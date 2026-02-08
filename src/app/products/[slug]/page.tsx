@@ -74,11 +74,6 @@ export default async function ProductDetailPage({ params }: Props) {
             )}
           </div>
 
-          {/* Cover */}
-          <div
-            className="aspect-video w-full rounded-3xl overflow-hidden border border-zinc-100 dark:border-zinc-800"
-            style={{ backgroundColor: post.coverColor || '#f4f4f5' }}
-          />
         </div>
 
         {/* Content */}

@@ -69,11 +69,6 @@ export default async function CaseStudyDetailPage({ params }: Props) {
             </div>
           </div>
 
-          {/* Cover Image */}
-          <div
-            className="aspect-[21/9] w-full rounded-3xl overflow-hidden border border-zinc-100 dark:border-zinc-800"
-            style={{ backgroundColor: post.coverColor || '#f4f4f5' }}
-          />
         </div>
 
         {/* Narrative Section */}
