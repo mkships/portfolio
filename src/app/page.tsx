@@ -14,7 +14,7 @@ export default function Home() {
   const bio = getBio()
 
   return (
-    <div className="max-w-4xl mx-auto px-6 py-12 md:py-24 flex flex-col gap-24">
+    <div className="max-w-4xl mx-auto px-6 py-12 md:py-24 flex flex-col gap-16">
       <Header />
 
       <Hero bio={bio} />

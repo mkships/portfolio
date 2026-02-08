@@ -1,9 +1,7 @@
 ---
-headline: "i’m a product guy who thinks fluently in systems, design, and execution."
-subheadline: "building and experimenting with agentic coding tools (aka vibecoding)."
+headline: "i'm a product leader who speaks fluently in code and ai."
+subheadline: ""
 ---
-over the years, i’ve worked across consumer and b2b products, close to real users, scale, and operational constraints. that experience shapes how i approach ai today — with judgment, taste, and a clear sense of what’s worth building.
+obsessed with the intersection of human intuition and agentic workflows. currently building the future of automated creativity.
 
-lately, i’m focusing on ideas i care about and trying to create things that i (and hopefully other people 😛) genuinely enjoy using.
-
-currently: experimenting with agentic coding and ai-driven product workflows through small tools and side projects.
+i spend most of my days prompting models, analyzing retention loops, and occasionally playing tennis in the delhi heat.

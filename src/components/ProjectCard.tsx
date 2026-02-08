@@ -14,7 +14,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           <h3 className="text-lg font-semibold lowercase text-zinc-900 dark:text-zinc-100">
             {project.title}
           </h3>
-          <span className="text-[10px] text-zinc-400 font-mono uppercase tracking-widest">
+          <span className="text-[10px] text-zinc-500 font-mono uppercase tracking-widest">
             {project.year || project.date}
           </span>
         </div>
