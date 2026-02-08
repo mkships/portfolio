@@ -3,7 +3,6 @@ title: "case study title"
 description: "one-line description of the project and its impact."
 year: "2024"
 tags: ["tag1", "tag2", "tag3"]
-coverColor: "#2a4858"
 role: "your role"
 metric: "XX%"
 metricLabel: "key metric description"

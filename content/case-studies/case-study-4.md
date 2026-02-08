@@ -25,10 +25,10 @@ the solution took shape as <span class="text-moss dark:text-moss-light">Reliance
 
 ## the outcome
 
-- **adoption at Scale:** <span class="text-moss dark:text-moss-light">Reliance Communities</span> served as a central engagement layer for thousands of employees across business units.
-- **boosted Engagement:** gamification design and feed personalisation encouraged more consistent participation compared to traditional static portals.
+- **adoption at scale:** <span class="text-moss dark:text-moss-light">Reliance Communities</span> served as a central engagement layer for thousands of employees across business units.
+- **boosted engagement:** gamification design and feed personalisation encouraged more consistent participation compared to traditional static portals.
 - **strategic alignment:** the project became a flagship initiative within HR 2.0, showcasing how AI, automation, and human-centric design could co-create next-gen HR practices.
 
 ## the learnings
 
-for me personally, it was a chance to build at massive scale, balance global benchmarks with contextual realities, and create an employee-first solution that anticipated many trends that have since become mainstream.
+for me personally, it was a chance to build at a massive scale while balancing global benchmarks with contextual realities, and create an employee-first solution. also i accidentally discovered product management 😎

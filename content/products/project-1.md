@@ -2,7 +2,6 @@
 title: "project name"
 description: "short description of what this project does."
 tags: ["tech1", "tech2"]
-coverColor: "#1e3a5f"
 url: ""
 status: "wip"
 ---

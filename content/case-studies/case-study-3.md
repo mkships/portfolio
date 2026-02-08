@@ -3,7 +3,6 @@ title: "vernacular digital media apps"
 description: "built and scaled apps for 1 billion Indians"
 year: "2021"
 tags: ["product-led-growth", "prototyping", "strategy"]
-coverColor: "#4a5568"
 role: "product lead"
 metric: "1M+ users"
 metricLabel: "key metric description"
