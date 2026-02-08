@@ -1,11 +1,11 @@
 ---
-title: "case study title"
-description: "one-line description of the project and its impact."
-year: "2024"
-tags: ["tag1", "tag2", "tag3"]
+title: "vernacular digital media apps"
+description: "built and scaled apps for 1 billion Indians"
+year: "2021"
+tags: ["product-led-growth", "prototyping", "strategy"]
 coverColor: "#4a5568"
-role: "your role"
-metric: "XX%"
+role: "product lead"
+metric: "1M+ users"
 metricLabel: "key metric description"
 ---
 

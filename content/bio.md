@@ -1,7 +1,7 @@
 ---
-headline: "i'm a product leader who speaks fluently in code and ai."
-subheadline: ""
+headline: "i’m a product guy who thinks fluently in systems, design, and execution."
+subheadline: "i’ve worked across consumer and b2b products at real scale, which shapes how i approach ai — with judgment, taste, and focus on what’s worth building."
 ---
-obsessed with the intersection of human intuition and agentic workflows. currently building the future of automated creativity.
+lately, i’m using agentic coding tools to build products around ideas i care about.
 
-i spend most of my days prompting models, analyzing retention loops, and occasionally playing tennis in the delhi heat.
+i also watch a lot of tennis 🎾 and try not to suck while playing it.
