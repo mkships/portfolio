@@ -1,5 +1,5 @@
 ---
-title: "project name"
+title: "mood2movies"
 description: "short description of what this project does."
 tags: ["tech1", "tech2"]
 url: ""
