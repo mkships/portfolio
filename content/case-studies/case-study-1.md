@@ -1,7 +1,7 @@
 ---
-title: "case study title"
+title: "bringing retail to Bharat 🇮🇳"
 description: "one-line description of the project and its impact."
-year: "2024"
+year: "2023"
 tags: ["tag1", "tag2", "tag3"]
 role: "your role"
 metric: "XX%"
