@@ -1,21 +1,21 @@
 ---
-title: "bringing retail to Bharat 🇮🇳"
-description: "one-line description of the project and its impact."
-year: "2023"
-tags: ["tag1", "tag2", "tag3"]
-role: "your role"
-metric: "XX%"
-metricLabel: "key metric description"
+title: "pivoting from a generalist PM to an AI generalist ✨"
+description: "building in a world where a PM is essentially redundant"
+year: "2025"
+tags: ["strategy", "product management", "AI"]
+role: "AI Generalist"
+metric: "100%"
+metricLabel: "of the tasks done by AI"
 ---
 
-## the challenge
+## is a pm role relevant in 2025?
 
 Describe the problem or opportunity that drove this project. What was broken? What was the business need? What user pain points existed?
 
-## the solution
+## building products with agentic coding (aka vibe-coding)
 
 Explain your approach and the key decisions you made. What did you build or change? How did you collaborate with stakeholders and teams?
 
-## the outcome
+## what do i look forward to in 2026 ✨
 
 Share the results and impact. What metrics improved? What did you learn? How did this project influence future work?
