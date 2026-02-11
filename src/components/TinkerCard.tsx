@@ -36,7 +36,7 @@ export default function TinkerCard({ project }: TinkerCardProps) {
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
+              className="w-full h-full object-contain"
             />
           </div>
         ) : (
@@ -56,7 +56,7 @@ export default function TinkerCard({ project }: TinkerCardProps) {
           </p>
           <div className="flex gap-2 flex-wrap">
             {project.tags?.map(tag => (
-              <span key={tag} className="px-3 py-1 bg-moss/20 border border-moss/30 rounded-full text-[9px] text-moss-light uppercase tracking-widest font-mono">
+              <span key={tag} className="px-3 py-1 bg-lime-500/20 border border-lime-500/40 rounded-full text-[9px] text-lime-400 uppercase tracking-widest font-mono">
                 {tag}
               </span>
             ))}
