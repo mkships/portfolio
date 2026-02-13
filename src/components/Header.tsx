@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Sun, Moon, ArrowDown } from 'lucide-react'
+import { Sun, Moon } from 'lucide-react'
 
 export default function Header() {
   const [isDark, setIsDark] = useState(false)
@@ -32,11 +32,11 @@ export default function Header() {
       </div>
 
       <nav className="flex items-center gap-8 md:gap-12 text-sm font-medium lowercase">
-        <a href="#work" className="hover:text-moss transition-colors">work</a>
-        <a href="#tinkertank" className="hover:text-moss transition-colors">tinkertank</a>
-        <div className="flex items-center gap-1 group cursor-pointer hover:text-moss transition-colors">
+        <a href="#work" className="flex items-center gap-1.5 hover:text-moss transition-colors group">work <span className="group-hover:-rotate-12 group-hover:scale-110 transition-transform inline-block">💻</span></a>
+        <a href="#tinkertank" className="flex items-center gap-1.5 hover:text-moss transition-colors group">tinkertank <span className="group-hover:animate-spin">✨</span></a>
+        <div className="flex items-center gap-1.5 group cursor-pointer hover:text-moss transition-colors">
           <a href="#beyondwork">beyond work</a>
-          <ArrowDown size={12} className="group-hover:translate-y-0.5 transition-transform" />
+          <span className="group-hover:animate-bounce">🎾</span>
         </div>
         <button
           onClick={toggleTheme}

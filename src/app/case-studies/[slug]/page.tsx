@@ -31,6 +31,12 @@ export async function generateMetadata({ params }: Props) {
 export default async function CaseStudyDetailPage({ params }: Props) {
   const { slug } = await params
   const post = getPostBySlug('case-studies', slug)
+  const allSlugs = getAllSlugs('case-studies')
+
+  // Find next case study (rotating: 1 → 2 → 3 → ... → 1)
+  const currentIndex = allSlugs.indexOf(slug)
+  const nextIndex = (currentIndex + 1) % allSlugs.length
+  const nextSlug = allSlugs[nextIndex]
 
   if (!post) {
     notFound()
@@ -114,9 +120,9 @@ export default async function CaseStudyDetailPage({ params }: Props) {
           <Link href="/#work" className="text-sm lowercase text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
             ← back to all work
           </Link>
-          <button className="flex items-center gap-2 text-sm lowercase font-semibold text-moss hover:translate-x-1 transition-transform">
+          <Link href={`/case-studies/${nextSlug}`} className="flex items-center gap-2 text-sm lowercase font-semibold text-moss hover:translate-x-1 transition-transform">
             next case study <ArrowRight size={14} />
-          </button>
+          </Link>
         </div>
       </article>
 
