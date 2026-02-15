@@ -51,7 +51,7 @@ export default function CompoundingLab() {
       {/* Header */}
       <div className="mb-8">
         <h3 className="text-[10px] font-medium text-zinc-500 uppercase tracking-[0.2em] font-mono mb-1">
-          Daily Calorie Deficit
+          Compounding Lab
         </h3>
         <p className="text-[11px] text-zinc-400 dark:text-zinc-500 italic lowercase">
           small daily wins compound into big transformations.
@@ -87,7 +87,7 @@ export default function CompoundingLab() {
       <div className="mb-6">
         <div className="flex items-center justify-between mb-2">
           <label className="text-[10px] font-mono uppercase tracking-[0.15em] text-zinc-500 dark:text-zinc-400">
-            daily calorie burn
+            daily calorie deficit
           </label>
           <span className="text-[9px] text-zinc-400 dark:text-zinc-500 italic lowercase">
             from diet choices — skipping snacks, lighter meals
