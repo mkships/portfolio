@@ -13,8 +13,11 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'MK | AI & Vibe Coder',
+  title: 'MK | Manohar Kanapaka - Product, AI and Vibe-Coding',
   description: 'Product guy who thinks fluently in systems, design, and execution. Building and experimenting with agentic coding tools.',
+  icons: {
+    icon: '/favicon.svg',
+  },
 }
 
 export default function RootLayout({
