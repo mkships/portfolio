@@ -1,17 +1,12 @@
-import { Twitter, Instagram, Linkedin } from 'lucide-react'
-
 export default function Footer() {
   return (
     <footer className="mt-12 py-12 border-t border-zinc-100 dark:border-zinc-900 flex flex-col md:flex-row items-center justify-between gap-12">
       <div className="flex items-center gap-10 text-sm font-medium lowercase">
-        <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-moss transition-colors">
-          <Linkedin size={14} strokeWidth={2.5} /> linkedin
+        <a href="https://x.com/mkanapaka" target="_blank" rel="noopener noreferrer" className="underline hover:text-moss transition-colors">
+          x (twitter)
         </a>
-        <a href="https://x.com/yourprofile" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-moss transition-colors">
-          <Twitter size={14} strokeWidth={2.5} /> twitter
-        </a>
-        <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-moss transition-colors">
-          <Instagram size={14} strokeWidth={2.5} /> instagram
+        <a href="https://linkedin.com/in/mkanapaka" target="_blank" rel="noopener noreferrer" className="underline hover:text-moss transition-colors">
+          linkedin
         </a>
       </div>
 
