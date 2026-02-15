@@ -10,14 +10,13 @@ export default function Footer() {
         </a>
       </div>
 
-      <div className="flex flex-col items-center md:items-end gap-3">
-        <div className="flex items-center gap-4">
-          <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-zinc-400">status: vibecoding</span>
-          <div className="w-1.5 h-1.5 rounded-full bg-moss animate-pulse"></div>
+      <div className="flex items-center gap-3">
+        <div className="w-7 h-7 rounded-full bg-zinc-900 dark:bg-zinc-100 text-zinc-100 dark:text-zinc-900 flex items-center justify-center font-medium text-[10px]">
+          MK
         </div>
-        <p className="text-[10px] text-zinc-500 italic lowercase tracking-wider">
-          built with human intuition and agentic workflows.
-        </p>
+        <span className="text-[11px] text-zinc-400 lowercase">
+          &copy; 2026 manohar kanapaka
+        </span>
       </div>
     </footer>
   )
