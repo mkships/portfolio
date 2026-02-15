@@ -13,10 +13,22 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://mkanapaka.space'),
   title: 'MK | Manohar Kanapaka - Product, AI and Vibe-Coding',
   description: 'Product guy who thinks fluently in systems, design, and execution. Building and experimenting with agentic coding tools.',
   icons: {
     icon: '/favicon.svg',
+  },
+  openGraph: {
+    title: 'MK | Manohar Kanapaka - Product, AI and Vibe-Coding',
+    description: 'Product guy who thinks fluently in systems, design, and execution. Building and experimenting with agentic coding tools.',
+    url: 'https://mkanapaka.space',
+    siteName: 'Manohar Kanapaka',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    creator: '@mkanapaka',
   },
 }
 
