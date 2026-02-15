@@ -41,7 +41,6 @@ export default function Footer() {
                 fontFamily="JetBrains Mono, monospace"
                 fontWeight="500"
                 letterSpacing="4"
-                textTransform="uppercase"
               >
                 <textPath href="#stampCircle">
                   VIBECODED 100% • VIBECODED 100% •
