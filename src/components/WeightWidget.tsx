@@ -19,8 +19,8 @@ export default function WeightWidget() {
         <span className="text-2xl font-semibold text-zinc-900 dark:text-white">-8.5 kg</span>
       </div>
 
-      <div className="h-[180px] w-full">
-        <ResponsiveContainer width="100%" height="100%">
+      <div className="h-[180px] w-full" style={{ minWidth: 0 }}>
+        <ResponsiveContainer width="100%" height="100%" minWidth={0}>
           <AreaChart data={data}>
             <XAxis
               dataKey="month"

@@ -10,7 +10,7 @@ metricLabel: "across 8+ langauges and 20+ states"
 
 ## the challenge
 
-from 2019–21, India’s next wave of internet users was coming online — largely from **tier-2 and tier-3 districts**, consuming content in their **native languages**, almost entirely on ***Android phones***.
+from 2019–21, India’s next wave of internet users was coming online - largely from **tier-2 and tier-3 districts**, consuming content in their **native languages**, almost entirely on ***Android phones***.
 
 this wasn’t a translation problem.
 
@@ -23,8 +23,8 @@ the real question was simple and uncomfortable:
 ## the solution
 
 <div class="grid grid-cols-2 gap-2 my-4">                                                        
-    <img src="/images/image1.avif" alt="" class="aspect-square object-cover rounded-xl" />             
-    <img src="/images/image2.jpeg" alt="" class="aspect-square object-cover rounded-xl" />                        
+    <img src="/images/case-studies/image1.avif" alt="" class="aspect-square object-cover rounded-xl" />             
+    <img src="/images/case-studies/image2.jpeg" alt="" class="aspect-square object-cover rounded-xl" />                        
   </div>   
 
 i led product and growth across two vernacular media products with one guiding principle:

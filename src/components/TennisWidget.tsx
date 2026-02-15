@@ -19,8 +19,8 @@ export default function TennisWidget() {
         <span className="text-2xl font-semibold text-zinc-900 dark:text-white">4.0 ntrp</span>
       </div>
 
-      <div className="flex-1 min-h-[180px]">
-        <ResponsiveContainer width="100%" height="100%">
+      <div className="flex-1 min-h-[180px]" style={{ minWidth: 0 }}>
+        <ResponsiveContainer width="100%" height="100%" minWidth={0}>
           <BarChart data={matchStats}>
             <XAxis
               dataKey="week"

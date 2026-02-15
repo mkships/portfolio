@@ -34,7 +34,7 @@ export default function TinkerCard({ project }: TinkerCardProps) {
         {project.image ? (
           <div className="w-full h-full flex items-center justify-center p-8 bg-zinc-50 dark:bg-zinc-900">
             <img
-              src={project.image}
+              src={project.image.startsWith('/') ? project.image : `/${project.image}`}
               alt={project.title}
               className="w-full h-full object-contain"
             />
@@ -56,7 +56,7 @@ export default function TinkerCard({ project }: TinkerCardProps) {
           </p>
           <div className="flex gap-2 flex-wrap">
             {project.tags?.map(tag => (
-              <span key={tag} className="px-3 py-1 bg-lime-500/20 border border-lime-500/40 rounded-full text-[9px] text-lime-400 uppercase tracking-widest font-mono">
+              <span key={tag} className="px-3 py-1 bg-moss/20 border border-moss/40 rounded-full text-[9px] text-moss-light uppercase tracking-widest font-mono">
                 {tag}
               </span>
             ))}

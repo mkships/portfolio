@@ -10,9 +10,9 @@ metricLabel: "worth transactions handled annually"
 
 ## the challenge
 
-**running a supermarket on spreadsheets** 📉
+*<span class="text-moss dark:text-moss-light">running a supermarket on spreadsheets*</span> 📉
 
-at **<span class="text-moss dark:text-moss-light">[SuperK](https://www.superk.in/)**</span>, franchise owners were running supermarkets with fragmented tools, spreadsheets, and manual processes.
+at **<span class="text-moss dark:text-moss-light">[superk](https://www.superk.in/)**</span>, franchise owners were running supermarkets with fragmented tools, spreadsheets, and manual processes.
 
 they lacked real-time visibility into financials, inventory, procurement, and returns, which led to stock mismatches, poor catalogue availability, operational friction, and early merchant churn.
 
@@ -26,16 +26,16 @@ they lacked real-time visibility into financials, inventory, procurement, and re
 
 ## the solution
 
-**a merchant OS that retailers will thrive on** 🧱
+*<span class="text-moss dark:text-moss-light">a merchant OS that retailers will thrive on*</span> 🧱
 
 built the merchant partner product across web + mobile, building software that behaved more like an operating system than a reporting layer.
 
 🧩 **what I built**
 
 shipped **8+ core modules** covering:
-- *financials*: invoice ledger, earnings reports
-- *procurement*: catalogue, cart/checkout, returns, new product requests
-- *inventory*: stock audits, inventory visibility
+- *financials* : invoice ledger, earnings reports
+- *procurement* : catalogue, cart/checkout, returns, new product requests
+- *inventory* : stock audits, inventory visibility
 
 built no-code / low-code internal apps to:
 - run inventory audits at scale across stores
