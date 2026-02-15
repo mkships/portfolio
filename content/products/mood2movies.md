@@ -1,6 +1,6 @@
 ---
 title: "mood2movies"
-description: "short description of what this project does."
+description: "your mood picks the movie, we tell you where to watch it"
 image: "/images/products/Mood2Movie.png"
 tags: ["claude-code", "replit"]
 url: ""

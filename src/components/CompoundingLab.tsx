@@ -18,7 +18,6 @@ export default function CompoundingLab() {
   const [steps, setSteps] = useState(8000)
   const [workouts, setWorkouts] = useState(3)
 
-  const stepsPercent = ((steps - 2000) / (18000 - 2000)) * 100
   // Zone boundaries as percentages
   const deadZoneEnd = ((5000 - 2000) / (18000 - 2000)) * 100
   const sweetSpotEnd = ((15000 - 2000) / (18000 - 2000)) * 100
@@ -221,7 +220,7 @@ export default function CompoundingLab() {
                 fontFamily: 'JetBrains Mono',
                 padding: '8px 12px',
               }}
-              formatter={(value: number) => [`${value} kg`, 'weight']}
+              formatter={(value) => [`${value} kg`, 'weight']}
             />
             <ReferenceLine
               y={weight}
