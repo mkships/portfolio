@@ -51,7 +51,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="space-y-4">
             <h3 className="text-lg md:text-xl font-semibold lowercase text-zinc-900 dark:text-zinc-100">
-              lost 25 kgs in 16 weeks. weight loss isn&apos;t hard!
+              lost 25 kgs in 16 weeks. weight loss isn&apos;t hard! 🏋️‍♂️🔥
             </h3>
             <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed lowercase">
               i followed three simple rules — be in a calorie deficit every single day, walk and move more (steps are underrated), and if possible, lift weights for gains and accelerated results. no fancy diets, no magic supplements. just consistency and the math of energy in vs energy out. the widget here lets you model that math yourself.
@@ -64,7 +64,7 @@ export default function Home() {
           <TennisRally />
           <div className="space-y-4 md:order-none order-first">
             <h3 className="text-lg md:text-xl font-semibold lowercase text-zinc-900 dark:text-zinc-100">
-              tennis is my meditation.
+              tennis is my meditation. 🎾🧘
             </h3>
             <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed lowercase">
               rhythm, focus, and staying in the point. the rally game here simulates that pressure — tap to keep the ball alive, but get the timing wrong and the point is over. it&apos;s a simple test of consistency under constraint, which is basically what tennis (and life) comes down to.
