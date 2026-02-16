@@ -2,7 +2,7 @@
 
 export default function Footer() {
   return (
-    <footer className="mt-12 py-12 border-t border-zinc-100 dark:border-zinc-900 flex items-center justify-between">
+    <footer className="mt-12 py-12 border-t border-zinc-100 dark:border-zinc-900 flex flex-col md:flex-row items-center md:justify-between gap-8">
       <div className="flex items-center gap-10 text-sm font-medium lowercase">
         <a href="https://x.com/mkanapaka" target="_blank" rel="noopener noreferrer" className="underline hover:text-moss transition-colors">
           x (twitter)
