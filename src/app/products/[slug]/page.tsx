@@ -37,7 +37,7 @@ export default async function ProductDetailPage({ params }: Props) {
   }
 
   return (
-    <div className="max-w-3xl mx-auto px-6 py-12 md:py-24 flex flex-col gap-24">
+    <div className="max-w-2xl mx-auto px-6 py-12 md:py-24 flex flex-col gap-24">
       {/* Detail Header */}
       <header className="flex items-center justify-between">
         <Link

@@ -15,7 +15,7 @@ export default function CaseStudiesPage() {
   const posts = getAllPosts('case-studies')
 
   return (
-    <div className="max-w-3xl mx-auto px-6 py-12 md:py-24 flex flex-col gap-16">
+    <div className="max-w-2xl mx-auto px-6 py-12 md:py-24 flex flex-col gap-16">
       <header className="flex items-center justify-between">
         <Link
           href="/#work"
