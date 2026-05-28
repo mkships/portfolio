@@ -29,7 +29,7 @@ export default function CaseStudiesPage() {
 
       <ScrollReveal>
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold lowercase mb-2 text-zinc-900 dark:text-zinc-100">
+          <h1 className="text-3xl md:text-4xl font-semibold tracking-[-0.03em] leading-[1.1] lowercase mb-3 text-zinc-900 dark:text-zinc-100">
             professional work
           </h1>
           <p className="text-moss dark:text-moss-light lowercase text-sm italic">
@@ -38,7 +38,7 @@ export default function CaseStudiesPage() {
         </div>
       </ScrollReveal>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {posts.map((post) => (
           <ScrollReveal key={post.slug}>
             <ProjectCard project={post} />

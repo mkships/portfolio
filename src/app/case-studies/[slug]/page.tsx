@@ -105,10 +105,11 @@ export default async function CaseStudyDetailPage({ params }: Props) {
 
           <main className="md:col-span-8">
             <div
-              className="prose prose-zinc dark:prose-invert prose-lg max-w-none
-                prose-headings:lowercase prose-headings:font-semibold
-                prose-h2:text-lg prose-h2:mb-4
-                prose-p:text-zinc-600 prose-p:dark:text-zinc-400 prose-p:leading-relaxed
+              className="prose prose-zinc dark:prose-invert max-w-[65ch]
+                prose-headings:lowercase prose-headings:font-semibold prose-headings:tracking-[-0.02em]
+                prose-h2:text-xl prose-h2:mb-4 prose-h2:mt-12
+                prose-p:text-zinc-700 prose-p:dark:text-zinc-300 prose-p:leading-[1.75] prose-p:text-base
+                prose-li:text-zinc-700 prose-li:dark:text-zinc-300 prose-li:leading-[1.75]
                 prose-a:text-moss prose-a:no-underline hover:prose-a:underline"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />

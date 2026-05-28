@@ -47,16 +47,16 @@ export default function TinkerCard({ project }: TinkerCardProps) {
         )}
 
         {/* Hover Overlay */}
-        <div className="absolute inset-0 bg-zinc-950/80 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-          <h3 className="text-zinc-100 text-lg font-semibold lowercase mb-1">
+        <div className="absolute inset-0 bg-zinc-950/80 flex flex-col justify-end p-7 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <h3 className="text-zinc-100 text-xl md:text-[22px] font-semibold tracking-[-0.02em] leading-[1.25] lowercase mb-3">
             {project.title}
           </h3>
-          <p className="text-zinc-400 text-xs mb-4 italic leading-relaxed">
+          <p className="text-zinc-300 text-sm leading-[1.75] mb-6 italic">
             {project.description || project.tagline}
           </p>
-          <div className="flex gap-2 flex-wrap">
+          <div className="flex gap-4 flex-wrap">
             {project.tags?.map(tag => (
-              <span key={tag} className="px-3 py-1 bg-moss/20 border border-moss/40 rounded-full text-[9px] text-moss-light uppercase tracking-widest font-mono">
+              <span key={tag} className="text-xs uppercase tracking-[0.08em] text-moss-light/80 font-medium">
                 {tag}
               </span>
             ))}

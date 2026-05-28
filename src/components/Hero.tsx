@@ -7,15 +7,17 @@ interface HeroProps {
 export default function Hero({ bio }: HeroProps) {
   return (
     <section className="mt-16 py-4 animate-fadeInUp">
-      <div className="space-y-4 text-base md:text-lg leading-normal text-zinc-500 dark:text-zinc-400 lowercase font-mono font-normal max-w-2xl">
-        <p className="text-zinc-900 dark:text-zinc-100 font-medium font-sans text-lg md:text-xl">
+      <div className="space-y-8 max-w-[720px]">
+        <h1 className="text-[40px] md:text-[56px] font-bold tracking-[-0.04em] leading-[1] lowercase text-zinc-900 dark:text-zinc-100">
           {bio.headline}
-        </p>
-        {bio.subheadline && <p>{bio.subheadline}</p>}
-        <div
-          className="space-y-4 [&>p]:leading-normal"
-          dangerouslySetInnerHTML={{ __html: bio.content }}
-        />
+        </h1>
+        <div className="space-y-6 text-lg md:text-xl leading-[1.7] tracking-[-0.01em] text-zinc-700 dark:text-zinc-300 lowercase">
+          {bio.subheadline && <p>{bio.subheadline}</p>}
+          <div
+            className="space-y-6 [&>p]:leading-[1.7]"
+            dangerouslySetInnerHTML={{ __html: bio.content }}
+          />
+        </div>
       </div>
     </section>
   )

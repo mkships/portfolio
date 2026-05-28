@@ -24,7 +24,7 @@ export default function Home() {
         title="professional work"
         subtitle="case studies and highlights from my career in product management"
       >
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {professionalWork.map(project => (
             <ProjectCard key={project.slug} project={project} />
           ))}
@@ -36,7 +36,7 @@ export default function Home() {
         title="ai/vibe coding"
         subtitle="tinkering with ai and agents to create some cool and fun products/projects"
       >
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {tinkerTank.map(project => (
             <TinkerCard key={project.slug} project={project} />
           ))}
@@ -49,11 +49,11 @@ export default function Home() {
         subtitle="detailing my journey with fitness and tennis"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-          <div className="space-y-4">
-            <h3 className="text-lg md:text-xl font-semibold lowercase text-zinc-900 dark:text-zinc-100">
+          <div className="space-y-4 max-w-[65ch]">
+            <h3 className="text-xl md:text-[22px] font-semibold tracking-[-0.02em] leading-[1.25] lowercase text-zinc-900 dark:text-zinc-100">
               lost 25 kg in 16 weeks through calorie deficit, walking, and consistency 🏋️‍♂️🔥
             </h3>
-            <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed lowercase">
+            <p className="text-base text-zinc-700 dark:text-zinc-300 leading-[1.75] lowercase">
               i followed three simple rules — be in a calorie deficit every single day, walk and move more (steps are underrated), and if possible, lift weights for gains and accelerated results. no fancy diets, no magic supplements. just consistency and the math of energy in vs energy out. the widget here lets you model that math yourself.
             </p>
           </div>
@@ -62,11 +62,11 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mt-12">
           <TennisRally />
-          <div className="space-y-4 md:order-none order-first">
-            <h3 className="text-lg md:text-xl font-semibold lowercase text-zinc-900 dark:text-zinc-100">
+          <div className="space-y-4 md:order-none order-first max-w-[65ch]">
+            <h3 className="text-xl md:text-[22px] font-semibold tracking-[-0.02em] leading-[1.25] lowercase text-zinc-900 dark:text-zinc-100">
               tennis is my meditation. 🎾🧘
             </h3>
-            <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed lowercase">
+            <p className="text-base text-zinc-700 dark:text-zinc-300 leading-[1.75] lowercase">
               rhythm, focus, and staying in the point. the rally game here simulates that pressure — tap to keep the ball alive, but get the timing wrong and the point is over. it&apos;s a simple test of consistency under constraint, which is basically what tennis (and life) comes down to.
             </p>
           </div>
