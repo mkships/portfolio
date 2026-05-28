@@ -51,7 +51,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="space-y-4">
             <h3 className="text-lg md:text-xl font-semibold lowercase text-zinc-900 dark:text-zinc-100">
-              lost 25 kgs in 16 weeks. weight loss isn&apos;t hard! 🏋️‍♂️🔥
+              lost 25 kg in 16 weeks through calorie deficit, walking, and consistency 🏋️‍♂️🔥
             </h3>
             <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed lowercase">
               i followed three simple rules — be in a calorie deficit every single day, walk and move more (steps are underrated), and if possible, lift weights for gains and accelerated results. no fancy diets, no magic supplements. just consistency and the math of energy in vs energy out. the widget here lets you model that math yourself.
