@@ -1,8 +1,8 @@
 ---
 title: "1percenter"
-description: "an accountability app for the disciplined 1%"
+description: "habit tracking for consistency-maxxing weirdos"
 image: "/images/products/Logo.png"
-tags: ["tech1", "tech2"]
+tags: ["iOS", "replit"]
 url: ""
 status: "wip"
 ---

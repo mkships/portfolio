@@ -1,5 +1,5 @@
 ---
-title: "pivoting from a generalist PM to an AI generalist ✨"
+title: "pivoting from product manager to AI-native builder ✨"
 description: "building in a world where a PM is essentially redundant"
 year: "2025"
 tags: ["strategy", "product management", "AI"]

@@ -1,8 +1,8 @@
 ---
 title: "mood2music"
-description: "your mood to determine your music 🎵"
+description: "turn a mood into a playlist in seconds 🎵"
 image: "/images/products/Mood2Music.png"
-tags: ["web-app", "Replit"]
+tags: ["web-app", "replit"]
 url: "https://mood2music.replit.app/"
 status: "live"
 ---

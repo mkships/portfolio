@@ -43,7 +43,7 @@ export default function Footer() {
                 letterSpacing="4"
               >
                 <textPath href="#stampCircle">
-                  VIBECODED 100% • VIBECODED 100% •
+                  BUILT WITH CLAUDE CODE • 100% •
                 </textPath>
               </text>
             </svg>
