@@ -30,14 +30,18 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
   background-color: var(--bg);
   color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-geist), 'Geist', system-ui, sans-serif;
+}
+
 .mono {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono), 'JetBrains Mono', monospace;
 }
 
 ::selection {

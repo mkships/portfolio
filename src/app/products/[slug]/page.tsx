@@ -87,7 +87,7 @@ export default async function ProductDetailPage({ params }: Props) {
               <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-400 block mb-4">tech stack</span>
               <div className="flex flex-col gap-2">
                 {post.tags?.map(tag => (
-                  <span key={tag} className="text-[9px] uppercase tracking-widest font-mono text-zinc-500">
+                  <span key={tag} className="text-xs uppercase tracking-[0.08em] text-zinc-500 font-medium">
                     {tag}
                   </span>
                 ))}
