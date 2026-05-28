@@ -22,3 +22,7 @@ npm-debug.log*
 
 # typescript
 *.tsbuildinfo
+
+# editors / local tooling
+.idea/
+.claude/
