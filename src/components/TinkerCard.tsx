@@ -5,63 +5,38 @@ interface TinkerCardProps {
   project: PostMeta
 }
 
-const statusConfig = {
-  live: { color: 'text-green-500', dot: 'bg-green-500' },
-  wip: { color: 'text-yellow-500', dot: 'bg-yellow-500' },
-  beta: { color: 'text-moss dark:text-moss-light', dot: 'bg-moss' },
-  'coming-soon': { color: 'text-zinc-400', dot: 'bg-zinc-400' },
+const statusDotColor: Record<string, string> = {
+  live: 'bg-green-500',
+  wip: 'bg-yellow-500',
+  beta: 'bg-moss',
+  'coming-soon': 'bg-zinc-400',
 }
 
 export default function TinkerCard({ project }: TinkerCardProps) {
   const status = project.status || 'wip'
-  const config = statusConfig[status as keyof typeof statusConfig] || statusConfig.wip
+  const dotColor = statusDotColor[status] || statusDotColor.wip
 
   return (
-    <Link href={`/products/${project.slug}`} className="group block">
-      <article className="relative aspect-square overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900">
-        {/* Status Badge */}
-        <div className="absolute top-3 right-3 z-10 flex items-center gap-1.5 px-2 py-1 bg-white/90 dark:bg-zinc-900/90 rounded-full backdrop-blur-sm">
-          <span className="relative flex h-2 w-2">
-            <span className={`animate-ping absolute inline-flex h-full w-full rounded-full ${config.dot} opacity-75`}></span>
-            <span className={`relative inline-flex rounded-full h-2 w-2 ${config.dot}`}></span>
-          </span>
-          <span className={`text-[10px] font-mono uppercase tracking-wide ${config.color}`}>
-            {status}
-          </span>
-        </div>
-
-        {/* Background Logo/Image */}
-        {project.image ? (
-          <div className="w-full h-full flex items-center justify-center p-8 bg-zinc-50 dark:bg-zinc-900">
-            <img
-              src={project.image.startsWith('/') ? project.image : `/${project.image}`}
-              alt={project.title}
-              className="w-full h-full object-contain"
-            />
-          </div>
-        ) : (
-          <div
-            className="w-full h-full"
-            style={{ backgroundColor: project.coverColor || '#e5e5e5' }}
-          />
-        )}
-
-        {/* Hover Overlay */}
-        <div className="absolute inset-0 bg-zinc-950/80 flex flex-col justify-end p-7 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-          <h3 className="text-zinc-100 text-xl md:text-[22px] font-semibold tracking-[-0.02em] leading-[1.25] lowercase mb-3">
+    <Link href={`/products/${project.slug}`} className="group block h-full">
+      <article className="border border-zinc-200 dark:border-zinc-800 rounded-xl p-5 flex flex-col h-full gap-4 hover:border-moss dark:hover:border-moss-light transition-colors">
+        <div className="flex items-center gap-2">
+          <h3 className="text-lg font-semibold leading-[1.3] lowercase text-zinc-900 dark:text-zinc-100">
             {project.title}
           </h3>
-          <p className="text-zinc-300 text-sm leading-[1.75] mb-6 italic">
-            {project.description || project.tagline}
-          </p>
-          <div className="flex gap-4 flex-wrap">
-            {project.tags?.map(tag => (
-              <span key={tag} className="text-xs uppercase tracking-[0.08em] text-moss-light/80 font-medium">
+          <span className={`inline-block h-2 w-2 rounded-full ${dotColor} shrink-0`} title={status} />
+        </div>
+        <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-[1.6] lowercase">
+          {project.description || project.tagline}
+        </p>
+        {project.tags && project.tags.length > 0 && (
+          <div className="flex gap-3 flex-wrap mt-auto pt-1">
+            {project.tags.map(tag => (
+              <span key={tag} className="text-xs text-zinc-500 lowercase">
                 {tag}
               </span>
             ))}
           </div>
-        </div>
+        )}
       </article>
     </Link>
   )

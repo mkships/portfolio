@@ -29,7 +29,7 @@ export default function CaseStudiesPage() {
 
       <ScrollReveal>
         <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-semibold tracking-[-0.03em] leading-[1.1] lowercase mb-3 text-zinc-900 dark:text-zinc-100">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-[-0.03em] leading-[1.05] lowercase mb-3 text-zinc-900 dark:text-zinc-100">
             professional work
           </h1>
           <p className="text-moss dark:text-moss-light lowercase text-sm italic">
