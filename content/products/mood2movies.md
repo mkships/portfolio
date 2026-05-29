@@ -1,6 +1,6 @@
 ---
 title: "mood2movies"
-description: "your mood picks the movie, we tell you where to watch it"
+description: "find the movie that fits your mood 🍿"
 image: "/images/products/Mood2Movie.png"
 tags: ["claude-code", "replit"]
 url: ""

@@ -1,6 +1,6 @@
 ---
 title: "1percenter"
-description: "habit tracking for consistency-maxxing weirdos"
+description: "habit tracking for consistency-maxxing weirdos 🏋🏻‍♂️"
 image: "/images/products/Logo.png"
 tags: ["iOS", "replit"]
 url: ""

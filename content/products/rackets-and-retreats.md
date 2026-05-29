@@ -1,6 +1,6 @@
 ---
 title: "rackets & retreats"
-description: "Web directory for racket sports vacations and holidays"
+description: "global directory for racket sports travel 🗺️"
 image: "/images/products/RacketsAndRetreats.png"
 tags: ["nextJS", "claude-code"]
 url: ""
