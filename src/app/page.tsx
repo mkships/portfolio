@@ -36,7 +36,7 @@ export default function Home() {
         title="ai/vibe coding"
         subtitle="tinkering with ai and agents to create some cool and fun products/projects"
       >
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="flex flex-col gap-3">
           {tinkerTank.map(project => (
             <TinkerCard key={project.slug} project={project} />
           ))}

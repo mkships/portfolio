@@ -1,6 +1,3 @@
-'use client'
-
-import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { PostMeta } from '@/lib/types'
 
@@ -19,75 +16,67 @@ export default function TinkerCard({ project }: TinkerCardProps) {
   const status = project.status || 'wip'
   const config = statusConfig[status as keyof typeof statusConfig] || statusConfig.wip
 
-  const handleDeeplink = (e: React.MouseEvent) => {
-    e.preventDefault()
-    e.stopPropagation()
-    if (project.url) {
-      window.open(project.url, '_blank', 'noopener,noreferrer')
-    }
-  }
+  const statusInner = (
+    <>
+      <span className={`h-1.5 w-1.5 rounded-full ${config.dot}`} />
+      <span>status — {status}</span>
+      {project.url && <ArrowUpRight size={12} />}
+    </>
+  )
 
   return (
-    <Link href={`/products/${project.slug}`} className="group block">
-      <article className="relative aspect-square overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 hover:border-moss dark:hover:border-moss-light transition-colors">
-        {/* Background image / colour */}
-        <div className="absolute inset-0 opacity-25 grayscale group-hover:opacity-40 group-hover:grayscale-0 transition-all duration-500">
-          {project.image ? (
-            <img
-              src={project.image.startsWith('/') ? project.image : `/${project.image}`}
-              alt=""
-              className="w-full h-full object-contain p-8"
-            />
-          ) : (
-            <div
-              className="w-full h-full"
-              style={{ backgroundColor: project.coverColor || '#e5e5e5' }}
-            />
-          )}
-        </div>
+    <article className="border border-zinc-200 dark:border-zinc-800 rounded-xl px-4 py-4 flex items-center gap-4">
+      {/* Thumbnail */}
+      <div className="shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+        {project.image ? (
+          <img
+            src={project.image.startsWith('/') ? project.image : `/${project.image}`}
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <div
+            className="w-full h-full"
+            style={{ backgroundColor: project.coverColor || '#e5e5e5' }}
+          />
+        )}
+      </div>
 
-        {/* Foreground content */}
-        <div className="relative h-full p-4 flex flex-col">
-          {/* Top row: status */}
-          <div className="flex justify-end mb-1">
-            <div className="flex items-center gap-1.5">
-              <span className={`h-2 w-2 rounded-full ${config.dot}`} />
-              <span className={`text-[10px] font-mono uppercase tracking-wide ${config.text}`}>
-                {status}
-              </span>
-            </div>
-          </div>
+      {/* Title + description */}
+      <div className="flex-1 min-w-0">
+        <h3 className="text-base md:text-lg font-semibold leading-[1.3] lowercase text-zinc-900 dark:text-zinc-100">
+          {project.title}
+        </h3>
+        {project.description && (
+          <p className="mt-1.5 text-sm italic text-zinc-600 dark:text-zinc-400 leading-[1.5] lowercase">
+            {project.description}
+          </p>
+        )}
+      </div>
 
-          {/* App name */}
-          <h3 className="text-base md:text-lg font-semibold leading-[1.25] lowercase text-zinc-900 dark:text-zinc-100">
-            {project.title}
-          </h3>
-
-          {/* Spacer pushes footer to bottom */}
-          <div className="flex-1" />
-
-          {/* Bottom row: tags + deeplink */}
-          <div className="flex justify-between items-end gap-3">
-            <div className="flex gap-2 flex-wrap min-w-0">
-              {project.tags?.map(tag => (
-                <span key={tag} className="text-[10px] text-zinc-500 lowercase">
-                  {tag}
-                </span>
-              ))}
-            </div>
-            {project.url && (
-              <button
-                type="button"
-                onClick={handleDeeplink}
-                className="flex items-center gap-1 text-xs font-medium text-moss dark:text-moss-light opacity-0 group-hover:opacity-100 transition-opacity hover:underline whitespace-nowrap"
-                aria-label={`Open ${project.title}`}
-              >
-                deeplink <ArrowUpRight size={12} />
-              </button>
-            )}
-          </div>
-        </div>
-      </article>
-    </Link>
+      {/* Right rail: status (deeplink if url) + tag */}
+      <div className="shrink-0 flex flex-col items-end gap-1.5 text-right">
+        {project.url ? (
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`inline-flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-wide ${config.text} hover:underline`}
+            aria-label={`Open ${project.title}`}
+          >
+            {statusInner}
+          </a>
+        ) : (
+          <span className={`inline-flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-wide ${config.text}`}>
+            {statusInner}
+          </span>
+        )}
+        {project.tags?.length > 0 && (
+          <span className="text-[10px] text-zinc-500 lowercase">
+            {project.tags.join(' · ')}
+          </span>
+        )}
+      </div>
+    </article>
   )
 }
