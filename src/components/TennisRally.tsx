@@ -95,7 +95,7 @@ export default function TennisRally() {
   }, [])
 
   return (
-    <div className="border border-zinc-200 dark:border-zinc-800 border-dashed rounded-3xl p-8 bg-[#EFE9DD] dark:bg-zinc-900/10 flex flex-col">
+    <div className="border border-zinc-200 dark:border-zinc-800 border-dashed rounded-3xl p-8 bg-[#F2EFE7] dark:bg-zinc-900/10 flex flex-col">
       {/* Header */}
       <div className="mb-6">
         <h3 className="text-[10px] font-medium text-zinc-500 uppercase tracking-[0.2em] font-mono mb-1">

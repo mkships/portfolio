@@ -47,7 +47,7 @@ export default function CompoundingLab() {
   const weightLost = +(weight - day90Weight).toFixed(1)
 
   return (
-    <div className="border border-zinc-200 dark:border-zinc-800 border-dashed rounded-3xl p-8 bg-[#EFE9DD] dark:bg-zinc-900/10">
+    <div className="border border-zinc-200 dark:border-zinc-800 border-dashed rounded-3xl p-8 bg-[#F2EFE7] dark:bg-zinc-900/10">
       {/* Header */}
       <div className="mb-8">
         <h3 className="text-[10px] font-medium text-zinc-500 uppercase tracking-[0.2em] font-mono mb-1">

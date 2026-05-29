@@ -44,7 +44,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${geist.variable} ${jetbrainsMono.variable}`}>
-      <body className="font-sans antialiased bg-[#F5F1E8] dark:bg-zinc-950 text-zinc-900 dark:text-zinc-200 transition-colors duration-300">
+      <body className="font-sans antialiased bg-[#FBFAF8] dark:bg-zinc-950 text-zinc-900 dark:text-zinc-200 transition-colors duration-300">
         {children}
       </body>
     </html>
