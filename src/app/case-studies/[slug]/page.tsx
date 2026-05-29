@@ -95,7 +95,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
               </div>
             </div>
             {(post.metric || post.metricLabel) && (
-              <div className="p-6 border border-zinc-100 dark:border-zinc-800 border-dashed rounded-2xl bg-zinc-50/30 dark:bg-zinc-900/10">
+              <div className="p-6 border border-zinc-100 dark:border-zinc-800 border-dashed rounded-2xl bg-[#EFE9DD] dark:bg-zinc-900/10">
                 <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-400 block mb-4">key metric</span>
                 <span className="text-3xl font-semibold text-moss">{post.metric || 'XX%'}</span>
                 <p className="text-[10px] lowercase italic text-zinc-500 mt-2">{post.metricLabel || 'key metric description'}</p>
