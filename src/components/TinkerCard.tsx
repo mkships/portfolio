@@ -25,7 +25,7 @@ export default function TinkerCard({ project }: TinkerCardProps) {
   )
 
   return (
-    <article className="border border-zinc-200 dark:border-zinc-800 rounded-xl px-4 py-4 flex items-start gap-4">
+    <article className="border border-zinc-200 dark:border-zinc-800 rounded-xl px-4 py-4 flex items-start gap-4 hover:border-moss dark:hover:border-moss-light transition-colors">
       {/* Thumbnail */}
       <div className="shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
         {project.image ? (

@@ -1,4 +1,4 @@
-import { getAllPosts, getBio } from '@/lib/posts'
+import { getAllPosts, getBio, statusOrder } from '@/lib/posts'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import Section from '@/components/Section'
@@ -7,13 +7,6 @@ import TinkerCard from '@/components/TinkerCard'
 import CompoundingLab from '@/components/CompoundingLab'
 import TennisRally from '@/components/TennisRally'
 import Footer from '@/components/Footer'
-
-const statusOrder: Record<string, number> = {
-  live: 0,
-  beta: 1,
-  wip: 2,
-  'coming-soon': 3,
-}
 
 export default function Home() {
   const professionalWork = getAllPosts('case-studies').sort((a, b) =>

@@ -6,6 +6,13 @@ import { PostMeta, PostDetail, BioData } from './types'
 
 const contentDirectory = path.join(process.cwd(), 'content')
 
+export const statusOrder: Record<string, number> = {
+  live: 0,
+  beta: 1,
+  wip: 2,
+  'coming-soon': 3,
+}
+
 export function getAllPosts(dir: string): PostMeta[] {
   const fullPath = path.join(contentDirectory, dir)
 

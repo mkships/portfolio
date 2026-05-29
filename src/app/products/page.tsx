@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
-import { getAllPosts } from '@/lib/posts'
+import { getAllPosts, statusOrder } from '@/lib/posts'
 import TinkerCard from '@/components/TinkerCard'
 import ScrollReveal from '@/components/ScrollReveal'
 import ThemeToggle from '@/components/ThemeToggle'
@@ -12,7 +12,9 @@ export const metadata = {
 }
 
 export default function ProductsPage() {
-  const posts = getAllPosts('products')
+  const posts = getAllPosts('products').sort(
+    (a, b) => (statusOrder[a.status ?? 'wip'] ?? 99) - (statusOrder[b.status ?? 'wip'] ?? 99)
+  )
 
   return (
     <div className="max-w-2xl mx-auto px-6 py-12 md:py-24 flex flex-col gap-16">

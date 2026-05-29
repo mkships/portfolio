@@ -12,7 +12,9 @@ export const metadata = {
 }
 
 export default function CaseStudiesPage() {
-  const posts = getAllPosts('case-studies')
+  const posts = getAllPosts('case-studies').sort((a, b) =>
+    (b.year || '').localeCompare(a.year || '')
+  )
 
   return (
     <div className="max-w-2xl mx-auto px-6 py-12 md:py-24 flex flex-col gap-16">
