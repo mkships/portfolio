@@ -10,7 +10,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     <Link href={`/case-studies/${project.slug}`} className="group block">
       <article className="border border-zinc-200 dark:border-zinc-800 rounded-xl px-5 py-4 flex items-center gap-5 hover:border-moss dark:hover:border-moss-light transition-colors">
         <div className="flex-1 min-w-0">
-          <h3 className="text-base md:text-lg font-semibold leading-[1.3] lowercase text-zinc-900 dark:text-zinc-100">
+          <h3 className="text-sm md:text-base font-semibold leading-[1.3] lowercase text-zinc-900 dark:text-zinc-100">
             {project.title}
           </h3>
           {(project.description || project.excerpt) && (

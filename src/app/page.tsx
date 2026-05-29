@@ -53,7 +53,7 @@ export default function Home() {
         subtitle="detailing my journey with fitness and tennis"
       >
         <div className="flex flex-col gap-4">
-          <h3 className="text-xl md:text-[22px] font-semibold tracking-[-0.02em] leading-[1.25] lowercase text-zinc-900 dark:text-zinc-100">
+          <h3 className="text-lg md:text-xl font-semibold tracking-[-0.02em] leading-[1.25] lowercase text-zinc-900 dark:text-zinc-100">
             lost 25 kg in 16 weeks 🏋️‍♂️🔥
           </h3>
           <p className="text-base text-zinc-700 dark:text-zinc-300 leading-[1.75] lowercase">
@@ -63,7 +63,7 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col gap-4 mt-16">
-          <h3 className="text-xl md:text-[22px] font-semibold tracking-[-0.02em] leading-[1.25] lowercase text-zinc-900 dark:text-zinc-100">
+          <h3 className="text-lg md:text-xl font-semibold tracking-[-0.02em] leading-[1.25] lowercase text-zinc-900 dark:text-zinc-100">
             tennis is my meditation 🎾🧘
           </h3>
           <p className="text-base text-zinc-700 dark:text-zinc-300 leading-[1.75] lowercase">

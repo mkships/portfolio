@@ -44,7 +44,7 @@ export default function TinkerCard({ project }: TinkerCardProps) {
 
       {/* 2x2 content grid: name|status on row 1, description|label on row 2 */}
       <div className="flex-1 min-w-0 grid grid-cols-[1fr_auto] gap-x-4 gap-y-1.5 items-baseline">
-        <h3 className="col-start-1 row-start-1 text-base md:text-lg font-semibold leading-[1.3] lowercase text-zinc-900 dark:text-zinc-100">
+        <h3 className="col-start-1 row-start-1 text-sm md:text-base font-semibold leading-[1.3] lowercase text-zinc-900 dark:text-zinc-100">
           {project.title}
         </h3>
 
