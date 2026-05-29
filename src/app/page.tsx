@@ -8,9 +8,20 @@ import CompoundingLab from '@/components/CompoundingLab'
 import TennisRally from '@/components/TennisRally'
 import Footer from '@/components/Footer'
 
+const statusOrder: Record<string, number> = {
+  live: 0,
+  beta: 1,
+  wip: 2,
+  'coming-soon': 3,
+}
+
 export default function Home() {
-  const professionalWork = getAllPosts('case-studies')
-  const tinkerTank = getAllPosts('products')
+  const professionalWork = getAllPosts('case-studies').sort((a, b) =>
+    (b.year || '').localeCompare(a.year || '')
+  )
+  const tinkerTank = getAllPosts('products').sort(
+    (a, b) => (statusOrder[a.status ?? 'wip'] ?? 99) - (statusOrder[b.status ?? 'wip'] ?? 99)
+  )
   const bio = getBio()
 
   return (
