@@ -52,28 +52,24 @@ export default function Home() {
         title="beyond work"
         subtitle="detailing my journey with fitness and tennis"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-          <div className="space-y-4 max-w-[65ch]">
-            <h3 className="text-xl md:text-[22px] font-semibold tracking-[-0.02em] leading-[1.25] lowercase text-zinc-900 dark:text-zinc-100">
-              lost 25 kg in 16 weeks through calorie deficit, walking, and consistency 🏋️‍♂️🔥
-            </h3>
-            <p className="text-base text-zinc-700 dark:text-zinc-300 leading-[1.75] lowercase">
-              i followed three simple rules — be in a calorie deficit every single day, walk and move more (steps are underrated), and if possible, lift weights for gains and accelerated results. no fancy diets, no magic supplements. just consistency and the math of energy in vs energy out. the widget here lets you model that math yourself.
-            </p>
-          </div>
+        <div className="flex flex-col gap-4">
+          <h3 className="text-xl md:text-[22px] font-semibold tracking-[-0.02em] leading-[1.25] lowercase text-zinc-900 dark:text-zinc-100">
+            lost 25 kg in 16 weeks 🏋️‍♂️🔥
+          </h3>
+          <p className="text-base text-zinc-700 dark:text-zinc-300 leading-[1.75] lowercase">
+            no diets, no supplements — just a daily calorie deficit, more steps, and consistency. model the math yourself below.
+          </p>
           <CompoundingLab />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mt-12">
+        <div className="flex flex-col gap-4 mt-16">
+          <h3 className="text-xl md:text-[22px] font-semibold tracking-[-0.02em] leading-[1.25] lowercase text-zinc-900 dark:text-zinc-100">
+            tennis is my meditation 🎾🧘
+          </h3>
+          <p className="text-base text-zinc-700 dark:text-zinc-300 leading-[1.75] lowercase">
+            rhythm, focus, and staying in the point. tap to rally below — mistime it and the point&apos;s over.
+          </p>
           <TennisRally />
-          <div className="space-y-4 md:order-none order-first max-w-[65ch]">
-            <h3 className="text-xl md:text-[22px] font-semibold tracking-[-0.02em] leading-[1.25] lowercase text-zinc-900 dark:text-zinc-100">
-              tennis is my meditation. 🎾🧘
-            </h3>
-            <p className="text-base text-zinc-700 dark:text-zinc-300 leading-[1.75] lowercase">
-              rhythm, focus, and staying in the point. the rally game here simulates that pressure — tap to keep the ball alive, but get the timing wrong and the point is over. it&apos;s a simple test of consistency under constraint, which is basically what tennis (and life) comes down to.
-            </p>
-          </div>
         </div>
       </Section>
 
