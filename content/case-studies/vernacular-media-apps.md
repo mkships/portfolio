@@ -1,6 +1,6 @@
 ---
-title: "scaling vernacular media products for India’s next billion users"
-description: "built and scaled apps for India2 and India3 🚀"
+title: "scaling vernacular media products for India2 and India3"
+description: "built and scaled apps for India's next billion users 🚀"
 year: "2021"
 tags: ["product-led-growth", "prototyping", "mobile-apps"]
 role: "product lead"
