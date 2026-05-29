@@ -1,6 +1,6 @@
 ---
-title: "bringing retail to Bharat 🇮🇳"
-description: "would 7-eleven work in India?"
+title: "bringing organised retail to gullies of India"
+description: "would a 7-eleven type store work in Bharat? 🇮🇳"
 year: "2023"
 tags: ["Retail Tech", "B2B Tools", "Operations"]
 role: "Product Lead"

@@ -1,5 +1,5 @@
 ---
-title: "hr tech platform for employees"
+title: "designing and scaling a work-place social platform"
 description: "i accidentally discovered product management 😇"
 year: "2019"
 tags: ["gamification", "hr-tech", "product-design"]

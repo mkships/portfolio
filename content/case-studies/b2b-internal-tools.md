@@ -1,5 +1,5 @@
 ---
-title: "b2b internal tools"
+title: "building boring b2b internal tools"
 description: "things break a lot at unicorn startups 🦄"
 year: "2022"
 tags: ["saas tools", "supply chain", "prds"]
