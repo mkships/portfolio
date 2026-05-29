@@ -2,7 +2,7 @@
 title: "1percenter"
 description: "habit tracking for consistency-maxxing weirdos 🏋🏻‍♂️"
 image: "/images/products/Logo.png"
-tags: ["iOS", "replit"]
+tags: ["building with milq"]
 url: ""
 status: "wip"
 ---

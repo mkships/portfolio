@@ -2,7 +2,7 @@
 title: "rackets & retreats"
 description: "global directory for racket sports travel 🗺️"
 image: "/images/products/RacketsAndRetreats.png"
-tags: ["nextJS", "claude-code"]
+tags: ["building with claude-code"]
 url: ""
 status: "wip"
 ---

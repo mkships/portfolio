@@ -2,7 +2,7 @@
 title: "mood2music"
 description: "turn a mood into a playlist in seconds 🎵"
 image: "/images/products/Mood2Music.png"
-tags: ["web-app", "replit"]
+tags: ["built with replit"]
 url: "https://mood2music.replit.app/"
 status: "live"
 ---

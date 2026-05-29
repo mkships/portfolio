@@ -2,7 +2,7 @@
 title: "mood2movies"
 description: "find the movie that fits your mood 🍿"
 image: "/images/products/Mood2Movie.png"
-tags: ["claude-code", "replit"]
+tags: ["building with codex"]
 url: ""
 status: "wip"
 ---
