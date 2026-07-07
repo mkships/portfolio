@@ -57,7 +57,7 @@ export default function Home() {
             lost 25 kg in 16 weeks 🏋️‍♂️🔥
           </h3>
           <p className="text-base text-zinc-700 dark:text-zinc-300 leading-[1.75] lowercase">
-            no diets, no supplements — just a daily calorie deficit, more steps, and consistency. model the math yourself below.
+            no diets. no supplements. just a consistent calorie deficit, more daily movement, and showing up every single day. i lost 25 kgs in 16 weeks - now model the math yourself below.
           </p>
           <CompoundingLab />
         </div>
@@ -67,7 +67,7 @@ export default function Home() {
             tennis is my meditation 🎾🧘
           </h3>
           <p className="text-base text-zinc-700 dark:text-zinc-300 leading-[1.75] lowercase">
-            rhythm, focus, and staying in the point. tap to rally below — mistime it and the point&apos;s over.
+            tennis has become more than a sport for me - it’s my reset button. i play recreationally whenever i can, watch it obsessively, and somehow the rhythm, intensity, and beauty of the game always helps me slow down and relax. current favorite: Carlos Alcaraz.
           </p>
           <TennisRally />
         </div>
