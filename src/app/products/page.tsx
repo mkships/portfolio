@@ -21,7 +21,7 @@ export default function ProductsPage() {
       <header className="flex items-center justify-between">
         <Link
           href="/#tinkertank"
-          className="flex items-center gap-2 text-sm font-medium lowercase hover:text-moss transition-colors group"
+          className="flex items-center gap-2 text-sm font-medium hover:text-moss transition-colors group"
         >
           <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
           back to home
@@ -31,10 +31,10 @@ export default function ProductsPage() {
 
       <ScrollReveal>
         <div className="mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-[-0.03em] leading-[1.05] lowercase mb-3 text-zinc-900 dark:text-zinc-100">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-[-0.03em] leading-[1.05] mb-3 text-zinc-900 dark:text-zinc-100">
             ai/vibe coding
           </h1>
-          <p className="text-moss dark:text-moss-light lowercase text-sm italic">
+          <p className="text-moss dark:text-moss-light text-sm italic">
             tinkering with ai and agents to create some cool and fun products/projects
           </p>
         </div>

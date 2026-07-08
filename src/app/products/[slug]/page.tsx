@@ -42,7 +42,7 @@ export default async function ProductDetailPage({ params }: Props) {
       <header className="flex items-center justify-between">
         <Link
           href="/#tinkertank"
-          className="flex items-center gap-2 text-sm font-medium lowercase hover:text-moss transition-colors group"
+          className="flex items-center gap-2 text-sm font-medium hover:text-moss transition-colors group"
         >
           <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
           back to tinkertank
@@ -53,65 +53,58 @@ export default async function ProductDetailPage({ params }: Props) {
 
       <article className="animate-fadeInUp">
         {/* Hero Content */}
-        <div className="space-y-8 mb-20">
-          <div className="border-b border-zinc-100 dark:border-zinc-800 pb-6">
-            <h1 className="text-4xl font-semibold lowercase text-zinc-900 dark:text-zinc-100 mb-2">
-              {post.title}
-            </h1>
-            <p className="text-moss dark:text-moss-light lowercase italic text-lg">
-              {post.tagline}
-            </p>
+        <div className="space-y-3 border-b border-zinc-100 dark:border-zinc-800 pb-6 mb-12">
+          <h1 className="text-4xl font-semibold text-zinc-900 dark:text-zinc-100">
+            {post.title}
+          </h1>
+          <p className="text-moss dark:text-moss-light italic text-lg">
+            {post.tagline}
+          </p>
+          {post.status && (
+            <p className="text-sm text-zinc-500">status — {post.status}</p>
+          )}
 
-            {post.url && (
-              <a
-                href={post.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 mt-6 px-6 py-3 bg-moss text-white font-medium rounded-full hover:bg-moss-dark transition-colors lowercase text-sm"
+          {post.url && (
+            <a
+              href={post.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-4 px-6 py-3 bg-moss text-white font-medium rounded-full hover:bg-moss-dark transition-colors text-sm"
+            >
+              visit project <ExternalLink size={14} />
+            </a>
+          )}
+        </div>
+
+        {/* Body */}
+        <div
+          className="prose prose-zinc dark:prose-invert max-w-none
+prose-headings:font-semibold prose-headings:tracking-[-0.02em]
+            prose-h2:text-xl prose-h2:mb-4 prose-h2:mt-12
+            prose-p:text-zinc-700 prose-p:dark:text-zinc-300 prose-p:leading-[1.75] prose-p:text-base
+            prose-li:text-zinc-700 prose-li:dark:text-zinc-300 prose-li:leading-[1.75]
+            prose-a:text-moss prose-a:no-underline hover:prose-a:underline
+            prose-ul:text-zinc-700 prose-ul:dark:text-zinc-300"
+          dangerouslySetInnerHTML={{ __html: post.content }}
+        />
+
+        {/* Tags */}
+        {post.tags?.length > 0 && (
+          <div className="mt-12 flex flex-wrap gap-2">
+            {post.tags.map(tag => (
+              <span
+                key={tag}
+                className="text-xs text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-800 rounded-full px-3 py-1"
               >
-                visit project <ExternalLink size={14} />
-              </a>
-            )}
+                {tag}
+              </span>
+            ))}
           </div>
-
-        </div>
-
-        {/* Content */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-24">
-          <aside className="md:col-span-4 space-y-10">
-            <div>
-              <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-400 block mb-4">status</span>
-              <p className="text-sm font-medium lowercase">{post.status || 'in development'}</p>
-            </div>
-            <div>
-              <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-400 block mb-4">tech stack</span>
-              <div className="flex flex-col gap-2">
-                {post.tags?.map(tag => (
-                  <span key={tag} className="text-xs uppercase tracking-[0.08em] text-zinc-500 font-medium">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </aside>
-
-          <main className="md:col-span-8">
-            <div
-              className="prose prose-zinc dark:prose-invert max-w-[65ch]
-                prose-headings:lowercase prose-headings:font-semibold prose-headings:tracking-[-0.02em]
-                prose-h2:text-xl prose-h2:mb-4 prose-h2:mt-12
-                prose-p:text-zinc-700 prose-p:dark:text-zinc-300 prose-p:leading-[1.75] prose-p:text-base
-                prose-li:text-zinc-700 prose-li:dark:text-zinc-300 prose-li:leading-[1.75]
-                prose-a:text-moss prose-a:no-underline hover:prose-a:underline
-                prose-ul:text-zinc-700 prose-ul:dark:text-zinc-300"
-              dangerouslySetInnerHTML={{ __html: post.content }}
-            />
-          </main>
-        </div>
+        )}
 
         {/* Back link */}
-        <div className="border-t border-zinc-100 dark:border-zinc-800 pt-12">
-          <Link href="/#tinkertank" className="text-sm lowercase text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
+        <div className="mt-24 border-t border-zinc-100 dark:border-zinc-800 pt-12">
+          <Link href="/#tinkertank" className="text-sm text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
             ← back to tinkertank
           </Link>
         </div>

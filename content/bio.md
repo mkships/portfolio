@@ -1,6 +1,7 @@
 ---
-headline: "hi, there! this is MK"
-subheadline: "welcome to my little corner on the internet 👋"
+headline: "Hey there! This is MK 👨🏽‍💻"
+subheadline: "Welcome to my little corner on the Internet 👋"
+image: "/images/bio/mk.jpg"
 ---
-i’m a product guy who thinks fluently in systems, design, and execution. i’ve worked across consumer and b2b products at scale. 
-lately, i’m using agentic coding tools to build products around ideas i care about. i also watch and play some tennis often 🎾.
+I’m a product guy who loves to iterate and build. In the past I have worked across consumer and b2b products at scale as a PM.<br>
+<br>Trying out indie-dev now, thanks to tools like Claude Code, Codex, Replit etc. When not prompting myself to boredom, I also watch and play some tennis 🎾.

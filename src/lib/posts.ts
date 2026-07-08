@@ -95,6 +95,7 @@ export function getBio(): BioData {
     headline: data.headline || '',
     subheadline: data.subheadline || '',
     content: htmlContent,
+    image: data.image,
   }
 }
 

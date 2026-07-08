@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --bg: #fbfaf8;
-  --surface: #fafafa;
-  --border: #e4e4e7;
-  --border-hover: #d4d4d8;
-  --text-primary: #18181b;
-  --text-secondary: #71717a;
-  --text-muted: #a1a1aa;
-  --moss: #5e7153;
-  --moss-light: #7a8c6f;
-  --moss-dark: #4a5941;
+  --bg: #fbf6ee;
+  --surface: #fdfbf7;
+  --border: #e7e2d8;
+  --border-hover: #d8d2c5;
+  --text-primary: #1a1a17;
+  --text-secondary: #78756b;
+  --text-muted: #a8a496;
+  --moss: #5f7d00;
+  --moss-light: #a7ce2b;
+  --moss-dark: #4a6100;
 }
 
 .dark {
@@ -36,8 +36,12 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-geist), 'Geist', system-ui, sans-serif;
+h1, h2 {
+  font-family: var(--font-playfair), 'Playfair Display', Georgia, serif;
+}
+
+h3, h4, h5, h6 {
+  font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
 }
 
 .mono {
@@ -92,4 +96,28 @@ h1, h2, h3, h4, h5, h6 {
 
 .animate-pulse {
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee var(--marquee-duration, 40s) linear infinite;
+}
+
+.marquee-paused:hover .animate-marquee,
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
 }

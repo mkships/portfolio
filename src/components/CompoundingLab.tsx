@@ -4,6 +4,7 @@ import { useState, useMemo } from 'react'
 import { AreaChart, Area, XAxis, YAxis, ResponsiveContainer, Tooltip, ReferenceLine } from 'recharts'
 
 const KCAL_PER_KG = 7700
+const MOSS = '#5f7d00'
 const STEPS_KCAL_MAP = (steps: number) => {
   // ~0.04 kcal per step, with diminishing returns above 15k
   if (steps <= 5000) return steps * 0.02 // minimal impact
@@ -11,6 +12,12 @@ const STEPS_KCAL_MAP = (steps: number) => {
   return 100 + 10000 * 0.045 + (steps - 15000) * 0.015 // diminishing
 }
 const WORKOUT_KCAL = 400
+
+const labelClass = 'text-[10px] font-medium uppercase tracking-[0.15em] text-zinc-500 dark:text-zinc-400'
+const hintClass = 'text-[9px] italic text-zinc-400 dark:text-zinc-500'
+const valueClass = 'text-sm font-semibold tabular-nums text-zinc-900 dark:text-zinc-100'
+const controlBtnClass =
+  'flex h-7 w-7 items-center justify-center rounded-full border border-zinc-200 text-xs text-zinc-500 transition-colors hover:border-tennis hover:text-moss dark:border-zinc-700 dark:hover:border-moss-light dark:hover:text-moss-light'
 
 export default function CompoundingLab() {
   const [weight, setWeight] = useState(80)
@@ -46,37 +53,30 @@ export default function CompoundingLab() {
 
   const weightLost = +(weight - day90Weight).toFixed(1)
 
-  return (
-    <div className="border border-zinc-200 dark:border-zinc-800 border-dashed rounded-3xl p-8 bg-[#F2EFE7] dark:bg-zinc-900/10">
-      {/* Header */}
-      <div className="mb-8">
-        <h3 className="text-[10px] font-medium text-zinc-500 uppercase tracking-[0.2em] font-mono mb-1">
-          Compounding Lab
-        </h3>
-        <p className="text-[11px] text-zinc-400 dark:text-zinc-500 italic lowercase">
-          small daily wins compound into big transformations.
-        </p>
-      </div>
+  const sliderClass =
+    'cursor-pointer appearance-none bg-zinc-200 outline-none dark:bg-zinc-700 [&::-webkit-slider-thumb]:h-3.5 [&::-webkit-slider-thumb]:w-3.5 [&::-webkit-slider-thumb]:cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-moss dark:[&::-webkit-slider-thumb]:bg-moss-light'
 
+  return (
+    <div className="p-5 sm:p-6">
       {/* Current Weight */}
       <div className="mb-6">
-        <label className="text-[10px] font-mono uppercase tracking-[0.15em] text-zinc-500 dark:text-zinc-400 block mb-2">
-          your current weight
-        </label>
+        <label className={`${labelClass} mb-2 block`}>Your current weight</label>
         <div className="flex items-center gap-2">
           <button
             onClick={() => setWeight(Math.max(40, weight - 1))}
-            className="w-7 h-7 rounded-full border border-zinc-200 dark:border-zinc-700 flex items-center justify-center text-xs font-mono text-zinc-500 hover:border-moss hover:text-moss transition-colors"
+            className={controlBtnClass}
+            aria-label="Decrease weight"
           >
             −
           </button>
-          <span className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100 font-mono tabular-nums w-20 text-center">
+          <span className="w-20 text-center text-2xl font-semibold tabular-nums text-zinc-900 dark:text-zinc-100">
             {weight}
-            <span className="text-xs font-normal text-zinc-400 ml-1">kg</span>
+            <span className="ml-1 text-xs font-normal text-zinc-400">kg</span>
           </span>
           <button
             onClick={() => setWeight(Math.min(200, weight + 1))}
-            className="w-7 h-7 rounded-full border border-zinc-200 dark:border-zinc-700 flex items-center justify-center text-xs font-mono text-zinc-500 hover:border-moss hover:text-moss transition-colors"
+            className={controlBtnClass}
+            aria-label="Increase weight"
           >
             +
           </button>
@@ -85,13 +85,9 @@ export default function CompoundingLab() {
 
       {/* Calorie Burn */}
       <div className="mb-6">
-        <div className="flex items-center justify-between mb-2">
-          <label className="text-[10px] font-mono uppercase tracking-[0.15em] text-zinc-500 dark:text-zinc-400">
-            daily calorie deficit
-          </label>
-          <span className="text-[9px] text-zinc-400 dark:text-zinc-500 italic lowercase">
-            from diet choices — skipping snacks, lighter meals
-          </span>
+        <div className="mb-2 flex items-center justify-between gap-3">
+          <label className={labelClass}>Daily calorie deficit</label>
+          <span className={hintClass}>from diet — skipping snacks, lighter meals</span>
         </div>
         <div className="flex items-center gap-3">
           <input
@@ -101,9 +97,9 @@ export default function CompoundingLab() {
             step={25}
             value={calorieBurn}
             onChange={(e) => setCalorieBurn(+e.target.value)}
-            className="flex-1 h-1 appearance-none bg-zinc-200 dark:bg-zinc-700 rounded-full outline-none accent-moss cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3.5 [&::-webkit-slider-thumb]:h-3.5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-moss [&::-webkit-slider-thumb]:cursor-pointer"
+            className={`h-1 flex-1 rounded-full accent-moss ${sliderClass}`}
           />
-          <span className="text-sm font-semibold font-mono tabular-nums text-zinc-900 dark:text-zinc-100 w-20 text-right">
+          <span className={`${valueClass} w-20 text-right`}>
             {calorieBurn} <span className="text-[9px] font-normal text-zinc-400">kcal</span>
           </span>
         </div>
@@ -111,15 +107,11 @@ export default function CompoundingLab() {
 
       {/* Steps */}
       <div className="mb-6">
-        <div className="flex items-center justify-between mb-2">
-          <label className="text-[10px] font-mono uppercase tracking-[0.15em] text-zinc-500 dark:text-zinc-400">
-            daily steps
-          </label>
-          <span className="text-sm font-semibold font-mono tabular-nums text-zinc-900 dark:text-zinc-100">
-            {steps.toLocaleString()}
-          </span>
+        <div className="mb-2 flex items-center justify-between">
+          <label className={labelClass}>Daily steps</label>
+          <span className={valueClass}>{steps.toLocaleString()}</span>
         </div>
-        <div className="relative">
+        <div className="relative pb-4">
           <input
             type="range"
             min={2000}
@@ -127,44 +119,41 @@ export default function CompoundingLab() {
             step={500}
             value={steps}
             onChange={(e) => setSteps(+e.target.value)}
-            className="w-full h-1 appearance-none bg-transparent rounded-full outline-none cursor-pointer relative z-10 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3.5 [&::-webkit-slider-thumb]:h-3.5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-moss [&::-webkit-slider-thumb]:cursor-pointer [&::-webkit-slider-thumb]:relative [&::-webkit-slider-thumb]:z-20"
+            className={`relative z-10 h-1 w-full rounded-full bg-transparent ${sliderClass}`}
           />
           {/* Track with zones */}
-          <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 h-1.5 rounded-full overflow-hidden pointer-events-none">
+          <div className="pointer-events-none absolute left-0 right-0 top-1/2 h-1.5 -translate-y-1/2 overflow-hidden rounded-full">
             <div className="absolute inset-0 flex">
-              {/* Dead zone: 2k-5k */}
               <div
                 className="h-full bg-red-300/40 dark:bg-red-400/20"
                 style={{ width: `${deadZoneEnd}%` }}
               />
-              {/* Sweet spot: 5k-15k */}
               <div
-                className="h-full bg-moss/30"
+                className="h-full bg-moss/30 dark:bg-moss-light/20"
                 style={{ width: `${sweetSpotEnd - deadZoneEnd}%` }}
               />
-              {/* Diminishing: 15k+ */}
               <div
-                className="h-full bg-yellow-400/30 dark:bg-yellow-400/15"
+                className="h-full bg-tennis/35 dark:bg-tennis/15"
                 style={{ width: `${100 - sweetSpotEnd}%` }}
               />
             </div>
           </div>
           {/* Zone indicators */}
-          <div className="absolute -translate-y-0 left-0 right-0 pointer-events-none">
+          <div className="pointer-events-none absolute left-0 right-0 top-full mt-1">
             <div
-              className="absolute text-[8px] font-mono text-red-400/80 dark:text-red-400/60 whitespace-nowrap"
+              className="absolute whitespace-nowrap text-[8px] font-medium uppercase tracking-wide text-red-400/80 dark:text-red-400/60"
               style={{ left: `${deadZoneEnd / 2}%`, transform: 'translateX(-50%)' }}
             >
               low impact
             </div>
             <div
-              className="absolute text-[8px] font-mono text-moss/70 whitespace-nowrap"
+              className="absolute whitespace-nowrap text-[8px] font-medium uppercase tracking-wide text-moss/80 dark:text-moss-light/80"
               style={{ left: `${deadZoneEnd + (sweetSpotEnd - deadZoneEnd) / 2}%`, transform: 'translateX(-50%)' }}
             >
               sweet spot
             </div>
             <div
-              className="absolute text-[8px] font-mono text-yellow-500/70 dark:text-yellow-400/50 whitespace-nowrap"
+              className="absolute whitespace-nowrap text-[8px] font-medium uppercase tracking-wide text-moss-dark/70 dark:text-tennis/70"
               style={{ left: `${sweetSpotEnd + (100 - sweetSpotEnd) / 2}%`, transform: 'translateX(-50%)' }}
             >
               diminishing
@@ -175,20 +164,16 @@ export default function CompoundingLab() {
 
       {/* Workouts */}
       <div className="mb-8">
-        <div className="flex items-center justify-between mb-2">
-          <label className="text-[10px] font-mono uppercase tracking-[0.15em] text-zinc-500 dark:text-zinc-400">
-            workouts / week
-          </label>
-        </div>
+        <label className={`${labelClass} mb-2 block`}>Workouts / week</label>
         <div className="flex gap-2">
           {[0, 1, 2, 3, 4, 5, 6, 7].map((n) => (
             <button
               key={n}
               onClick={() => setWorkouts(n)}
-              className={`flex-1 py-2 rounded-lg text-xs font-mono transition-all ${
+              className={`flex-1 rounded-lg py-2 text-xs font-medium transition-all ${
                 n === workouts
-                  ? 'bg-moss text-white font-semibold'
-                  : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-500 hover:bg-zinc-200 dark:hover:bg-zinc-700'
+                  ? 'bg-moss font-semibold text-white dark:bg-moss-light dark:text-zinc-900'
+                  : 'bg-zinc-100 text-zinc-500 hover:border hover:border-tennis/60 dark:bg-zinc-800 dark:hover:border-moss-light/60'
               }`}
             >
               {n}
@@ -198,42 +183,41 @@ export default function CompoundingLab() {
       </div>
 
       {/* Chart */}
-      <div className="h-[140px] w-full mb-4" style={{ minWidth: 0 }}>
+      <div className="mb-4 h-[140px] w-full" style={{ minWidth: 0 }}>
         <ResponsiveContainer width="100%" height="100%" minWidth={0}>
           <AreaChart data={data} margin={{ top: 4, right: 4, bottom: 0, left: -20 }}>
             <XAxis
               dataKey="label"
               axisLine={false}
               tickLine={false}
-              tick={{ fontSize: 9, fill: '#71717a', fontFamily: 'JetBrains Mono' }}
+              tick={{ fontSize: 9, fill: '#78756b' }}
               interval={4}
               dy={6}
             />
             <YAxis hide domain={['dataMin - 2', 'dataMax + 2']} />
             <Tooltip
               contentStyle={{
-                backgroundColor: 'rgba(0, 0, 0, 0.85)',
+                backgroundColor: 'rgba(26, 26, 23, 0.92)',
                 borderRadius: '10px',
-                border: 'none',
+                border: '1px solid rgba(231, 226, 216, 0.12)',
                 fontSize: '10px',
-                color: '#fff',
-                fontFamily: 'JetBrains Mono',
+                color: '#fbf6ee',
                 padding: '8px 12px',
               }}
               formatter={(value) => [`${value} kg`, 'weight']}
             />
             <ReferenceLine
               y={weight}
-              stroke="#71717a"
+              stroke="#a8a496"
               strokeDasharray="3 3"
               strokeWidth={0.5}
             />
             <Area
               type="monotone"
               dataKey="weight"
-              stroke="#5e7153"
-              fill="#5e7153"
-              fillOpacity={0.1}
+              stroke={MOSS}
+              fill={MOSS}
+              fillOpacity={0.12}
               strokeWidth={2}
             />
           </AreaChart>
@@ -241,14 +225,12 @@ export default function CompoundingLab() {
       </div>
 
       {/* Result */}
-      <div className="border-t border-zinc-100 dark:border-zinc-800 pt-5 text-center">
-        <span className="text-[9px] font-mono uppercase tracking-[0.2em] text-zinc-400 block mb-2">
-          in 90 days, you could lose
-        </span>
-        <span className="text-3xl font-semibold text-moss font-mono tabular-nums">
+      <div className="border-t border-zinc-200 pt-5 text-center dark:border-zinc-800">
+        <span className={`${labelClass} mb-2 block`}>In 90 days, you could lose</span>
+        <span className="text-3xl font-semibold tabular-nums text-moss dark:text-moss-light">
           {weightLost > 0 ? weightLost : 0} kg
         </span>
-        <p className="text-[10px] text-zinc-400 italic mt-1 lowercase">
+        <p className={`${hintClass} mt-1`}>
           {weight} kg → {weightLost > 0 ? day90Weight : weight} kg
         </p>
       </div>

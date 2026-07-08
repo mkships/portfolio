@@ -1,6 +1,6 @@
 ---
-title: "1percenter"
-description: "habit tracking for consistency-maxxing weirdos 🏋🏻‍♂️"
+title: "1-Percenter"
+description: "The 1% habit tracking because 99% can't 🏋🏻‍♂️"
 image: "/images/products/Logo.png"
 tags: ["building with milq"]
 url: ""

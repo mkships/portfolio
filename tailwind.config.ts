@@ -18,9 +18,14 @@ const config: Config = {
         'text-secondary': 'var(--text-secondary)',
         'text-muted': 'var(--text-muted)',
         moss: {
-          DEFAULT: '#5e7153',
-          light: '#7a8c6f',
-          dark: '#4a5941',
+          DEFAULT: '#5f7d00',
+          light: '#a7ce2b',
+          dark: '#4a6100',
+        },
+        tennis: {
+          DEFAULT: '#c8e600',
+          optic: '#ccff00',
+          deep: '#5f7d00',
         },
         zinc: {
           50: '#fafafa',
@@ -38,7 +43,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
-        display: ['var(--font-geist)', 'Geist', 'system-ui', 'sans-serif'],
+        display: ['var(--font-playfair)', 'Playfair Display', 'Georgia', 'serif'],
         mono: ['var(--font-mono)', 'JetBrains Mono', 'monospace'],
       },
       maxWidth: {
