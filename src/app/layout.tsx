@@ -21,8 +21,8 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://mkanapaka.space'),
-  title: 'MK | Manohar Kanapaka - Product, AI and Vibe-Coding',
-  description: 'Product guy who thinks fluently in systems, design, and execution. Building and experimenting with agentic coding tools.',
+  title: 'Musings of a Product Guy',
+  description: 'My space on the internet, showcasing my work, hobbies, and experiments.',
   icons: {
     icon: '/favicon.svg',
   },
