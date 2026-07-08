@@ -1,6 +1,6 @@
 ---
-title: "pivoting from a PM to AI-native builder"
-description: "building in a world with unlimited intelligence ✨"
+title: "Pivoting from a PM to AI-native builder"
+description: "Building apps in a world with unlimited intelligence ✨"
 year: "2025"
 tags: ["strategy", "product management", "AI"]
 role: "AI Generalist"
@@ -8,21 +8,21 @@ metric: "100%"
 metricLabel: "of the tasks done by AI"
 ---
 
-## is a pm role relevant in 2025?
+## Is a pm role relevant in 2025/2026?
 
-honestly? the traditional pm role is shrinking. the days of writing 30-page prds, running ticket factories, and playing telephone between design and engineering are numbered. ai can do most of that faster and better.
+Honestly, the traditional PM role is shrinking. The days of writing 30-page PRDs, running ticket factories, and playing telephone between design and engineering are numbered. AI can do most of that faster and better.
 
-but here's what ai can't do — hold conviction on what to build next, say no to 90% of ideas, and connect dots across business context, user pain, and technical feasibility in real-time. that's the job now. less process manager, more opinionated builder.
+But here's what ai can't do — hold conviction on what to build next, say no to 90% of ideas, and connect dots across business context, user pain, and technical feasibility in real-time. That's the job now. Less process management, more opinionated building with taste.
+ 
+I saw this shift coming and decided to lean in rather than resist it. Instead of protecting the old PM playbook, I started rebuilding my workflow around ai-native tools and agentic coding.
 
-i saw this shift coming and decided to lean in rather than resist it. instead of protecting the old pm playbook, i started rebuilding my workflow around ai-native tools and agentic coding.
+## Building products with agentic coding (aka vibe-coding)
 
-## building products with agentic coding (aka vibe-coding)
+I went from writing specs to writing prompts that built products, literally.
 
-i went from writing specs to writing products. literally.
+Using tools like **<span class="text-moss dark:text-moss-light">claude code</span>**, **<span class="text-moss dark:text-moss-light">Replit</span>**, and **<span class="text-moss dark:text-moss-light">Cursor</span>**, I started shipping functional prototypes and full apps — not mockups, not Figma flows, but working software.
 
-using tools like **<span class="text-moss dark:text-moss-light">claude code</span>**, **<span class="text-moss dark:text-moss-light">replit</span>**, and **<span class="text-moss dark:text-moss-light">cursor</span>**, i started shipping functional prototypes and full apps — not mockups, not figma flows, but working software.
-
-the workflow is simple: think clearly about the problem, prompt precisely, iterate fast, and ship. the bottleneck is no longer "can we build this?" — it's "should we build this?" and that's always been a pm's real job.
+The workflow is simple: think clearly about the problem, prompt precisely, iterate fast, and ship. The bottleneck is no longer "can we build this?" — it's "should we build this?" and that's always been a PM's real job.
 
 this portfolio site, the products in my tinkertank, the interactive widgets — all built this way. no traditional engineering team. just clear thinking and agentic tools.
 

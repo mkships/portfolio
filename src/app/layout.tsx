@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Geist, JetBrains_Mono } from 'next/font/google'
+import { Inter, Playfair_Display, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 
 const inter = Inter({
@@ -7,9 +7,11 @@ const inter = Inter({
   variable: '--font-inter',
 })
 
-const geist = Geist({
+const playfair = Playfair_Display({
   subsets: ['latin'],
-  variable: '--font-geist',
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-playfair',
 })
 
 const jetbrainsMono = JetBrains_Mono({
@@ -43,8 +45,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${geist.variable} ${jetbrainsMono.variable}`}>
-      <body className="font-sans antialiased bg-[#FBFAF8] dark:bg-zinc-950 text-zinc-900 dark:text-zinc-200 transition-colors duration-300">
+    <html lang="en" className={`${inter.variable} ${playfair.variable} ${jetbrainsMono.variable}`}>
+      <body className="font-sans antialiased bg-[#FBF6EE] dark:bg-zinc-950 text-zinc-900 dark:text-zinc-200 transition-colors duration-300">
         {children}
       </body>
     </html>

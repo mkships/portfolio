@@ -48,7 +48,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
       <header className="flex items-center justify-between">
         <Link
           href="/#work"
-          className="flex items-center gap-2 text-sm font-medium lowercase hover:text-moss transition-colors group"
+          className="flex items-center gap-2 text-sm font-medium hover:text-moss transition-colors group"
         >
           <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
           back to work
@@ -59,69 +59,49 @@ export default async function CaseStudyDetailPage({ params }: Props) {
 
       <article className="animate-fadeInUp">
         {/* Hero Content */}
-        <div className="space-y-8 mb-20">
-          <div className="flex justify-between items-end border-b border-zinc-100 dark:border-zinc-800 pb-6">
-            <div className="space-y-2">
-              <h1 className="text-4xl font-semibold lowercase text-zinc-900 dark:text-zinc-100">
-                {post.title}
-              </h1>
-              <p className="text-moss dark:text-moss-light lowercase italic text-lg">
-                {post.description || post.excerpt}
-              </p>
-            </div>
-            <div className="text-right hidden md:block">
-              <span className="block text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-400 mb-1">delivery year</span>
-              <span className="text-xl font-medium font-mono text-zinc-900 dark:text-zinc-100">{post.year || post.date}</span>
-            </div>
+        <div className="space-y-3 border-b border-zinc-100 dark:border-zinc-800 pb-6 mb-12">
+          <h1 className="text-4xl font-semibold text-zinc-900 dark:text-zinc-100">
+            {post.title}
+          </h1>
+          <p className="text-moss dark:text-moss-light italic text-lg">
+            {post.description || post.excerpt}
+          </p>
+          {(post.year || post.date) && (
+            <p className="text-sm text-zinc-500">{post.year || post.date}</p>
+          )}
+        </div>
+
+        {/* Body */}
+        <div
+          className="prose prose-zinc dark:prose-invert max-w-none
+prose-headings:font-semibold prose-headings:tracking-[-0.02em]
+            prose-h2:text-xl prose-h2:mb-4 prose-h2:mt-12
+            prose-p:text-zinc-700 prose-p:dark:text-zinc-300 prose-p:leading-[1.75] prose-p:text-base
+            prose-li:text-zinc-700 prose-li:dark:text-zinc-300 prose-li:leading-[1.75]
+            prose-a:text-moss prose-a:no-underline hover:prose-a:underline"
+          dangerouslySetInnerHTML={{ __html: post.content }}
+        />
+
+        {/* Tags */}
+        {post.tags?.length > 0 && (
+          <div className="mt-12 flex flex-wrap gap-2">
+            {post.tags.map(tag => (
+              <span
+                key={tag}
+                className="text-xs text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-800 rounded-full px-3 py-1"
+              >
+                {tag}
+              </span>
+            ))}
           </div>
-
-        </div>
-
-        {/* Narrative Section */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-24">
-          <aside className="md:col-span-4 space-y-10">
-            <div>
-              <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-400 block mb-4">my role</span>
-              <p className="text-sm font-medium lowercase">{post.role || 'your role'}</p>
-            </div>
-            <div>
-              <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-400 block mb-4">the stack</span>
-              <div className="flex flex-col gap-2">
-                {post.tags?.map(tag => (
-                  <span key={tag} className="text-xs uppercase tracking-[0.08em] text-zinc-500 font-medium">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-            {(post.metric || post.metricLabel) && (
-              <div className="p-6 border border-zinc-100 dark:border-zinc-800 border-dashed rounded-2xl bg-[#F2EFE7] dark:bg-zinc-900/10">
-                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-400 block mb-4">key metric</span>
-                <span className="text-3xl font-semibold text-moss">{post.metric || 'XX%'}</span>
-                <p className="text-[10px] lowercase italic text-zinc-500 mt-2">{post.metricLabel || 'key metric description'}</p>
-              </div>
-            )}
-          </aside>
-
-          <main className="md:col-span-8">
-            <div
-              className="prose prose-zinc dark:prose-invert max-w-[65ch]
-                prose-headings:lowercase prose-headings:font-semibold prose-headings:tracking-[-0.02em]
-                prose-h2:text-xl prose-h2:mb-4 prose-h2:mt-12
-                prose-p:text-zinc-700 prose-p:dark:text-zinc-300 prose-p:leading-[1.75] prose-p:text-base
-                prose-li:text-zinc-700 prose-li:dark:text-zinc-300 prose-li:leading-[1.75]
-                prose-a:text-moss prose-a:no-underline hover:prose-a:underline"
-              dangerouslySetInnerHTML={{ __html: post.content }}
-            />
-          </main>
-        </div>
+        )}
 
         {/* Navigation Footer */}
-        <div className="border-t border-zinc-100 dark:border-zinc-800 pt-12 flex justify-between items-center">
-          <Link href="/#work" className="text-sm lowercase text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
+        <div className="mt-24 border-t border-zinc-100 dark:border-zinc-800 pt-12 flex justify-between items-center">
+          <Link href="/#work" className="text-sm text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
             ← back to all work
           </Link>
-          <Link href={`/case-studies/${nextSlug}`} className="flex items-center gap-2 text-sm lowercase font-semibold text-moss hover:translate-x-1 transition-transform">
+          <Link href={`/case-studies/${nextSlug}`} className="flex items-center gap-2 text-sm font-semibold text-moss hover:translate-x-1 transition-transform">
             next case study <ArrowRight size={14} />
           </Link>
         </div>

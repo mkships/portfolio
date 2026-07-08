@@ -4,8 +4,8 @@ import Hero from '@/components/Hero'
 import Section from '@/components/Section'
 import ProjectCard from '@/components/ProjectCard'
 import TinkerCard from '@/components/TinkerCard'
-import CompoundingLab from '@/components/CompoundingLab'
-import TennisRally from '@/components/TennisRally'
+import CompoundingLabWidget from '@/components/CompoundingLabWidget'
+import TennisCarousel from '@/components/TennisCarousel'
 import Footer from '@/components/Footer'
 
 export default function Home() {
@@ -18,7 +18,7 @@ export default function Home() {
   const bio = getBio()
 
   return (
-    <div className="relative max-w-2xl mx-auto px-6 py-12 md:py-24 flex flex-col">
+    <div className="relative max-w-2xl mx-auto px-6 pt-6 md:pt-10 pb-12 md:pb-24 flex flex-col">
       <Header />
 
       <Hero bio={bio} />
@@ -53,23 +53,24 @@ export default function Home() {
         subtitle="detailing my journey with fitness and tennis"
       >
         <div className="flex flex-col gap-4">
-          <h3 className="text-lg md:text-xl font-semibold tracking-[-0.02em] leading-[1.25] lowercase text-zinc-900 dark:text-zinc-100">
-            lost 25 kg in 16 weeks 🏋️‍♂️🔥
+          <h3 className="text-lg md:text-xl font-semibold tracking-[-0.02em] leading-[1.25] text-zinc-900 dark:text-zinc-100">
+            Lost fat and got fit 🏋️‍♂️🔥
           </h3>
-          <p className="text-base text-zinc-700 dark:text-zinc-300 leading-[1.75] lowercase">
-            no diets. no supplements. just a consistent calorie deficit, more daily movement, and showing up every single day. i lost 25 kgs in 16 weeks - now model the math yourself below.
+          <p className="text-base text-zinc-700 dark:text-zinc-300 leading-[1.75]">
+            During the summer of 2023, I lost around 25 kg with calorie deficit, more daily movement, and showing up every single day. To lose 1 kg of fat, you need to create a calorie deficit of 7700 kcal. Once you realise that it is entirely just math, you can start to see the power of compounding.
+            Use this simple widget to understand how you can transform your body with a consistent calorie deficit and more daily movement.
           </p>
-          <CompoundingLab />
+          <CompoundingLabWidget />
         </div>
 
         <div className="flex flex-col gap-4 mt-16">
-          <h3 className="text-lg md:text-xl font-semibold tracking-[-0.02em] leading-[1.25] lowercase text-zinc-900 dark:text-zinc-100">
-            tennis is my meditation 🎾🧘
+          <h3 className="text-lg md:text-xl font-semibold tracking-[-0.02em] leading-[1.25] text-zinc-900 dark:text-zinc-100">
+            Tennis is my reset button 🎾🧘
           </h3>
-          <p className="text-base text-zinc-700 dark:text-zinc-300 leading-[1.75] lowercase">
-            tennis has become more than a sport for me - it’s my reset button. i play recreationally whenever i can, watch it obsessively, and somehow the rhythm, intensity, and beauty of the game always helps me slow down and relax. current favorite: Carlos Alcaraz.
+          <p className="text-base text-zinc-700 dark:text-zinc-300 leading-[1.75]">
+            Over the years, tennis has become more than a sport for me — it’s my reset button. I play it recreationally, watch it on TV obsessively, and somehow the rhythm, intensity, and beauty of the game always helps me slow down and relax. Currently, my favorite player is Carlos Alcaraz.
           </p>
-          <TennisRally />
+          <TennisCarousel />
         </div>
       </Section>
 

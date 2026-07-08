@@ -1,6 +1,6 @@
 ---
-title: "mood2movies"
-description: "find the movie that fits your mood 🍿"
+title: "Mood2Movies"
+description: "Find the movie that matches your mood 🍿"
 image: "/images/products/Mood2Movie.png"
 tags: ["building with codex"]
 url: ""

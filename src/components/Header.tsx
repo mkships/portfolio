@@ -33,24 +33,24 @@ export default function Header() {
   ]
 
   return (
-    <header className="flex items-center justify-between">
-      <div className="w-10 h-10 rounded-full bg-zinc-900 dark:bg-zinc-100 text-zinc-100 dark:text-zinc-900 flex items-center justify-center font-medium text-sm">
+    <header className="relative flex items-center justify-between py-2">
+      <div className="w-12 h-12 rounded-full bg-zinc-900 text-zinc-100 flex items-center justify-center font-semibold text-lg dark:bg-zinc-100 dark:text-zinc-900">
         MK
       </div>
 
       {/* Desktop nav */}
-      <nav className="hidden md:flex items-center gap-8 md:gap-12 text-sm font-medium lowercase">
+      <nav className="hidden md:flex items-center gap-10 text-lg font-medium">
         {navLinks.map((link) => (
-          <a key={link.href} href={link.href} className="flex items-center gap-1.5 hover:text-moss transition-colors group">
+          <a key={link.href} href={link.href} className="flex items-center gap-1.5 hover:text-moss dark:hover:text-moss-light transition-colors group">
             {link.label} <span className={link.hoverClass}>{link.emoji}</span>
           </a>
         ))}
         <button
           onClick={toggleTheme}
-          className="p-2 rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+          className="p-2.5 rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
           aria-label="Toggle dark mode"
         >
-          {isDark ? <Sun size={14} /> : <Moon size={14} />}
+          {isDark ? <Sun size={16} /> : <Moon size={16} />}
         </button>
       </nav>
 
@@ -58,30 +58,30 @@ export default function Header() {
       <div className="flex md:hidden items-center gap-3">
         <button
           onClick={toggleTheme}
-          className="p-2 rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+          className="p-2.5 rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
           aria-label="Toggle dark mode"
         >
-          {isDark ? <Sun size={14} /> : <Moon size={14} />}
+          {isDark ? <Sun size={16} /> : <Moon size={16} />}
         </button>
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="p-2 rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+          className="p-2.5 rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
           aria-label="Toggle menu"
         >
-          {menuOpen ? <X size={14} /> : <Menu size={14} />}
+          {menuOpen ? <X size={16} /> : <Menu size={16} />}
         </button>
       </div>
 
       {/* Mobile menu */}
       {menuOpen && (
-        <nav className="absolute top-20 left-0 right-0 z-50 mx-6 p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-lg md:hidden">
-          <div className="flex flex-col gap-4 text-sm font-medium lowercase">
+        <nav className="absolute top-[calc(100%+0.75rem)] left-0 right-0 z-50 p-6 bg-[#fbf6ee] dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-lg md:hidden">
+          <div className="flex flex-col gap-4 text-base font-medium">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="flex items-center gap-2 hover:text-moss transition-colors py-1"
+                className="flex items-center gap-2 text-zinc-900 dark:text-zinc-100 hover:text-moss dark:hover:text-moss-light transition-colors py-1"
               >
                 <span>{link.emoji}</span> {link.label}
               </a>
