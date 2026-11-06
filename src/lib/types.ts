@@ -7,6 +7,7 @@ export interface PostMeta {
   coverColor?: string
   tagline?: string
   status?: 'coming-soon' | 'beta' | 'live' | 'wip'
+  archived?: boolean
   url?: string
   // Case study specific fields
   year?: string

@@ -10,11 +10,11 @@ interface SectionProps {
 export default function Section({ id, title, subtitle, children }: SectionProps) {
   return (
     <section id={id} className="scroll-mt-24">
-      <div className="mt-14 md:mt-16 mb-8">
+      <div className="mt-12 mb-6 sm:mt-14 sm:mb-8 md:mt-16">
         <h2 className="text-3xl md:text-4xl font-bold tracking-[-0.01em] leading-[1.1] text-zinc-900 dark:text-zinc-100 mb-3">
           {title}
         </h2>
-        <p className="text-moss dark:text-moss-light text-sm italic">
+        <p className="text-moss dark:text-moss-light text-sm">
           {subtitle}
         </p>
       </div>

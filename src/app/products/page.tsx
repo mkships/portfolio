@@ -1,48 +1,32 @@
-import Link from 'next/link'
-import { ArrowLeft } from 'lucide-react'
-import { getAllPosts, statusOrder } from '@/lib/posts'
+import { getTinkerProjects } from '@/lib/posts'
 import TinkerCard from '@/components/TinkerCard'
 import ScrollReveal from '@/components/ScrollReveal'
-import ThemeToggle from '@/components/ThemeToggle'
-import Footer from '@/components/Footer'
 
 export const metadata = {
-  title: 'AI/Vibe Coding | MK',
-  description: 'Experimental projects and AI explorations.',
+  title: 'Tinkertank | MK',
+  description: 'What I’m building with AI and agents, from web tools to a real kitchen.',
 }
 
 export default function ProductsPage() {
-  const posts = getAllPosts('products').sort(
-    (a, b) => (statusOrder[a.status ?? 'wip'] ?? 99) - (statusOrder[b.status ?? 'wip'] ?? 99)
-  )
+  const posts = getTinkerProjects()
 
   return (
-    <div className="max-w-2xl mx-auto px-6 py-12 md:py-24 flex flex-col gap-16">
-      <header className="flex items-center justify-between">
-        <Link
-          href="/#tinkertank"
-          className="flex items-center gap-2 text-sm font-medium hover:text-moss transition-colors group"
-        >
-          <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-          back to home
-        </Link>
-        <ThemeToggle />
-      </header>
-
+    <div className="mx-auto flex max-w-3xl flex-col gap-10 px-4 pt-6 sm:px-6 sm:pt-10 md:pt-14">
       <ScrollReveal>
-        <div className="mb-8">
+        <div className="portfolio-panel">
+          <p className="portfolio-kicker mb-3">Projects</p>
           <h1 className="text-4xl md:text-5xl font-bold tracking-[-0.03em] leading-[1.05] mb-3 text-zinc-900 dark:text-zinc-100">
-            ai/vibe coding
+            tinkertank
           </h1>
-          <p className="text-moss dark:text-moss-light text-sm italic">
-            tinkering with ai and agents to create some cool and fun products/projects
+          <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+            {metadata.description}
           </p>
         </div>
       </ScrollReveal>
 
-      <div className="flex flex-col gap-3">
+      <div className="grid gap-4 sm:grid-cols-2">
         {posts.map((post) => (
-          <ScrollReveal key={post.slug}>
+          <ScrollReveal key={post.slug} className="h-full">
             <TinkerCard project={post} />
           </ScrollReveal>
         ))}
@@ -53,8 +37,6 @@ export default function ProductsPage() {
           No projects yet. Check back soon!
         </p>
       )}
-
-      <Footer />
     </div>
   )
 }

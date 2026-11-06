@@ -1,26 +1,23 @@
-import { getAllPosts, getBio, statusOrder } from '@/lib/posts'
-import Header from '@/components/Header'
+import Link from 'next/link'
+import { ArrowDown, ArrowUpRight } from 'lucide-react'
+import { getAllPosts, getBio, getTinkerProjects } from '@/lib/posts'
 import Hero from '@/components/Hero'
 import Section from '@/components/Section'
 import ProjectCard from '@/components/ProjectCard'
 import TinkerCard from '@/components/TinkerCard'
 import CompoundingLabWidget from '@/components/CompoundingLabWidget'
-import TennisCarousel from '@/components/TennisCarousel'
-import Footer from '@/components/Footer'
+import CourtNotes from '@/components/CourtNotes'
 
 export default function Home() {
   const professionalWork = getAllPosts('case-studies').sort((a, b) =>
     (b.year || '').localeCompare(a.year || '')
   )
-  const tinkerTank = getAllPosts('products').sort(
-    (a, b) => (statusOrder[a.status ?? 'wip'] ?? 99) - (statusOrder[b.status ?? 'wip'] ?? 99)
-  )
+  const featuredStudy = professionalWork.find(project => project.slug === 'retail-bharat')
+  const tinkerTank = getTinkerProjects()
   const bio = getBio()
 
   return (
-    <div className="relative max-w-2xl mx-auto px-6 pt-6 md:pt-10 pb-12 md:pb-24 flex flex-col">
-      <Header />
-
+    <div className="relative mx-auto flex max-w-3xl flex-col px-4 sm:px-6">
       <Hero bio={bio} />
 
       <Section
@@ -28,8 +25,51 @@ export default function Home() {
         title="professional work"
         subtitle="case studies and highlights from my career in product management"
       >
+        {featuredStudy && (
+          <article className="mb-5 grid gap-6 rounded-[1.5rem] border border-[#dedfc9] bg-[#f4f4e7] p-6 sm:p-8 md:grid-cols-[1.25fr_1fr] md:items-center dark:border-[#35382a] dark:bg-[#1d2118]">
+            <div>
+              <p className="portfolio-kicker">
+                Featured case study · SuperK
+              </p>
+              <h3 className="mt-3 text-pretty font-display text-2xl font-semibold leading-tight tracking-tight text-zinc-900 sm:text-3xl dark:text-zinc-100">
+                How do you run 150+ supermarkets when the tools are spreadsheets?
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+                We built one merchant platform for inventory, procurement, and financials. Configurable rules helped it adapt across stores.
+              </p>
+              <p className="mt-4 text-sm text-zinc-700 dark:text-zinc-300">
+                <strong className="mr-1 text-xl font-semibold text-moss-dark dark:text-moss-light">83.3%</strong> monthly retention for new merchants
+              </p>
+              <Link
+                href={`/case-studies/${featuredStudy.slug}`}
+                className="group mt-5 inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-moss-dark underline decoration-moss/40 underline-offset-4 hover:decoration-current dark:text-moss-light"
+              >
+                Read the case study <ArrowUpRight size={15} aria-hidden="true" />
+              </Link>
+            </div>
+
+            <figure className="rounded-xl border border-[#dedfc9] bg-[#fcfcf5] p-4 dark:border-[#3c402f] dark:bg-[#171a13]">
+              <figcaption className="mb-3 text-[10px] font-semibold uppercase tracking-[0.14em] text-zinc-600 dark:text-zinc-400">
+                How store rules worked
+              </figcaption>
+              <ol className="space-y-1.5 text-center text-sm">
+                <li className="rounded-lg border border-[#dedfc9] px-3 py-2 dark:border-[#3c402f]">10K+ products across 150+ stores</li>
+                <li>
+                  <ArrowDown className="mx-auto mb-1.5 text-moss dark:text-moss-light" size={14} aria-hidden="true" />
+                  <div className="rounded-lg bg-[#e7edc7] px-3 py-2 font-semibold text-[#313c16] dark:bg-[#343f21] dark:text-[#e1edb8]">
+                    Configurable rules engine
+                  </div>
+                </li>
+                <li>
+                  <ArrowDown className="mx-auto mb-1.5 text-moss dark:text-moss-light" size={14} aria-hidden="true" />
+                  <div className="rounded-lg border border-[#dedfc9] px-3 py-2 dark:border-[#3c402f]">Catalogue, returns, and replenishment</div>
+                </li>
+              </ol>
+            </figure>
+          </article>
+        )}
         <div className="flex flex-col gap-3">
-          {professionalWork.map(project => (
+          {professionalWork.filter(project => project !== featuredStudy).map(project => (
             <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
@@ -37,10 +77,10 @@ export default function Home() {
 
       <Section
         id="tinkertank"
-        title="ai/vibe coding"
-        subtitle="tinkering with ai and agents to create some cool and fun products/projects"
+        title="tinkertank"
+        subtitle="What I’m building with AI and agents, from web tools to a real kitchen."
       >
-        <div className="flex flex-col gap-3">
+        <div className="grid gap-4 sm:grid-cols-2">
           {tinkerTank.map(project => (
             <TinkerCard key={project.slug} project={project} />
           ))}
@@ -52,8 +92,8 @@ export default function Home() {
         title="beyond work"
         subtitle="detailing my journey with fitness and tennis"
       >
-        <div className="flex flex-col gap-4">
-          <h3 className="text-lg md:text-xl font-semibold tracking-[-0.02em] leading-[1.25] text-zinc-900 dark:text-zinc-100">
+        <div className="portfolio-panel flex flex-col gap-4">
+          <h3 className="font-display text-lg md:text-xl font-semibold tracking-[-0.02em] leading-[1.25] text-zinc-900 dark:text-zinc-100">
             Lost fat and got fit 🏋️‍♂️🔥
           </h3>
           <p className="text-base text-zinc-700 dark:text-zinc-300 leading-[1.75]">
@@ -63,18 +103,16 @@ export default function Home() {
           <CompoundingLabWidget />
         </div>
 
-        <div className="flex flex-col gap-4 mt-16">
-          <h3 className="text-lg md:text-xl font-semibold tracking-[-0.02em] leading-[1.25] text-zinc-900 dark:text-zinc-100">
-            Tennis is my reset button 🎾🧘
+        <div className="mt-10 flex flex-col gap-3">
+          <h3 className="font-display text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
+            Tennis is my reset button
           </h3>
           <p className="text-base text-zinc-700 dark:text-zinc-300 leading-[1.75]">
             Over the years, tennis has become more than a sport for me — it’s my reset button. I play it recreationally, watch it on TV obsessively, and somehow the rhythm, intensity, and beauty of the game always helps me slow down and relax. Currently, my favorite player is Carlos Alcaraz.
           </p>
-          <TennisCarousel />
+          <CourtNotes />
         </div>
       </Section>
-
-      <Footer />
     </div>
   )
 }

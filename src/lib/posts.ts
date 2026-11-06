@@ -6,11 +6,24 @@ import { PostMeta, PostDetail, BioData } from './types'
 
 const contentDirectory = path.join(process.cwd(), 'content')
 
-export const statusOrder: Record<string, number> = {
+const statusOrder: Record<string, number> = {
   live: 0,
   beta: 1,
   wip: 2,
   'coming-soon': 3,
+}
+
+export const statusLabels = {
+  live: 'Live',
+  beta: 'Beta',
+  wip: 'In progress',
+  'coming-soon': 'Coming soon',
+}
+
+export function getTinkerProjects(): PostMeta[] {
+  return getAllPosts('products')
+    .filter(post => !post.archived)
+    .sort((a, b) => (statusOrder[a.status ?? 'wip'] ?? 99) - (statusOrder[b.status ?? 'wip'] ?? 99))
 }
 
 export function getAllPosts(dir: string): PostMeta[] {
@@ -38,6 +51,7 @@ export function getAllPosts(dir: string): PostMeta[] {
         coverColor: data.coverColor,
         tagline: data.tagline,
         status: data.status,
+        archived: data.archived === true,
         url: data.url,
         year: data.year,
         role: data.role,
@@ -74,6 +88,7 @@ export function getPostBySlug(dir: string, slug: string): PostDetail | null {
     coverColor: data.coverColor,
     tagline: data.tagline,
     status: data.status,
+    archived: data.archived === true,
     url: data.url,
     year: data.year,
     role: data.role,

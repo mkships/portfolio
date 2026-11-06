@@ -26,3 +26,6 @@ npm-debug.log*
 # editors / local tooling
 .idea/
 .claude/
+
+# Original tennis photos kept outside the public site
+/.local/tennis-photos/

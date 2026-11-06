@@ -8,6 +8,8 @@ metric: "6M+ usd"
 metricLabel: "worth transactions handled annually"
 ---
 
+At SuperK, I led product for a platform that brought inventory, procurement, and financials together for franchise owners. Newly onboarded merchants recorded **83.3% monthly retention**, and we saw **75% CSAT**.
+
 ## The Challenge
 
 *<span class="text-moss dark:text-moss-light">Running a supermarket on spreadsheets*</span> 📉
@@ -43,7 +45,9 @@ Built no-code / low-code internal apps to:
 - Track physical assets (*crates*, *containers*)
 - Monitor orders and returns via ops dashboards
 
-Conceptualized and implemented a rules engine to dynamically control catalogue visibility, returns eligibility, and replenishment logic across 10K+ products and 150+ franchise locations
+### Why we built a rules engine
+
+With 10K+ products across 150+ franchise locations, the same catalogue, returns, and replenishment rules didn’t fit every store. We made those rules configurable so the product could adapt across locations without hard-coding each variation. The same engine controlled what stores could order, which items were eligible for return, and how stock was replenished.
 
 **How I worked**
 - Tight loops with ops, supply, and engineering to translate on-ground chaos into systems

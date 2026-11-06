@@ -1,10 +1,6 @@
-import Link from 'next/link'
-import { ArrowLeft } from 'lucide-react'
 import { getAllPosts } from '@/lib/posts'
 import ProjectCard from '@/components/ProjectCard'
 import ScrollReveal from '@/components/ScrollReveal'
-import ThemeToggle from '@/components/ThemeToggle'
-import Footer from '@/components/Footer'
 
 export const metadata = {
   title: 'Professional Work | MK',
@@ -17,24 +13,14 @@ export default function CaseStudiesPage() {
   )
 
   return (
-    <div className="max-w-2xl mx-auto px-6 py-12 md:py-24 flex flex-col gap-16">
-      <header className="flex items-center justify-between">
-        <Link
-          href="/#work"
-          className="flex items-center gap-2 text-sm font-medium hover:text-moss transition-colors group"
-        >
-          <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-          back to home
-        </Link>
-        <ThemeToggle />
-      </header>
-
+    <div className="mx-auto flex max-w-2xl flex-col gap-10 px-4 pt-6 sm:px-6 sm:pt-10 md:pt-14">
       <ScrollReveal>
-        <div className="mb-8">
+        <div className="portfolio-panel">
+          <p className="portfolio-kicker mb-3">Case studies</p>
           <h1 className="text-4xl md:text-5xl font-bold tracking-[-0.03em] leading-[1.05] mb-3 text-zinc-900 dark:text-zinc-100">
             professional work
           </h1>
-          <p className="text-moss dark:text-moss-light text-sm italic">
+          <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
             case studies and highlights from my career in product management
           </p>
         </div>
@@ -53,8 +39,6 @@ export default function CaseStudiesPage() {
           No case studies yet. Check back soon!
         </p>
       )}
-
-      <Footer />
     </div>
   )
 }

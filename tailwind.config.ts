@@ -52,9 +52,6 @@ const config: Config = {
       borderRadius: {
         '3xl': '1.5rem',
       },
-      animation: {
-        'spin-slow': 'spin 12s linear infinite',
-      },
     },
   },
   plugins: [
