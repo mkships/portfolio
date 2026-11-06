@@ -1,23 +1,28 @@
 import type { Metadata } from 'next'
-import { Inter, Playfair_Display, JetBrains_Mono } from 'next/font/google'
+import localFont from 'next/font/local'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import './globals.css'
 
-const inter = Inter({
-  subsets: ['latin'],
+const inter = localFont({
+  src: './fonts/inter.woff2',
+  weight: '100 900',
   variable: '--font-inter',
 })
 
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  style: ['normal', 'italic'],
+const playfair = localFont({
+  src: [
+    { path: './fonts/playfair-display.woff2', weight: '400 700', style: 'normal' },
+    { path: './fonts/playfair-display-italic.woff2', weight: '400 700', style: 'italic' },
+  ],
+  adjustFontFallback: 'Times New Roman',
   variable: '--font-playfair',
 })
 
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
+const jetbrainsMono = localFont({
+  src: './fonts/jetbrains-mono.woff2',
+  weight: '100 800',
+  adjustFontFallback: false,
   variable: '--font-mono',
 })
 
