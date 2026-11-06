@@ -5,6 +5,7 @@ image: "/images/products/Logo.png"
 tags: ["building with milq"]
 url: ""
 status: "wip"
+archived: true
 ---
 
 **the 1% club** 

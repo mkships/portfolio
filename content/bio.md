@@ -1,7 +1,6 @@
 ---
-headline: "Hey there! This is MK 👨🏽‍💻"
-subheadline: "Welcome to my little corner on the Internet 👋"
+headline: "I helped scale products to 1M+ users. Now I’m building my own."
+subheadline: "Hey there, I’m Manohar Kanapaka (MK)."
 image: "/images/bio/mk.jpg"
 ---
-I’m a product guy who loves to iterate and build. In the past I have worked across consumer and b2b products at scale as a PM.<br>
-<br>Trying out indie-dev now, thanks to tools like Claude Code, Codex, Replit etc. When not prompting myself to boredom, I also watch and play some tennis 🎾.
+I’ve built apps for readers across India and tools for the people running its supermarkets. These days I’m building my own apps with AI, playing tennis, and sharing what I learn along the way.

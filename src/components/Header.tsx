@@ -1,94 +1,74 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { Sun, Moon, Menu, X } from 'lucide-react'
+import { useRef, useState } from 'react'
+import Link from 'next/link'
+import { Menu, X } from 'lucide-react'
+import ThemeToggle from './ThemeToggle'
+
+const navLinks = [
+  { href: '/#work', label: 'Work' },
+  { href: '/#tinkertank', label: 'Tinkertank' },
+  { href: '/#beyondwork', label: 'Beyond Work' },
+]
 
 export default function Header() {
-  const [isDark, setIsDark] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-
-  useEffect(() => {
-    const stored = localStorage.getItem('theme')
-    if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      setIsDark(true)
-      document.documentElement.classList.add('dark')
-    }
-  }, [])
-
-  const toggleTheme = () => {
-    setIsDark(!isDark)
-    if (isDark) {
-      document.documentElement.classList.remove('dark')
-      localStorage.setItem('theme', 'light')
-    } else {
-      document.documentElement.classList.add('dark')
-      localStorage.setItem('theme', 'dark')
-    }
-  }
-
-  const navLinks = [
-    { href: '#work', label: 'work', emoji: '💻', hoverClass: 'group-hover:-rotate-12 group-hover:scale-110 transition-transform inline-block' },
-    { href: '#tinkertank', label: 'tinkertank', emoji: '✨', hoverClass: 'group-hover:animate-spin' },
-    { href: '#beyondwork', label: 'beyond work', emoji: '🎾', hoverClass: 'group-hover:animate-bounce' },
-  ]
+  const menuButton = useRef<HTMLButtonElement>(null)
 
   return (
-    <header className="relative flex items-center justify-between py-2">
-      <div className="w-12 h-12 rounded-full bg-zinc-900 text-zinc-100 flex items-center justify-center font-semibold text-lg dark:bg-zinc-100 dark:text-zinc-900">
-        MK
-      </div>
-
-      {/* Desktop nav */}
-      <nav className="hidden md:flex items-center gap-10 text-lg font-medium">
-        {navLinks.map((link) => (
-          <a key={link.href} href={link.href} className="flex items-center gap-1.5 hover:text-moss dark:hover:text-moss-light transition-colors group">
-            {link.label} <span className={link.hoverClass}>{link.emoji}</span>
-          </a>
-        ))}
-        <button
-          onClick={toggleTheme}
-          className="p-2.5 rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
-          aria-label="Toggle dark mode"
+    <header
+      id="top"
+      tabIndex={-1}
+      className="relative mx-auto max-w-3xl px-4 pt-4 sm:px-6 sm:pt-6 focus:outline-none md:pt-10"
+      onKeyDown={event => {
+        if (event.key === 'Escape' && menuOpen) {
+          setMenuOpen(false)
+          menuButton.current?.focus()
+        }
+      }}
+    >
+      <div className="flex items-center gap-3 border-b border-[var(--panel-border)] pb-4 md:gap-6">
+        <Link
+          href="/"
+          onClick={() => setMenuOpen(false)}
+          aria-label="Manohar Kanapaka home"
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-zinc-900 text-sm font-semibold text-white transition-colors hover:bg-moss-dark dark:bg-[#e7edc7] dark:text-zinc-900 dark:hover:bg-moss-light"
         >
-          {isDark ? <Sun size={16} /> : <Moon size={16} />}
-        </button>
-      </nav>
+          MK
+        </Link>
 
-      {/* Mobile controls */}
-      <div className="flex md:hidden items-center gap-3">
-        <button
-          onClick={toggleTheme}
-          className="p-2.5 rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
-          aria-label="Toggle dark mode"
+        <nav
+          id="site-navigation"
+          aria-label="Main navigation"
+          className={`${menuOpen ? 'flex' : 'hidden'} absolute inset-x-4 top-full sm:inset-x-6 z-30 flex-col gap-1 rounded-xl border border-[var(--panel-border)] bg-[var(--card)] p-2 shadow-lg md:static md:ml-auto md:flex md:flex-row md:items-center md:gap-5 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:shadow-none`}
         >
-          {isDark ? <Sun size={16} /> : <Moon size={16} />}
-        </button>
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="p-2.5 rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
-          aria-label="Toggle menu"
-        >
-          {menuOpen ? <X size={16} /> : <Menu size={16} />}
-        </button>
-      </div>
-
-      {/* Mobile menu */}
-      {menuOpen && (
-        <nav className="absolute top-[calc(100%+0.75rem)] left-0 right-0 z-50 p-6 bg-[#fbf6ee] dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-lg md:hidden">
-          <div className="flex flex-col gap-4 text-base font-medium">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                className="flex items-center gap-2 text-zinc-900 dark:text-zinc-100 hover:text-moss dark:hover:text-moss-light transition-colors py-1"
-              >
-                <span>{link.emoji}</span> {link.label}
-              </a>
-            ))}
-          </div>
+          {navLinks.map(link => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setMenuOpen(false)}
+              className="flex min-h-11 items-center rounded-lg px-3 py-2 text-sm md:min-h-0 font-medium text-zinc-800 transition-colors hover:bg-[var(--panel)] hover:text-moss-dark md:px-1 md:hover:bg-transparent dark:text-zinc-200 dark:hover:text-moss-light"
+            >
+              {link.label}
+            </Link>
+          ))}
         </nav>
-      )}
+
+        <div className="ml-auto flex items-center gap-2 md:ml-0">
+          <ThemeToggle />
+          <button
+            ref={menuButton}
+            type="button"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-controls="site-navigation"
+            aria-expanded={menuOpen}
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--panel-border)] transition-colors hover:bg-[var(--panel)] md:hidden"
+          >
+            {menuOpen ? <X size={17} aria-hidden="true" /> : <Menu size={17} aria-hidden="true" />}
+          </button>
+        </div>
+      </div>
     </header>
   )
 }

@@ -2,8 +2,6 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { getPostBySlug, getAllSlugs } from '@/lib/posts'
-import ThemeToggle from '@/components/ThemeToggle'
-import Footer from '@/components/Footer'
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -24,7 +22,7 @@ export async function generateMetadata({ params }: Props) {
 
   return {
     title: `${post.title} | Case Studies`,
-    description: post.excerpt,
+    description: post.description || post.excerpt,
   }
 }
 
@@ -43,37 +41,26 @@ export default async function CaseStudyDetailPage({ params }: Props) {
   }
 
   return (
-    <div className="max-w-2xl mx-auto px-6 py-12 md:py-24 flex flex-col gap-24">
-      {/* Detail Header */}
-      <header className="flex items-center justify-between">
-        <Link
-          href="/#work"
-          className="flex items-center gap-2 text-sm font-medium hover:text-moss transition-colors group"
-        >
-          <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-          back to work
-        </Link>
+    <div className="mx-auto flex max-w-2xl flex-col gap-6 px-4 pt-6 sm:px-6 sm:pt-10 md:pt-14">
+      <Link href="/#work" className="inline-flex min-h-11 items-center gap-2 self-start text-sm font-medium hover:text-moss dark:hover:text-moss-light">
+        <ArrowLeft size={16} aria-hidden="true" /> Back to work
+      </Link>
 
-        <ThemeToggle />
-      </header>
-
-      <article className="animate-fadeInUp">
+      <article className="motion-safe:animate-fadeInUp">
         {/* Hero Content */}
-        <div className="space-y-3 border-b border-zinc-100 dark:border-zinc-800 pb-6 mb-12">
-          <h1 className="text-4xl font-semibold text-zinc-900 dark:text-zinc-100">
+        <div className="portfolio-panel mb-10 space-y-3">
+          <p className="portfolio-kicker">Case study{(post.year || post.date) && ` · ${post.year || post.date}`}</p>
+          <h1 className="text-pretty text-[2rem] sm:text-4xl font-semibold leading-tight tracking-tight text-zinc-900 dark:text-zinc-100">
             {post.title}
           </h1>
-          <p className="text-moss dark:text-moss-light italic text-lg">
+          <p className="text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
             {post.description || post.excerpt}
           </p>
-          {(post.year || post.date) && (
-            <p className="text-sm text-zinc-500">{post.year || post.date}</p>
-          )}
         </div>
 
         {/* Body */}
         <div
-          className="prose prose-zinc dark:prose-invert max-w-none
+          className="article-copy prose prose-zinc dark:prose-invert max-w-none
 prose-headings:font-semibold prose-headings:tracking-[-0.02em]
             prose-h2:text-xl prose-h2:mb-4 prose-h2:mt-12
             prose-p:text-zinc-700 prose-p:dark:text-zinc-300 prose-p:leading-[1.75] prose-p:text-base
@@ -97,7 +84,7 @@ prose-headings:font-semibold prose-headings:tracking-[-0.02em]
         )}
 
         {/* Navigation Footer */}
-        <div className="mt-24 border-t border-zinc-100 dark:border-zinc-800 pt-12 flex justify-between items-center">
+        <div className="mt-14 border-t border-zinc-100 dark:border-zinc-800 pt-6 sm:mt-24 sm:pt-12 flex flex-wrap justify-between items-center gap-4">
           <Link href="/#work" className="text-sm text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
             ← back to all work
           </Link>
@@ -106,8 +93,6 @@ prose-headings:font-semibold prose-headings:tracking-[-0.02em]
           </Link>
         </div>
       </article>
-
-      <Footer />
     </div>
   )
 }

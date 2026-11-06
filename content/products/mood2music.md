@@ -5,6 +5,7 @@ image: "/images/products/Mood2Music.png"
 tags: ["built with replit"]
 url: "https://mood2music.replit.app/"
 status: "live"
+archived: true
 ---
 
 the idea was pretty simple. you tell your mood, the app plays a song for your complimenting your mood. 

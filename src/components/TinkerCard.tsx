@@ -1,80 +1,61 @@
-import { ArrowUpRight } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { ArrowUpRight, Layers3, MapPin, PanelsTopLeft } from 'lucide-react'
+import { statusLabels } from '@/lib/posts'
 import { PostMeta } from '@/lib/types'
+import ProjectWindow, { previewSlugs } from './ProjectWindow'
 
-interface TinkerCardProps {
-  project: PostMeta
+const projectIcons: Record<string, typeof MapPin> = {
+  'court-trips': MapPin,
+  courtsidebio: PanelsTopLeft,
 }
 
-const statusConfig = {
-  live: { text: 'text-green-500', dot: 'bg-green-500' },
-  wip: { text: 'text-yellow-500', dot: 'bg-yellow-500' },
-  beta: { text: 'text-moss dark:text-moss-light', dot: 'bg-moss' },
-  'coming-soon': { text: 'text-zinc-400', dot: 'bg-zinc-400' },
-}
-
-export default function TinkerCard({ project }: TinkerCardProps) {
-  const status = project.status || 'wip'
-  const config = statusConfig[status as keyof typeof statusConfig] || statusConfig.wip
-
-  const statusInner = (
-    <>
-      <span className={`h-1.5 w-1.5 rounded-full ${config.dot}`} />
-      <span>status — {status}</span>
-      {project.url && <ArrowUpRight size={12} />}
-    </>
-  )
+export default function TinkerCard({ project }: { project: PostMeta }) {
+  const Icon = projectIcons[project.slug] || Layers3
+  const hasPreview = previewSlugs.includes(project.slug)
 
   return (
-    <article className="border border-zinc-200 dark:border-zinc-800 rounded-xl px-4 py-4 flex items-center gap-4 hover:border-tennis dark:hover:border-moss-light transition-colors">
-      {/* Thumbnail */}
-      <div className="shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
-        {project.image ? (
-          <img
-            src={project.image.startsWith('/') ? project.image : `/${project.image}`}
-            alt=""
-            className="w-full h-full object-cover"
-          />
-        ) : (
-          <div
-            className="w-full h-full"
-            style={{ backgroundColor: project.coverColor || '#e5e5e5' }}
-          />
-        )}
-      </div>
+    <article className="portfolio-card flex h-full flex-col overflow-hidden p-0 sm:p-0">
+      <Link href={`/products/${project.slug}`} className="group flex flex-1 flex-col focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-moss">
+        <ProjectWindow slug={project.slug} />
+        <div className="flex flex-1 flex-col gap-3 p-4 sm:p-5">
+          <div className="flex items-start justify-between gap-3">
+            {project.image ? (
+              <div className="relative h-9 w-9 shrink-0">
+                <Image
+                  src={project.image.startsWith('/') ? project.image : `/${project.image}`}
+                  alt=""
+                  fill
+                  sizes="36px"
+                  className="object-contain"
+                />
+              </div>
+            ) : (
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[var(--card-mark)] text-moss-dark dark:text-moss-light">
+                <Icon size={19} aria-hidden="true" />
+              </div>
+            )}
+            <span className="portfolio-kicker rounded-full border border-[var(--panel-border)] px-2.5 py-1.5">
+              {project.role || statusLabels[project.status ?? 'wip']}
+            </span>
+          </div>
 
-      {/* 2x2 content grid: name|status on row 1, description|label on row 2 */}
-      <div className="flex-1 min-w-0 grid grid-cols-[1fr_auto] gap-x-4 gap-y-1.5 items-baseline">
-        <h3 className="col-start-1 row-start-1 text-sm md:text-base font-semibold leading-[1.3] text-zinc-900 dark:text-zinc-100">
-          {project.title}
-        </h3>
+          <div className="flex-1">
+            <h3 className="font-display text-2xl font-semibold leading-tight tracking-tight text-zinc-900 dark:text-zinc-100">
+              {project.title}
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+              {project.description || project.tagline}
+            </p>
+          </div>
 
-        {project.url ? (
-          <a
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`col-start-2 row-start-1 justify-self-end inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wide ${config.text} hover:underline`}
-            aria-label={`Open ${project.title}`}
-          >
-            {statusInner}
-          </a>
-        ) : (
-          <span className={`col-start-2 row-start-1 justify-self-end inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wide ${config.text}`}>
-            {statusInner}
-          </span>
-        )}
-
-        {project.description && (
-          <p className="col-start-1 row-start-2 text-sm italic text-zinc-600 dark:text-zinc-400 leading-[1.5]">
-            {project.description}
-          </p>
-        )}
-
-        {project.tags?.length > 0 && (
-          <span className="col-start-2 row-start-2 justify-self-end text-[10px] text-zinc-500 whitespace-nowrap">
-            {project.tags.join(' · ')}
-          </span>
-        )}
+        </div>
+      </Link>
+      <div className="mx-4 flex flex-wrap items-center justify-between gap-x-3 border-t border-[var(--panel-border)] py-2 sm:mx-5">
+        <span className="text-[11px] leading-relaxed text-zinc-600 dark:text-zinc-400">{project.tags.join(' · ')}</span>
+        <Link href={`/products/${project.slug}${hasPreview ? '#project-preview' : ''}`} aria-label={`${hasPreview ? 'Explore preview' : 'Read more'}: ${project.title}`} className="inline-flex min-h-11 items-center gap-1.5 text-xs font-semibold text-moss-dark underline decoration-moss/30 underline-offset-4 hover:decoration-current focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-moss dark:text-moss-light">
+          {hasPreview ? 'Explore preview' : 'Read more'} <ArrowUpRight size={14} aria-hidden="true" />
+        </Link>
       </div>
     </article>
   )
