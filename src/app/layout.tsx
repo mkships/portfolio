@@ -26,7 +26,7 @@ const jetbrainsMono = localFont({
   variable: '--font-mono',
 })
 
-const title = 'Musings of a Product Guy | Manohar Kanapaka'
+const title = 'Manohar Kanapaka | Product guy, now building with AI'
 const description = 'I’m Manohar Kanapaka. I’ve helped scale products to a million users. Now I’m building my own and sharing what I learn along the way.'
 const socialImage = {
   url: '/images/social/musings.jpg',
