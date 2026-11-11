@@ -1,48 +1,51 @@
 ---
-title: "Scaling vernacular media products for India2 and India3"
-description: "Built and scaled apps for India's next billion users 🚀"
+title: "Scaling local-language news beyond India’s biggest cities"
+description: "Bulletin reached 100K mobile app sign-ups. Webdunia’s website drew 50M page views a month."
+excerpt: "I built for India’s vernacular internet. Bulletin gave readers a video feed of hyperlocal news from their district. Webdunia brought news in eight Indian languages into a single app."
+organization: "Bulletin & Webdunia"
 year: "2021"
 tags: ["product-led-growth", "prototyping", "mobile-apps"]
-role: "product lead"
-metric: "1M+ users"
-metricLabel: "across 8+ langauges and 20+ states"
+role: "Product Lead"
+linkPreviews:
+  - url: "https://play.google.com/store/apps/details?id=com.webdunia.app&hl=en_IN"
+    title: "Webdunia News on Google Play"
+    image: "/images/case-studies/webdunia-app-preview.jpg"
+highlights:
+  - value: "100K"
+    label: "Sign-ups on Bulletin’s mobile app"
+  - value: "50M"
+    label: "Monthly page views on Webdunia’s website"
 ---
+
+> Built and scaled apps for India’s next billion users. 🚀
 
 ## The challenge
 
-From 2019–21, India’s next wave of internet users was coming online - largely from **tier-2 and tier-3 districts**, consuming content in their **native languages**, almost entirely on ***Android phones***.
+From 2019 to 2021, many of the readers we wanted to reach were coming online in India’s tier-2 and tier-3 districts. They read in their own languages and used mostly Android phones.
 
-This wasn’t a translation problem. These users had little patience for clutter, weak networks, low-end devices, and zero loyalty to apps that didn’t deliver value immediately. In vernacular news, demand was massive — but **retention was broken**. Bounce rates crossed 90%. Distribution was fragmented. Competition from players like DailyHunt, Dainik Bhaskar, TOI and regional apps was intense.
+Translation was only part of the job. Readers needed apps that loaded quickly on weaker connections and made it easy to find relevant news on lower-end devices. Bounce rates hovered around 90%, distribution was fragmented, and readers already had plenty of alternatives, including Dailyhunt, Dainik Bhaskar, The Times of India and regional apps.
 
-The real question then was simple and uncomfortable:
+**How do you build products for Bharat that people actually come back to?**
 
-**<span class="text-moss dark:text-moss-light">How do you build products for Bharat that people actually come back to?</span>**
+## The solution
 
-## The Solution
+I led product and growth across Bulletin and Webdunia. One principle guided the work.
 
-<div class="grid grid-cols-2 gap-2 my-4">                                                        
-    <img src="/images/case-studies/image1.avif" alt="" class="aspect-square object-cover rounded-xl" />             
-    <img src="/images/case-studies/image2.jpeg" alt="" class="aspect-square object-cover rounded-xl" />                        
-  </div>   
+> Design for familiarity, speed and habit.
 
-I hacked and built product and growth across two vernacular media products with one guiding principle:
+- Designed Bulletin’s first version around a video feed of hyperlocal news, organised by district. We expanded to more than 30 districts.
+- Launched the [Webdunia app](https://play.google.com/store/apps/details?id=com.webdunia.app&hl=en_IN) with a news feed available in eight Indian languages.
+- Distributed the apps through Google Play and app stores run by device manufacturers.
+- Tested app store listings, onboarding and interface copy for first-time internet users.
+- Shipped features such as astrology widgets and auto-scrolling videos to give readers reasons to return.
 
-> Design for familiarity, speed, and habit - not novelty.
+## The outcome
 
-- Designed the **MVP for the Bulletin app**, optimised for fast discovery and district-level relevance
-- Rolled out a **district-first GTM**, expanding across 30+ districts instead of chasing vanity scale
-- Launched **PWA and native apps for <span class="text-moss dark:text-moss-light">[Webdunia](https://play.google.com/store/apps/details?id=com.webdunia.app&hl=en_IN)</span>** in **8 Indian languages**
-- Opened up non-obvious distribution by shipping across **Google Play** and **OEM app stores**
-- Ran continuous experiments across **ASO, onboarding, and UX copy** for first-time internet users
-- Shipped culturally grounded features like **Astrology widgets** and **video auto-scroll** to build daily habits
+- **100K sign-ups** on Bulletin’s mobile app and **75K monthly active users** across 30+ districts
+- **50M monthly page views** on Webdunia’s website
+- **About 30% improvement** in day-seven retention
+- Bounce rate fell from **about 90% to 65%**
 
-## The Outcome
+## What I learned
 
-- **100K+ installs** and **75K MAU** for Bulletin across 30+ districts
-- **50M+ monthly page views** across Webdunia web + mobile
-- ***~30% lift*** in D7 retention
-- Bounce rate reduced from ***~90% to ~65%***
-
-## The Learnings
-
-Building for Bharat wasn’t about simplifying products — it was about **respecting context**. Cultural relevance, speed, and habits mattered more than elegant flows or global best practices. This work still shapes how i build today: stay close to users, embrace constraints, and optimize for adoption before aesthetics.
+Working on Bulletin and Webdunia gave me a firsthand view of India’s consumer internet beyond the metros. Designing for Bharat meant helping readers find news from their own district, offering it in the languages they use every day and keeping the feed fast on the phones and connections they already have.

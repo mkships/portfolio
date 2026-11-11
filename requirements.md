@@ -21,7 +21,7 @@ Musings of a Product Guy is Manohar Kanapaka’s personal portfolio. It brings t
 ## Design System
 
 - Use warm paper (`#FBF6EE`), cream panels (`#F7EDDD`), zinc text, and moss green accents. The dark theme uses near-black backgrounds and olive panels. Follow the system theme on first visit and remember manual changes.
-- Use Playfair Display for editorial headings, Inter for body copy and controls, and JetBrains Mono for small metadata such as the Court Notes counter. Font files are bundled under `src/app/fonts/`.
+- Use Plus Jakarta Sans for display headings and Inter for body copy and controls. Both fonts are bundled under `src/app/fonts/`. Use Menlo with system monospace fallbacks for small metadata such as Musings dates and the Court Notes counter.
 - Keep content centred with a 48rem maximum width for the main layout and 42rem for most reading pages. Use 16px page gutters on phones and 24px from 640px. The project grid gains a second column at 640px. The hero and header navigation expand at 768px.
 - Use softly rounded panels, thin borders, visible keyboard focus, and restrained motion. Respect reduced-motion preferences for smooth scrolling, entrance effects, the Court Notes strip, and the footer stamp.
 

@@ -89,6 +89,10 @@
   .portfolio-kicker {
     @apply text-[10px] font-semibold uppercase tracking-[0.17em] text-moss-dark dark:text-moss-light;
   }
+
+  .portfolio-meta {
+    @apply font-mono text-[11px] font-medium leading-normal text-moss-dark dark:text-moss-light;
+  }
 }
 
 .article-copy {
@@ -145,7 +149,7 @@ body {
 }
 
 h1, h2 {
-  font-family: var(--font-playfair), 'Playfair Display', Georgia, serif;
+  @apply font-display;
 }
 
 h3, h4, h5, h6 {
@@ -153,7 +157,7 @@ h3, h4, h5, h6 {
 }
 
 .mono {
-  font-family: var(--font-mono), 'JetBrains Mono', monospace;
+  @apply font-mono;
 }
 
 ::selection {

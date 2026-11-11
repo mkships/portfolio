@@ -2,7 +2,7 @@
 title: "Court Trips"
 description: "A directory of tennis, pickleball, and padel camps, clinics, and getaways."
 status: "wip"
-tags: ["Racket sports travel", "Built with Claude Code"]
+tags: ["Racket sports travel"]
 ---
 
 ## How it started

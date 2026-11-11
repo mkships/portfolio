@@ -53,6 +53,7 @@ export function getAllPosts(dir: string): PostMeta[] {
         status: data.status,
         archived: data.archived === true,
         url: data.url,
+        organization: data.organization,
         year: data.year,
         role: data.role,
         metric: data.metric,
@@ -90,12 +91,15 @@ export function getPostBySlug(dir: string, slug: string): PostDetail | null {
     status: data.status,
     archived: data.archived === true,
     url: data.url,
+    organization: data.organization,
     year: data.year,
     role: data.role,
     metric: data.metric,
     metricLabel: data.metricLabel,
     description: data.description,
     image: data.image,
+    highlights: data.highlights,
+    linkPreviews: data.linkPreviews ?? (data.linkPreview ? [data.linkPreview] : []),
     content: htmlContent,
   }
 }

@@ -35,7 +35,7 @@ export default function TinkerCard({ project }: { project: PostMeta }) {
                 <Icon size={19} aria-hidden="true" />
               </div>
             )}
-            <span className="portfolio-kicker rounded-full border border-[var(--panel-border)] px-2.5 py-1.5">
+            <span className="portfolio-meta rounded-full border border-[var(--panel-border)] px-2.5 py-1.5">
               {project.role || statusLabels[project.status ?? 'wip']}
             </span>
           </div>
@@ -52,7 +52,7 @@ export default function TinkerCard({ project }: { project: PostMeta }) {
         </div>
       </Link>
       <div className="mx-4 flex flex-wrap items-center justify-between gap-x-3 border-t border-[var(--panel-border)] py-2 sm:mx-5">
-        <span className="text-[11px] leading-relaxed text-zinc-600 dark:text-zinc-400">{project.tags.join(' · ')}</span>
+        <span className="font-mono text-[11px] leading-relaxed text-zinc-600 dark:text-zinc-400">{project.tags.join(' · ')}</span>
         <Link href={`/products/${project.slug}${hasPreview ? '#project-preview' : ''}`} aria-label={`${hasPreview ? 'Explore preview' : 'Read more'}: ${project.title}`} className="inline-flex min-h-11 items-center gap-1.5 text-xs font-semibold text-moss-dark underline decoration-moss/30 underline-offset-4 hover:decoration-current focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-moss dark:text-moss-light">
           {hasPreview ? 'Explore preview' : 'Read more'} <ArrowUpRight size={14} aria-hidden="true" />
         </Link>

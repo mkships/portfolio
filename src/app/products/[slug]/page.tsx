@@ -84,6 +84,7 @@ export default async function ProductDetailPage({ params }: Props) {
   }
 
   const preview = projectPreviews[slug]
+  const context = post.role || (post.status && statusLabels[post.status])
 
   return (
     <div className={`mx-auto flex flex-col gap-6 px-4 pt-6 sm:px-6 sm:pt-10 md:pt-14 ${preview ? 'max-w-3xl' : 'max-w-2xl'}`}>
@@ -93,7 +94,10 @@ export default async function ProductDetailPage({ params }: Props) {
 
       <article className="motion-safe:animate-fadeInUp">
         <header className="portfolio-panel space-y-3">
-          <p className="portfolio-kicker">Tinkertank{post.role ? ` · ${post.role}` : post.status && ` · ${statusLabels[post.status]}`}</p>
+          <p className="text-[11px] leading-normal">
+            <span className="portfolio-kicker">Tinkertank</span>
+            {context && <span className="portfolio-meta"> · {context}</span>}
+          </p>
           <h1 className="text-pretty text-[2rem] sm:text-4xl font-semibold leading-tight tracking-tight text-zinc-900 sm:text-5xl dark:text-zinc-100">
             {post.title}
           </h1>
