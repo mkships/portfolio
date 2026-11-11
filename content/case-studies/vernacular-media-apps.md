@@ -4,7 +4,7 @@ description: "Bulletin reached 100K mobile app sign-ups. Webdunia’s website dr
 excerpt: "I built for India’s vernacular internet. Bulletin gave readers a video feed of hyperlocal news from their district. Webdunia brought news in eight Indian languages into a single app."
 organization: "Bulletin & Webdunia"
 year: "2021"
-tags: ["product-led-growth", "prototyping", "mobile-apps"]
+tags: ["product-led growth", "prototyping", "mobile apps"]
 role: "Product Lead"
 linkPreviews:
   - url: "https://play.google.com/store/apps/details?id=com.webdunia.app&hl=en_IN"

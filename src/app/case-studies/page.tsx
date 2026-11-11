@@ -21,7 +21,7 @@ export default function CaseStudiesPage() {
             professional work
           </h1>
           <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
-            case studies and highlights from my career in product management
+            Case studies and highlights from my career in product management.
           </p>
         </div>
       </ScrollReveal>

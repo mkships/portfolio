@@ -33,7 +33,7 @@ export default function Home() {
       <Section
         id="work"
         title="professional work"
-        subtitle="case studies and highlights from my career in product management"
+        subtitle="Case studies and highlights from my career in product management."
       >
         {featuredStudy && (
           <article className="mb-5 grid gap-6 rounded-[1.5rem] border border-[#dedfc9] bg-[#f4f4e7] p-6 sm:p-8 md:grid-cols-[1.25fr_1fr] md:items-center dark:border-[#35382a] dark:bg-[#1d2118]">
@@ -118,8 +118,9 @@ export default function Home() {
               How I got fit
             </h3>
             <p className="text-base leading-[1.75] text-zinc-700 dark:text-zinc-300">
-              During the summer of 2023, I lost around 25 kg with calorie deficit, more daily movement, and showing up every single day. To lose 1 kg of fat, you need to create a calorie deficit of 7700 kcal. Once you realise that it is entirely just math, you can start to see the power of compounding.
-              Use this simple widget to understand how you can transform your body with a consistent calorie deficit and more daily movement.
+              In the summer of 2023, I lost around 25 kg by maintaining a calorie deficit, moving more, and showing up every day.
+              The math made it click for me. A deficit of roughly 7,700 kcal is a rule of thumb for losing 1 kg of fat.
+              The calculator shows how those daily deficits add up.
             </p>
             <CompoundingLabWidget />
           </article>

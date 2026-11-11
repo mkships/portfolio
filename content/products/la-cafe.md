@@ -4,7 +4,7 @@ description: "How we used agents to build the brand, menu, and software around a
 image: "/images/products/la-cafe.webp"
 url: "https://mk-lacafe.vercel.app/menu/"
 status: "wip"
-tags: ["Cloud kitchen", "Agent-built"]
+tags: ["Cloud kitchen"]
 ---
 
 ## One kitchen, two products

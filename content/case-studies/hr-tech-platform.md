@@ -4,7 +4,7 @@ description: "Designed personalised feeds and gamified features for a platform t
 excerpt: "Reliance Communities brought people across business units together through personalised feeds, gamification, and tools for everyday HR tasks."
 organization: "Reliance Industries"
 year: "2019"
-tags: ["gamification", "hr-tech", "product-design"]
+tags: ["gamification", "HR tech", "product design"]
 role: "Product Manager"
 linkPreviews:
   - url: "https://www.ril.com/"
