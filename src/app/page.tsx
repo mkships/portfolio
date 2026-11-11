@@ -1,12 +1,21 @@
 import Link from 'next/link'
 import { ArrowDown, ArrowUpRight } from 'lucide-react'
 import { getAllPosts, getBio, getTinkerProjects } from '@/lib/posts'
+import { getMusings } from '@/lib/musings'
 import Hero from '@/components/Hero'
 import Section from '@/components/Section'
 import ProjectCard from '@/components/ProjectCard'
 import TinkerCard from '@/components/TinkerCard'
 import CompoundingLabWidget from '@/components/CompoundingLabWidget'
 import CourtNotes from '@/components/CourtNotes'
+import MusingsList from '@/components/MusingsList'
+import WebsitePreview from '@/components/WebsitePreview'
+
+const alcarazPreview = {
+  url: 'https://www.atptour.com/en/players/carlos-alcaraz/a0e2/overview',
+  title: 'Carlos Alcaraz · ATP Tour',
+  description: 'Player profile, rankings, match results and career stats.',
+}
 
 export default function Home() {
   const professionalWork = getAllPosts('case-studies').sort((a, b) =>
@@ -14,6 +23,7 @@ export default function Home() {
   )
   const featuredStudy = professionalWork.find(project => project.slug === 'retail-bharat')
   const tinkerTank = getTinkerProjects()
+  const recentMusings = getMusings().slice(0, 3)
   const bio = getBio()
 
   return (
@@ -75,6 +85,15 @@ export default function Home() {
         </div>
       </Section>
 
+      {recentMusings.length > 0 && (
+        <Section id="musings" title="Musings" subtitle="Notes on products, building with AI, and life on and off court.">
+          <MusingsList entries={recentMusings} />
+          <Link href="/musings" className="mt-3 inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-moss-dark underline decoration-moss/40 underline-offset-4 hover:decoration-current focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 dark:text-moss-light">
+            All musings <ArrowUpRight size={15} aria-hidden="true" />
+          </Link>
+        </Section>
+      )}
+
       <Section
         id="tinkertank"
         title="tinkertank"
@@ -90,27 +109,34 @@ export default function Home() {
       <Section
         id="beyondwork"
         title="beyond work"
-        subtitle="detailing my journey with fitness and tennis"
+        subtitle="How I got fit and why I keep coming back to tennis."
       >
-        <div className="portfolio-panel flex flex-col gap-4">
-          <h3 className="font-display text-lg md:text-xl font-semibold tracking-[-0.02em] leading-[1.25] text-zinc-900 dark:text-zinc-100">
-            Lost fat and got fit 🏋️‍♂️🔥
-          </h3>
-          <p className="text-base text-zinc-700 dark:text-zinc-300 leading-[1.75]">
-            During the summer of 2023, I lost around 25 kg with calorie deficit, more daily movement, and showing up every single day. To lose 1 kg of fat, you need to create a calorie deficit of 7700 kcal. Once you realise that it is entirely just math, you can start to see the power of compounding.
-            Use this simple widget to understand how you can transform your body with a consistent calorie deficit and more daily movement.
-          </p>
-          <CompoundingLabWidget />
-        </div>
+        <div className="portfolio-panel divide-y divide-[var(--panel-border)]">
+          <article className="flex flex-col gap-3 pb-6 sm:pb-8">
+            <p className="portfolio-kicker">Fitness</p>
+            <h3 className="font-display text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
+              How I got fit
+            </h3>
+            <p className="text-base leading-[1.75] text-zinc-700 dark:text-zinc-300">
+              During the summer of 2023, I lost around 25 kg with calorie deficit, more daily movement, and showing up every single day. To lose 1 kg of fat, you need to create a calorie deficit of 7700 kcal. Once you realise that it is entirely just math, you can start to see the power of compounding.
+              Use this simple widget to understand how you can transform your body with a consistent calorie deficit and more daily movement.
+            </p>
+            <CompoundingLabWidget />
+          </article>
 
-        <div className="mt-10 flex flex-col gap-3">
-          <h3 className="font-display text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
-            Tennis is my reset button
-          </h3>
-          <p className="text-base text-zinc-700 dark:text-zinc-300 leading-[1.75]">
-            Over the years, tennis has become more than a sport for me — it’s my reset button. I play it recreationally, watch it on TV obsessively, and somehow the rhythm, intensity, and beauty of the game always helps me slow down and relax. Currently, my favorite player is Carlos Alcaraz.
-          </p>
-          <CourtNotes />
+          <article className="flex flex-col gap-3 pt-6 sm:pt-8">
+            <p className="portfolio-kicker">Tennis</p>
+            <h3 className="font-display text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
+              Tennis is my reset button
+            </h3>
+            <WebsitePreview previews={[alcarazPreview]}>
+              <p className="text-base leading-[1.75] text-zinc-700 dark:text-zinc-300">
+                Over the years, tennis has become more than a sport for me. It’s almost an obsession. I play it recreationally and watch it live on TV whenever I can. The rhythm, intensity and beauty of the game help me slow down and clear my head.{' '}
+                <a href={alcarazPreview.url} className="font-medium text-moss-dark underline underline-offset-4 dark:text-moss-light">Carlos Alcaraz</a> is my favourite player right now.
+              </p>
+            </WebsitePreview>
+            <CourtNotes />
+          </article>
         </div>
       </Section>
     </div>

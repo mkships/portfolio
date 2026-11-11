@@ -51,7 +51,7 @@ export async function GET(_request: Request, { params }: { params: Promise<{ slu
             <div style={{ display: 'flex', marginTop: 22, width: '100%', padding: 12, justifyContent: 'center', borderRadius: 9, background: '#edf2e8', fontSize: 18 }}>Coaching & hitting practice</div>
           </div>}
           {slug === 'startdotdev' && <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
-            <img src={logo} alt="Startdotdev" width={52} height={52} style={{ marginBottom: 18 }} />
+            <img src={logo} alt={post.title} width={52} height={52} style={{ marginBottom: 18 }} />
             {['Research', 'Draft', 'Review'].map(stage => <div key={stage} style={{ display: 'flex', justifyContent: 'center', marginTop: 8, padding: 12, width: '100%', borderRadius: 10, background: '#fbfcf5', border: '1px solid #cbd4bb', color: brand.accent, fontSize: 21 }}>{stage}</div>)}
           </div>}
         </div>

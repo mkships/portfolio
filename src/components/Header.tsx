@@ -7,6 +7,7 @@ import ThemeToggle from './ThemeToggle'
 
 const navLinks = [
   { href: '/#work', label: 'Work' },
+  { href: '/musings', label: 'Musings' },
   { href: '/#tinkertank', label: 'Tinkertank' },
   { href: '/#beyondwork', label: 'Beyond Work' },
 ]

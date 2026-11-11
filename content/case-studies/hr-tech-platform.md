@@ -1,34 +1,48 @@
 ---
-title: "Designing and Scaling a Work-Place Social Platform"
-description: "I accidentally discovered product management 😇"
+title: "Designing and scaling a workplace social platform"
+description: "Designed personalised feeds and gamified features for a platform that drew 50K+ employee sign-ups."
+excerpt: "Reliance Communities brought people across business units together through personalised feeds, gamification, and tools for everyday HR tasks."
+organization: "Reliance Industries"
 year: "2019"
 tags: ["gamification", "hr-tech", "product-design"]
-role: "product manager"
-metric: "50K+ signups"
-metricLabel: "150K+ employees engaged"
+role: "Product Manager"
+linkPreviews:
+  - url: "https://www.ril.com/"
+    title: "Reliance Industries"
+    image: "/images/case-studies/reliance-industries-preview.jpg"
+  - url: "https://joshbersin.com/2020/02/reliance-one-of-the-largest-companies-in-india-takes-hr-very-seriously/"
+    title: "Josh Bersin on Reliance’s HR transformation"
+    image: "/images/case-studies/reliance-hr-bersin-preview.jpg"
+  - url: "https://yukaichou.com/gamification-examples/octalysis-gamification-framework/"
+    title: "Yu-kai Chou’s Octalysis framework"
+    description: "How eight core drives of human motivation inform gamification design."
+highlights:
+  - value: "50K+"
+    label: "Employee sign-ups"
+  - value: "150K+"
+    label: "Employees engaged"
 ---
 
-## The Challenge
+## The challenge
 
-In 2018, reliance industries ltd., india’s largest publicly listed company was undergoing a major hr transformation under the banner of **HR 2.0**. with a workforce exceeding **500,000 employees** across energy, retail, telecom, and media, the challenge was clear: how to reimagine the *employee lifecycle* (“hire to retire”) with a **digital-first philosophy** that could keep pace with reliance’s scale and ambition.
+In 2018, [Reliance Industries](https://www.ril.com/) was redesigning how employees interacted with HR, from hiring to retirement. Its **HR 2.0** programme had to serve more than **500,000 employees** across energy, retail, telecom and media.
 
-the mandate from leadership, guided by the chairman and executive council was to design **futuristic, benchmarked HR experiences** that improved engagement, broke silos, and enabled “future of hr” for reliance group companies.
+Leadership wanted to help employees connect across those businesses and make everyday HR tasks easier.
 
-## The Solution
+## The solution
 
-The solution took shape as <span class="text-moss dark:text-moss-light">Reliance Communities</span>, an yammer-inspired internal social and engagement platform. The platform aimed to bring together employees across divisions through:
+We built [Reliance Communities](https://joshbersin.com/2020/02/reliance-one-of-the-largest-companies-in-india-takes-hr-very-seriously/), an internal social platform inspired by Yammer and part of Reliance’s wider HR 2.0 programme. It gave employees across divisions a shared place to connect and find help with routine HR tasks.
 
-- **Personalised Feeds** powered by a custom algorithm that weighted posts by who posted, engagement (likes/comments), content format (image/video), and user-defined interests.
-- **Gamification-First design**, deeply inspired by <span class="text-moss dark:text-moss-light">[octalysis framework from Yu-Kai-Chou’s actionable gamification (2014)](https://yukaichou.com/gamification-examples/octalysis-gamification-framework/)</span>, moving beyond points and badges to create intrinsic motivation through streaks, achievements, and reputation markers.
-- **Human-Centric Design Principles** that made the experience intuitive and delightful, even at scale.
-- **Chatbots & Workflow Automations** to streamline common employee actions and hr queries.
+- **Personalised feeds** ranked posts by author, engagement, content format and the interests employees chose.
+- **Streaks, achievements and reputation markers** encouraged employees to participate regularly. The design drew on [Yu-kai Chou’s Octalysis framework](https://yukaichou.com/gamification-examples/octalysis-gamification-framework/).
+- **Chatbots and automated workflows** helped employees get answers to common HR questions and complete routine tasks.
 
-## The Outcome
+## The outcome
 
-- **Adoption at Scale:** <span class="text-moss dark:text-moss-light">Reliance Communities</span> served as a central engagement layer for thousands of employees across business units.
-- **Boosted Engagement:** Gamification design and feed personalization encouraged more consistent participation compared to traditional static portals.
-- **Strategic Alignment:** The project became a flagship initiative within HR 2.0, showcasing how ai, automation, and human-centric design could co-create next-gen hr practices.
+Reliance Communities became a flagship HR 2.0 initiative and gave thousands of employees across business units a shared place to connect. Personalised feeds and gamification encouraged more regular participation than the company’s static portals.
 
-## The Learnings
+## What I learned
 
-For me personally, it was a chance to build at a massive scale while balancing global benchmarks with contextual realities, and create an employee-first solution. Also I accidentally discovered product management 😎
+Designing for a workforce this large taught me to use global benchmarks as a starting point and adapt them to how employees actually worked.
+
+> I accidentally discovered product management. 😇

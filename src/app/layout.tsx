@@ -10,20 +10,10 @@ const inter = localFont({
   variable: '--font-inter',
 })
 
-const playfair = localFont({
-  src: [
-    { path: './fonts/playfair-display.woff2', weight: '400 700', style: 'normal' },
-    { path: './fonts/playfair-display-italic.woff2', weight: '400 700', style: 'italic' },
-  ],
-  adjustFontFallback: 'Times New Roman',
-  variable: '--font-playfair',
-})
-
-const jetbrainsMono = localFont({
-  src: './fonts/jetbrains-mono.woff2',
-  weight: '100 800',
-  adjustFontFallback: false,
-  variable: '--font-mono',
+const plusJakartaSans = localFont({
+  src: './fonts/plus-jakarta-sans.woff2',
+  weight: '200 800',
+  variable: '--font-plus-jakarta-sans',
 })
 
 const title = 'Manohar Kanapaka | Product guy, now building with AI'
@@ -59,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${plusJakartaSans.variable}`}>
       <body className="font-sans antialiased bg-[#FBF6EE] dark:bg-zinc-950 text-zinc-900 dark:text-zinc-200 transition-colors duration-300">
         <Header />
         <main>{children}</main>

@@ -12,6 +12,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: '/case-studies/ai-generalist-pm',
+        destination: '/musings/pivoting-from-pm-to-ai-native-builder',
+        permanent: true,
+      },
+      {
         source: '/products/rackets-and-retreats',
         destination: '/products/court-trips',
         permanent: true,

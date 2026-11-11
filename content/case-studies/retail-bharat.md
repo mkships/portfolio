@@ -1,63 +1,55 @@
 ---
-title: "Bringing organised retail to gullies of India"
-description: "Would a 7-eleven type store work in Bharat? 🇮🇳"
+title: "Bringing organised retail to the gullies of India"
+description: "Led product for a platform that brought inventory, procurement, and financials together for SuperK franchise owners."
+organization: "SuperK"
 year: "2023"
-tags: ["Retail Tech", "B2B Tools", "Operations"]
+tags: ["retail tech", "B2B tools", "operations"]
 role: "Product Lead"
-metric: "6M+ usd"
-metricLabel: "worth transactions handled annually"
+linkPreviews:
+  - url: "https://www.superk.in/"
+    title: "SuperK Supermarket"
+    image: "/images/case-studies/superk-site-preview.jpg"
+  - url: "https://play.google.com/store/apps/details?id=in.localbuy.superk.partner.superk_partner"
+    title: "SuperK Store Partner App on Google Play"
+    image: "/images/case-studies/superk-store-partner-preview.jpg"
+highlights:
+  - value: "83.3%"
+    label: "Monthly retention for newly onboarded merchants"
+  - value: "75%"
+    label: "Customer satisfaction"
 ---
 
-At SuperK, I led product for a platform that brought inventory, procurement, and financials together for franchise owners. Newly onboarded merchants recorded **83.3% monthly retention**, and we saw **75% CSAT**.
+> Would a 7-Eleven type store work in Bharat? 🇮🇳
 
-## The Challenge
+## The challenge
 
-*<span class="text-moss dark:text-moss-light">Running a supermarket on spreadsheets*</span> 📉
+Franchise owners at [SuperK](https://www.superk.in/) ran their supermarkets with spreadsheets, disconnected tools and manual processes. Without a shared view of financials, inventory, orders and returns, stock counts were often out of sync. Audits took time, returns were prone to errors and products were harder to keep in stock.
 
-At **<span class="text-moss dark:text-moss-light">[superk](https://www.superk.in/)**</span>, franchise owners were running supermarkets with fragmented tools, spreadsheets, and manual processes.
+The problems made it harder to fulfil demand across stores and keep newly onboarded merchants.
 
-They lacked real-time visibility into financials, inventory, procurement, and returns, which led to stock mismatches, poor catalogue availability, operational friction, and early merchant churn.
+## The solution
 
-🔴 *User Pain*
-- No single source of truth for store operations
-- Inventory audits and returns were slow, error-prone, and manual
+I led product for SuperK’s merchant platform, which paired the mobile [Store Partner App](https://play.google.com/store/apps/details?id=in.localbuy.superk.partner.superk_partner) with an internal web dashboard. We shipped at least eight modules across three areas.
 
-🔴 *Business Pain*
- - Fragile early retention
- - Inconsistent demand fulfillment across locations
+- **Financials** covered invoice ledgers and earnings reports.
+- **Procurement** covered the catalogue, checkout, returns and new product requests.
+- **Inventory** let merchants see stock levels and run audits.
 
-## The Solution
-
-*<span class="text-moss dark:text-moss-light">A merchant OS that retailers will thrive on*</span> 🧱
-
-Built the merchant partner product across web + mobile, building software that behaved more like an operating system than a reporting layer.
-
-🧩 **what I had built**
-
-Shipped **8+ core modules** covering:
-- *Financials* : invoice ledger, earnings reports
-- *Procurement* : catalogue, cart/checkout, returns, new product requests
-- *Inventory* : stock audits, inventory visibility
-
-Built no-code / low-code internal apps to:
-- Run inventory audits at scale across stores
-- Manage role-based access for merchant teams
-- Track physical assets (*crates*, *containers*)
-- Monitor orders and returns via ops dashboards
+We also built low-code tools to run audits across stores, manage team permissions, track crates and containers, and monitor orders and returns.
 
 ### Why we built a rules engine
 
 With 10K+ products across 150+ franchise locations, the same catalogue, returns, and replenishment rules didn’t fit every store. We made those rules configurable so the product could adapt across locations without hard-coding each variation. The same engine controlled what stores could order, which items were eligible for return, and how stock was replenished.
 
-**How I worked**
-- Tight loops with ops, supply, and engineering to translate on-ground chaos into systems
-- Biased toward configurable tools over hard-coded logic to scale faster with fewer engineers
-- Optimized for merchant trust first, growth second
+I worked with operations, supply and engineering to turn store policies into rules the team could maintain. Configurable rules helped a small engineering team support more stores. My priority was making the product reliable enough for merchants to trust it with daily operations.
 
-## The Outcome
+## The outcome
 
 - **83.3% monthly retention** for newly onboarded merchants
-- **75% CSAT**, driven by better control and visibility for store owners
-- Improved *catalogue quality*, *returns handling*, and *replenishment accuracy* at scale
-- Learned how small operational primitives (**rules, audits, access control**) compound into massive retention wins
-- Set the foundation for future merchant tooling by proving that ops-heavy B2B products win on clarity + reliability
+- **75% customer satisfaction**, alongside better visibility and control for store owners
+- **US$6M+** in transactions handled annually
+- Better catalogue quality, returns handling and replenishment accuracy across stores
+
+## What I learned
+
+Store rules, stock audits and access controls can sound like small features. Together, they determine whether a merchant can rely on the platform every day.

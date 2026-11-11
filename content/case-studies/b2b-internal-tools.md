@@ -1,33 +1,47 @@
 ---
-title: "Building Boring B2B Internal Tools"
-description: "things break a lot at unicorn startups 🦄"
+title: "Building boring B2B internal tools"
+description: "Built a property operations tool that cut average transformation time by seven days."
+excerpt: "Stanza Sigma gave site managers one place to schedule tasks, see dependencies, and track progress across properties."
+organization: "Stanza Living"
 year: "2022"
-tags: ["saas tools", "supply chain", "prds"]
-role: "product manager"
-metric: "~2M usd"
-metricLabel: "annualised cost savings"
+tags: ["SaaS tools", "supply chain", "PRDs"]
+role: "Product Manager"
+linkPreviews:
+  - url: "https://www.stanzaliving.com/"
+    title: "Stanza Living"
+    image: "/images/case-studies/stanza-living-preview.jpg"
+  - url: "https://play.google.com/store/apps/details?id=com.stanzaliving.sigma&hl=en_IN"
+    title: "Stanza Sigma on Google Play"
+    image: "/images/case-studies/stanza-sigma-preview.jpg"
+highlights:
+  - value: "7 days"
+    label: "Reduction in average transformation time"
+  - value: "$2M"
+    label: "Annual cost savings"
 ---
 
-## The Challenge
+> Things break a lot at unicorn startups. 🦄
 
-Things break fast at unicorn startups 🦄 - especially when operations scale faster than systems. And break they did at **<span class="text-moss dark:text-moss-light">[stanza living](https://www.stanzaliving.com/)**</span> - a unicorn startup selling managed accommodation for students and working professionals.
+## The challenge
 
-Stanza’s supply and property operations were running on fragmented tools, manual coordination, and tribal knowledge. Site managers struggled to track tasks across properties, dependencies were invisible, and delivery timelines slipped regularly. 
+At [Stanza Living](https://www.stanzaliving.com/), which provides managed accommodation for students and working professionals, operations were scaling faster than the systems that supported them.
 
-The business impact was real: *delayed project handovers*, *supply inefficiencies*, and *high operational costs*. the need was clear - a **single internal system** to bring structure, visibility, and accountability to supply and operations.
+Supply and property teams worked across separate tools and coordinated tasks by hand. Site managers struggled to track progress across properties or see which tasks depended on others, so handovers often slipped.
 
-## The Solution
+Delays, supply inefficiencies and high operating costs made it clear that teams needed one place to see who owned each task and what was holding up the work.
 
-I have managed the product for **<span class="text-moss dark:text-moss-light">[stanza sigma](https://play.google.com/store/apps/details?id=com.stanzaliving.sigma&hl=en_IN)**</span>, an internal b2b platform built to systemize how properties get delivered.
+## The solution
 
-We designed and shipped a **task scheduler and property management module** that mapped real operational workflows - not idealized ones. I worked closely with ops, supply, and site teams to translate on-ground chaos into structured flows, defined clear ownership and dependencies, and made progress measurable.
+I managed [Stanza Sigma](https://play.google.com/store/apps/details?id=com.stanzaliving.sigma&hl=en_IN), the internal platform for property transformations.
 
-On the execution side, i owned PRDs, workflows, and high-fidelity prototypes (desktop + mobile), partnered with engineering and design through sprint planning and delivery, and closed the loop with training videos to drive adoption across site managers, ops, and support teams.
+We shipped a task scheduler and a property management module. I worked with operations, supply and site teams to map how they worked, assign task owners, record dependencies and make progress visible.
 
-## The Outcome
+I wrote product requirements, mapped workflows and created desktop and mobile prototypes. I worked with engineering and design through sprint planning and delivery, then made training videos for site managers, operations and support teams.
 
-The platform reduced average project delivery TAT (turn-around-time) by **7 days (~25%)**, unlocked **$2M in annual cost savings** by cutting supply inefficiencies, and became the default system of record for internal teams.
+## The outcome
 
-Beyond metrics, the biggest win was trust - ops teams finally had a tool built for how they actually work. the suite was later nominated for the *techSparks product innovation challenge*, recognizing its impact on improving the living experience for students and young professionals across Indian cities.
+The platform reduced average transformation time by **7 days (~25%)**, unlocked **$2M in annual cost savings** by cutting supply inefficiencies, and became the default system of record for internal teams.
 
->what I have learned: internal tools are products too — if adoption isn’t designed in, nothing ships no matter how good the roadmap looks.
+Operations teams gained a tool that fit how they worked. Stanza Sigma was later nominated for the TechSparks Product Innovation Challenge.
+
+> Internal tools are products too. If people can’t fit the tool into their day, a good roadmap only gets you so far.

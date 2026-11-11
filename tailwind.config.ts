@@ -43,8 +43,8 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
-        display: ['var(--font-playfair)', 'Playfair Display', 'Georgia', 'serif'],
-        mono: ['var(--font-mono)', 'JetBrains Mono', 'monospace'],
+        display: ['var(--font-plus-jakarta-sans)', 'Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        mono: ['Menlo', 'Consolas', 'Liberation Mono', 'ui-monospace', 'monospace'],
       },
       maxWidth: {
         content: '56rem', // 4xl = 896px

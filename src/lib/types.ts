@@ -10,6 +10,7 @@ export interface PostMeta {
   archived?: boolean
   url?: string
   // Case study specific fields
+  organization?: string
   year?: string
   role?: string
   metric?: string
@@ -20,6 +21,15 @@ export interface PostMeta {
 
 export interface PostDetail extends PostMeta {
   content: string
+  highlights?: { value: string; label: string }[]
+  linkPreviews: WebsitePreviewData[]
+}
+
+export interface WebsitePreviewData {
+  url: string
+  title: string
+  image?: string
+  description?: string
 }
 
 export interface BioData {
