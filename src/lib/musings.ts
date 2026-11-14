@@ -15,7 +15,6 @@ interface MusingBase {
   date: string | null
   body: string
   topics: string[]
-  featured: boolean
 }
 
 export type Musing = MusingBase & (
@@ -112,7 +111,6 @@ export function getMusings(): Musing[] {
         date: draft ? null : readDate(data.date),
         body: (data.kind === 'repost' ? postMarkdown : markdown).parse(requiredText(content, 'body'), { async: false }) as string,
         topics: readTopics(data),
-        featured: data.featured === true,
       }
 
       switch (data.kind) {

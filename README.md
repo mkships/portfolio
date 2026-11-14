@@ -26,6 +26,6 @@ Add a Markdown file in `content/musings/` with a `title` and a `kind` of `note`,
 
 Set `draft: true` and run `MUSINGS_PREVIEW=1 npm run dev` to review unpublished entries. When an entry is approved, remove `draft` and add a quoted `date` in `YYYY-MM-DD` format. The standard build excludes drafts.
 
-Every entry needs `topics`, a list with one or more of `thoughts`, `tech`, `tennis`, and `fitness` (defined in `src/lib/musing-topics.ts`). These are the archive filters, and an unknown slug fails the build. Add `featured: true` to show an entry in the Musings section of the home page, which lists up to three featured entries, newest first.
+Every entry needs `topics`, a list with one or more of `thoughts`, `tech`, `tennis`, and `fitness` (defined in `src/lib/musing-topics.ts`). These are the archive filters, and an unknown slug fails the build. The Musings section of the home page lists the three newest essays.
 
 For a post from X, use `kind: repost` with the post text as the body, the post’s date, its URL as `originalUrl`, and `embed` with `provider: x` and the post `id`. Line breaks in the body are kept. For a reply or quote post, add a one-line `context` saying what it responds to. The archive shows 20 entries at a time.

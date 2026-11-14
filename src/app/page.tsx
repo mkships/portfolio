@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import { ArrowDown, ArrowUpRight } from 'lucide-react'
+import { ArrowDown, ArrowRight } from 'lucide-react'
 import { getAllPosts, getBio, getExperience, getTinkerProjects } from '@/lib/posts'
-import { getMusings } from '@/lib/musings'
+import { getMusingEssays, getMusings } from '@/lib/musings'
 import Hero from '@/components/Hero'
 import Section from '@/components/Section'
 import ProjectCard from '@/components/ProjectCard'
@@ -24,10 +24,8 @@ export default function Home() {
   )
   const featuredStudy = professionalWork.find(project => project.slug === 'retail-bharat')
   const tinkerTank = getTinkerProjects()
-  const musings = getMusings()
-  // Entries marked `featured: true` lead the home page; without any, show the newest.
-  const featuredMusings = musings.filter(entry => entry.featured)
-  const recentMusings = (featuredMusings.length > 0 ? featuredMusings : musings).slice(0, 3)
+  const recentMusings = getMusingEssays().slice(0, 3)
+  const otherMusings = getMusings().length - recentMusings.length
   const bio = getBio()
   const experience = getExperience()
 
@@ -59,7 +57,7 @@ export default function Home() {
                 href={`/case-studies/${featuredStudy.slug}`}
                 className="group mt-5 inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-moss-dark underline decoration-moss/40 underline-offset-4 hover:decoration-current dark:text-moss-light"
               >
-                Read the case study <ArrowUpRight size={15} aria-hidden="true" />
+                Read the case study <ArrowRight size={15} aria-hidden="true" />
               </Link>
             </div>
 
@@ -95,7 +93,7 @@ export default function Home() {
         <Section id="musings" title="Musings" subtitle="Notes on products, building with AI, and life on and off court.">
           <MusingsList entries={recentMusings} />
           <Link href="/musings" className="mt-3 inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-moss-dark underline decoration-moss/40 underline-offset-4 hover:decoration-current focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 dark:text-moss-light">
-            All musings <ArrowUpRight size={15} aria-hidden="true" />
+            {otherMusings > 0 ? `${otherMusings} more posts on tech, tennis and fitness` : 'All musings'} <ArrowRight size={15} aria-hidden="true" />
           </Link>
         </Section>
       )}
@@ -123,9 +121,15 @@ export default function Home() {
               How I got fit
             </h3>
             <p className="text-base leading-[1.75] text-zinc-700 dark:text-zinc-300">
-              In the summer of 2023, I lost around 25 kg by maintaining a calorie deficit, moving more, and showing up every day.
+              I was 97 kg in mid-2021. I got serious at the end of 2022, and by mid-2023 I was down to 73 kg. I did it by maintaining a calorie deficit, moving more, and showing up every day.
               The math made it click for me. A deficit of roughly 7,700 kcal is a rule of thumb for losing 1 kg of fat.
-              The calculator shows how those daily deficits add up.
+              The calculator starts at my 97 kg and shows how those daily deficits add up.
+            </p>
+            <p className="portfolio-meta">
+              97 kg → 73 kg ·{' '}
+              <a href="https://x.com/mkanapaka/status/1740800474700517576" target="_blank" rel="noopener noreferrer" className="underline decoration-moss/40 underline-offset-4 hover:decoration-current focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4">
+                the post I wrote when I got there
+              </a>
             </p>
             <CompoundingLabWidget />
           </article>

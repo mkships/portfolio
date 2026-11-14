@@ -1,6 +1,5 @@
 ---
 title: "What live TV misses about tennis"
-featured: true
 kind: repost
 date: "2026-09-03"
 topics: [tennis]

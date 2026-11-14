@@ -20,7 +20,7 @@ const controlBtnClass =
   'flex h-11 w-11 items-center justify-center rounded-full border border-zinc-200 text-xs text-zinc-500 transition-colors hover:border-tennis hover:text-moss dark:border-zinc-700 dark:hover:border-moss-light dark:hover:text-moss-light'
 
 export default function CompoundingLab() {
-  const [weight, setWeight] = useState(80)
+  const [weight, setWeight] = useState(97) // where MK started
   const [calorieBurn, setCalorieBurn] = useState(200)
   const [steps, setSteps] = useState(8000)
   const [workouts, setWorkouts] = useState(3)
@@ -56,7 +56,10 @@ export default function CompoundingLab() {
     <div className="p-5 sm:p-6">
       {/* Current Weight */}
       <div className="mb-6">
-        <label className={`${labelClass} mb-2 block`}>Your current weight</label>
+        <div className="mb-2 flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
+          <label className={labelClass}>Your current weight</label>
+          <span className={hintClass}>97 kg is where I started</span>
+        </div>
         <div className="flex items-center gap-2">
           <button
             onClick={() => setWeight(Math.max(40, weight - 1))}
