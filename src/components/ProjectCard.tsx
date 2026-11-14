@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { PostMeta } from '@/lib/types'
 
 interface ProjectCardProps {
@@ -25,7 +25,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             </p>
           )}
         </div>
-        <ArrowUpRight size={16} className="mt-1 shrink-0 sm:mt-0 text-moss-dark dark:text-moss-light" aria-hidden="true" />
+        <ArrowRight size={16} className="mt-1 shrink-0 sm:mt-0 text-moss-dark dark:text-moss-light" aria-hidden="true" />
       </article>
     </Link>
   )
