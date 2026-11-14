@@ -14,9 +14,8 @@ export default function ProductsPage() {
     <div className="mx-auto flex max-w-3xl flex-col gap-10 px-4 pt-6 sm:px-6 sm:pt-10 md:pt-14">
       <ScrollReveal>
         <div className="portfolio-panel">
-          <p className="portfolio-kicker mb-3">Projects</p>
           <h1 className="text-4xl md:text-5xl font-bold tracking-[-0.03em] leading-[1.05] mb-3 text-zinc-900 dark:text-zinc-100">
-            tinkertank
+            Tinkertank
           </h1>
           <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
             {metadata.description}
@@ -24,9 +23,9 @@ export default function ProductsPage() {
         </div>
       </ScrollReveal>
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="border-t border-[var(--panel-border)]">
         {posts.map((post) => (
-          <ScrollReveal key={post.slug} className="h-full">
+          <ScrollReveal key={post.slug}>
             <TinkerCard project={post} />
           </ScrollReveal>
         ))}

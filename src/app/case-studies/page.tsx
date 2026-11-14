@@ -16,17 +16,16 @@ export default function CaseStudiesPage() {
     <div className="mx-auto flex max-w-2xl flex-col gap-10 px-4 pt-6 sm:px-6 sm:pt-10 md:pt-14">
       <ScrollReveal>
         <div className="portfolio-panel">
-          <p className="portfolio-kicker mb-3">Case studies</p>
           <h1 className="text-4xl md:text-5xl font-bold tracking-[-0.03em] leading-[1.05] mb-3 text-zinc-900 dark:text-zinc-100">
-            professional work
+            Professional work
           </h1>
           <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
-            case studies and highlights from my career in product management
+            Case studies and highlights from my career in product management.
           </p>
         </div>
       </ScrollReveal>
 
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col border-t border-[var(--panel-border)]">
         {posts.map((post) => (
           <ScrollReveal key={post.slug}>
             <ProjectCard project={post} />

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { getBio } from '@/lib/posts'
 import './globals.css'
 
 const inter = localFont({
@@ -51,7 +52,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${plusJakartaSans.variable}`}>
       <body className="font-sans antialiased bg-[#FBF6EE] dark:bg-zinc-950 text-zinc-900 dark:text-zinc-200 transition-colors duration-300">
-        <Header />
+        <Header openTo={getBio().openTo} />
         <main>{children}</main>
         <Footer />
       </body>

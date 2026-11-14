@@ -2,17 +2,17 @@
 
 import { useRef, useState } from 'react'
 import Link from 'next/link'
-import { Menu, X } from 'lucide-react'
+import { ArrowDown, Menu, X } from 'lucide-react'
 import ThemeToggle from './ThemeToggle'
 
 const navLinks = [
   { href: '/#work', label: 'Work' },
   { href: '/musings', label: 'Musings' },
   { href: '/#tinkertank', label: 'Tinkertank' },
-  { href: '/#beyondwork', label: 'Beyond Work' },
+  { href: '/#beyondwork', label: 'Beyond work' },
 ]
 
-export default function Header() {
+export default function Header({ openTo }: { openTo?: string }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const menuButton = useRef<HTMLButtonElement>(null)
 
@@ -20,7 +20,7 @@ export default function Header() {
     <header
       id="top"
       tabIndex={-1}
-      className="relative mx-auto max-w-3xl px-4 pt-4 sm:px-6 sm:pt-6 focus:outline-none md:pt-10"
+      className="focus:outline-none"
       onKeyDown={event => {
         if (event.key === 'Escape' && menuOpen) {
           setMenuOpen(false)
@@ -28,14 +28,34 @@ export default function Header() {
         }
       }}
     >
+      {openTo && (
+        <div className="border-b border-[var(--panel-border)] bg-[var(--card-mark)]">
+          <p className="mx-auto flex max-w-3xl flex-wrap items-center gap-x-3 gap-y-0.5 px-4 py-2 text-sm font-medium text-zinc-800 sm:px-6 dark:text-zinc-200">
+            <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-moss dark:bg-tennis" aria-hidden="true" />
+            <span className="min-w-0 flex-1 basis-56">{openTo}</span>
+            <a
+              href="#contact"
+              className="inline-flex min-h-11 items-center gap-1.5 font-semibold text-moss-dark underline decoration-moss/40 underline-offset-4 hover:decoration-current focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 dark:text-moss-light"
+            >
+              Get in touch <ArrowDown size={15} aria-hidden="true" />
+            </a>
+          </p>
+        </div>
+      )}
+      <div className="relative mx-auto max-w-3xl px-4 pt-4 sm:px-6 sm:pt-6 md:pt-10">
       <div className="flex items-center gap-3 border-b border-[var(--panel-border)] pb-4 md:gap-6">
         <Link
           href="/"
           onClick={() => setMenuOpen(false)}
-          aria-label="Manohar Kanapaka home"
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-zinc-900 text-sm font-semibold text-white transition-colors hover:bg-moss-dark dark:bg-[#e7edc7] dark:text-zinc-900 dark:hover:bg-moss-light"
+          aria-label="Musings of a Product Guy, Manohar Kanapaka home"
+          className="group flex shrink-0 items-center gap-3"
         >
-          MK
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-zinc-900 text-sm font-semibold text-white transition-colors group-hover:bg-moss-dark dark:bg-[#e7edc7] dark:text-zinc-900 dark:group-hover:bg-moss-light">
+            MK
+          </span>
+          <span className="hidden font-display text-lg font-semibold leading-tight tracking-tight text-zinc-900 sm:inline dark:text-zinc-100">
+            Musings of a Product Guy
+          </span>
         </Link>
 
         <nav
@@ -69,6 +89,7 @@ export default function Header() {
             {menuOpen ? <X size={17} aria-hidden="true" /> : <Menu size={17} aria-hidden="true" />}
           </button>
         </div>
+      </div>
       </div>
     </header>
   )

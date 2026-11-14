@@ -12,7 +12,7 @@ Musings of a Product Guy is Manohar Kanapaka’s personal portfolio. It brings t
 | `content/case-studies/` and `content/products/` | Markdown entries with YAML frontmatter and filenames that determine route slugs |
 | `src/app/` | Pages, shared layout, theme styles, bundled fonts, and social image route |
 | `src/components/` | Header, footer, cards, fitness calculator, and Court Notes |
-| `src/components/project-previews/` | Interactive previews for the four featured projects |
+| `content/experience.md` and `public/resume.pdf` | Career timeline rows and the résumé offered for download |
 | `src/lib/` | Content loading with `gray-matter` and `marked`, shared types, and project branding |
 | `public/images/` | Portrait, case-study assets, project artwork, social images, and compressed tennis photos |
 
@@ -29,9 +29,9 @@ Musings of a Product Guy is Manohar Kanapaka’s personal portfolio. It brings t
 
 | Route | Content and behaviour |
 | --- | --- |
-| `/` | Bio and portrait, featured SuperK case study with a rules-engine diagram, remaining case studies, Tinkertank cards, and Beyond Work. Beyond Work includes the fitness calculator and a captioned tennis photo strip with browse and pause controls. The calculator opens as a bottom sheet on phones and a floating panel on larger screens. |
+| `/` | Headline, introduction, and portrait with no buttons, featured SuperK case study with a rules-engine diagram, remaining case studies, the Career so far timeline with a résumé download, Musings, Tinkertank entries, and Beyond Work. Beyond Work includes the fitness calculator and a captioned tennis photo strip with browse and pause controls. The calculator opens as a bottom sheet on phones and a floating panel on larger screens. |
 | `/case-studies` and `/case-studies/[slug]` | A list of case studies ordered by year and individual articles with tags, a return link, and navigation to the next study. |
-| `/products` and `/products/[slug]` | The Tinkertank catalogue and project detail pages. Cards show project artwork, a status or role, and a preview link where available. Court Trips, courtsidebio, La Cafe, and Startdotdev have interactive previews. Entries marked `archived: true` stay accessible by URL and are omitted from the catalogue. The old Rackets & Retreats URL redirects to Court Trips. |
-| `/api/social/[slug]` | A 1200 × 630 branded PNG for each of the four featured projects. Project pages reference these images in Open Graph and X sharing metadata. |
+| `/products` and `/products/[slug]` | The Tinkertank catalogue and project detail pages. Each entry shows a screenshot of the real product from the `screenshots` list in its frontmatter, its tags and status, a link to the write-up, and a link to the live site when `url` is set. Detail pages show the screenshots with captions above a short write-up on why the project was built and what it does. Entries marked `archived: true` stay accessible by URL and are omitted from the catalogue. The old Rackets & Retreats URL redirects to Court Trips, and the old Start.dev URL redirects to the career timeline. |
+| `/api/social/[slug]` | A 1200 × 630 branded PNG for each of the three Tinkertank projects. Project pages reference these images in Open Graph and X sharing metadata. |
 
-The shared header links to Work, Tinkertank, and Beyond Work and includes the theme toggle. On phones, those links sit behind a menu. The shared footer puts X first, groups LinkedIn and Instagram below it on phones, and uses the MK stamp as a back-to-top control.
+The shared header opens with a full-width bar that shows the `openTo` line from `content/bio.md` and a Get in touch link to the footer. Below it, the MK mark and the “Musings of a Product Guy” wordmark link home, followed by Work, Musings, Tinkertank, and Beyond work and the theme toggle. The wordmark is hidden on phones. On phones, those links sit behind a menu. The shared footer puts X first, groups email, LinkedIn, and Instagram below it on phones, and uses the MK stamp as a back-to-top control.

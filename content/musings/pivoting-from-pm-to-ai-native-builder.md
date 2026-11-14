@@ -1,7 +1,8 @@
 ---
 title: "Pivoting from a PM to an AI-native builder"
+featured: true
 kind: essay
-topic: building-with-ai
+topics: [tech]
 date: "2026-02-15"
 excerpt: "I went from writing specs to shipping working apps with AI. Building got faster, and deciding what was worth building became a bigger part of the job."
 ---

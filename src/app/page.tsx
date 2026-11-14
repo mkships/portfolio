@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { ArrowDown, ArrowUpRight } from 'lucide-react'
-import { getAllPosts, getBio, getTinkerProjects } from '@/lib/posts'
+import { getAllPosts, getBio, getExperience, getTinkerProjects } from '@/lib/posts'
 import { getMusings } from '@/lib/musings'
 import Hero from '@/components/Hero'
 import Section from '@/components/Section'
@@ -8,6 +8,7 @@ import ProjectCard from '@/components/ProjectCard'
 import TinkerCard from '@/components/TinkerCard'
 import CompoundingLabWidget from '@/components/CompoundingLabWidget'
 import CourtNotes from '@/components/CourtNotes'
+import CareerTimeline from '@/components/CareerTimeline'
 import MusingsList from '@/components/MusingsList'
 import WebsitePreview from '@/components/WebsitePreview'
 
@@ -23,8 +24,12 @@ export default function Home() {
   )
   const featuredStudy = professionalWork.find(project => project.slug === 'retail-bharat')
   const tinkerTank = getTinkerProjects()
-  const recentMusings = getMusings().slice(0, 3)
+  const musings = getMusings()
+  // Entries marked `featured: true` lead the home page; without any, show the newest.
+  const featuredMusings = musings.filter(entry => entry.featured)
+  const recentMusings = (featuredMusings.length > 0 ? featuredMusings : musings).slice(0, 3)
   const bio = getBio()
+  const experience = getExperience()
 
   return (
     <div className="relative mx-auto flex max-w-3xl flex-col px-4 sm:px-6">
@@ -32,14 +37,14 @@ export default function Home() {
 
       <Section
         id="work"
-        title="professional work"
-        subtitle="case studies and highlights from my career in product management"
+        title="Professional work"
+        subtitle="Case studies and highlights from my career in product management."
       >
         {featuredStudy && (
-          <article className="mb-5 grid gap-6 rounded-[1.5rem] border border-[#dedfc9] bg-[#f4f4e7] p-6 sm:p-8 md:grid-cols-[1.25fr_1fr] md:items-center dark:border-[#35382a] dark:bg-[#1d2118]">
+          <article className="mb-2 grid gap-6 rounded-[1.5rem] border border-[#dedfc9] bg-[#f4f4e7] p-6 sm:p-8 md:grid-cols-[1.25fr_1fr] md:items-center dark:border-[#35382a] dark:bg-[#1d2118]">
             <div>
-              <p className="portfolio-kicker">
-                Featured case study · SuperK
+              <p className="portfolio-meta">
+                {[featuredStudy.organization, featuredStudy.year, 'Featured'].filter(Boolean).join(' · ')}
               </p>
               <h3 className="mt-3 text-pretty font-display text-2xl font-semibold leading-tight tracking-tight text-zinc-900 sm:text-3xl dark:text-zinc-100">
                 How do you run 150+ supermarkets when the tools are spreadsheets?
@@ -78,11 +83,12 @@ export default function Home() {
             </figure>
           </article>
         )}
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col">
           {professionalWork.filter(project => project !== featuredStudy).map(project => (
             <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
+        <CareerTimeline experience={experience} />
       </Section>
 
       {recentMusings.length > 0 && (
@@ -96,10 +102,10 @@ export default function Home() {
 
       <Section
         id="tinkertank"
-        title="tinkertank"
+        title="Tinkertank"
         subtitle="What I’m building with AI and agents, from web tools to a real kitchen."
       >
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="border-t border-[var(--panel-border)]">
           {tinkerTank.map(project => (
             <TinkerCard key={project.slug} project={project} />
           ))}
@@ -108,30 +114,29 @@ export default function Home() {
 
       <Section
         id="beyondwork"
-        title="beyond work"
+        title="Beyond work"
         subtitle="How I got fit and why I keep coming back to tennis."
       >
-        <div className="portfolio-panel divide-y divide-[var(--panel-border)]">
-          <article className="flex flex-col gap-3 pb-6 sm:pb-8">
-            <p className="portfolio-kicker">Fitness</p>
+        <div className="divide-y divide-[var(--panel-border)] border-t border-[var(--panel-border)]">
+          <article className="flex flex-col gap-3 py-6 sm:py-8">
             <h3 className="font-display text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
               How I got fit
             </h3>
             <p className="text-base leading-[1.75] text-zinc-700 dark:text-zinc-300">
-              During the summer of 2023, I lost around 25 kg with calorie deficit, more daily movement, and showing up every single day. To lose 1 kg of fat, you need to create a calorie deficit of 7700 kcal. Once you realise that it is entirely just math, you can start to see the power of compounding.
-              Use this simple widget to understand how you can transform your body with a consistent calorie deficit and more daily movement.
+              In the summer of 2023, I lost around 25 kg by maintaining a calorie deficit, moving more, and showing up every day.
+              The math made it click for me. A deficit of roughly 7,700 kcal is a rule of thumb for losing 1 kg of fat.
+              The calculator shows how those daily deficits add up.
             </p>
             <CompoundingLabWidget />
           </article>
 
           <article className="flex flex-col gap-3 pt-6 sm:pt-8">
-            <p className="portfolio-kicker">Tennis</p>
             <h3 className="font-display text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
               Tennis is my reset button
             </h3>
             <WebsitePreview previews={[alcarazPreview]}>
               <p className="text-base leading-[1.75] text-zinc-700 dark:text-zinc-300">
-                Over the years, tennis has become more than a sport for me. It’s almost an obsession. I play it recreationally and watch it live on TV whenever I can. The rhythm, intensity and beauty of the game help me slow down and clear my head.{' '}
+                I’m a little obsessed with tennis. I play recreationally, and if there’s a match on TV I’m probably watching it live. Time on court is the thing that most reliably slows my head down.{' '}
                 <a href={alcarazPreview.url} className="font-medium text-moss-dark underline underline-offset-4 dark:text-moss-light">Carlos Alcaraz</a> is my favourite player right now.
               </p>
             </WebsitePreview>
