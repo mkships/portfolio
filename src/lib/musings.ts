@@ -3,6 +3,7 @@ import path from 'node:path'
 import matter from 'gray-matter'
 import { Marked } from 'marked'
 import { getAllSlugs } from './posts'
+import { musingTopics } from './musing-topics'
 
 export type MusingEmbed =
   | { provider: 'linkedin'; src: string }
@@ -13,7 +14,8 @@ interface MusingBase {
   title: string
   date: string | null
   body: string
-  topic?: string
+  topics: string[]
+  featured: boolean
 }
 
 export type Musing = MusingBase & (
@@ -26,6 +28,18 @@ type Essay = Extract<Musing, { kind: 'essay' }>
 
 const directory = 'musings'
 const markdown = new Marked({ renderer: { html: () => '' } })
+// Posts brought in from X keep their line breaks as written.
+const postMarkdown = new Marked({ breaks: true, renderer: { html: () => '' } })
+
+function readTopics(data: { topic?: unknown; topics?: unknown }): string[] {
+  if (data.topics !== undefined && !Array.isArray(data.topics)) throw new Error('topics must be a list')
+  const topics = [...(data.topic === undefined ? [] : [data.topic]), ...(data.topics ?? [])]
+    .map(topic => requiredText(topic, 'topic'))
+  if (topics.length === 0) throw new Error('topics must list at least one topic')
+  const unknown = topics.find(topic => !(topic in musingTopics))
+  if (unknown) throw new Error(`unknown topic "${unknown}". Add it to src/lib/musing-topics.ts`)
+  return [...new Set(topics)]
+}
 
 function requiredText(value: unknown, field: string): string {
   if (typeof value !== 'string' || !value.trim()) {
@@ -96,8 +110,9 @@ export function getMusings(): Musing[] {
         slug,
         title: requiredText(data.title, 'title'),
         date: draft ? null : readDate(data.date),
-        body: markdown.parse(requiredText(content, 'body'), { async: false }) as string,
-        topic: data.topic === undefined ? undefined : requiredText(data.topic, 'topic'),
+        body: (data.kind === 'repost' ? postMarkdown : markdown).parse(requiredText(content, 'body'), { async: false }) as string,
+        topics: readTopics(data),
+        featured: data.featured === true,
       }
 
       switch (data.kind) {

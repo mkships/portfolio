@@ -6,13 +6,13 @@ I’m Manohar Kanapaka (MK). This portfolio brings together my product work, exp
 
 Professional Work opens with SuperK. A small diagram shows how its rules engine handled different ordering, returns, and replenishment rules across franchise stores.
 
-In Tinkertank, you can filter Court Trips by sport, preview a coach inquiry in courtsidebio, browse La Cafe’s menu, or step through a sample Startdotdev growth workflow. The write-ups explain how each idea took shape.
+Tinkertank shows Court Trips, courtsidebio and La Cafe with screenshots of the real products. Each has a short write-up on why I built it and what it does.
 
 Beyond Work pairs a calculator inspired by my fitness journey with Court Notes, a photo strip of the courts and people I remember.
 
 ## The details that make it feel personal
 
-A narrow column, warm paper tones, and moss accents give the site the feel of a printed notebook. The headings use Plus Jakarta Sans. Each featured project brings its own colours and artwork to its preview and sharing image.
+A narrow column, warm paper tones, and moss accents give the site the feel of a printed notebook. The headings use Plus Jakarta Sans. Each Tinkertank project brings its own colours to its sharing image.
 
 Court Notes frames photos like slightly crooked prints. The MK stamp gives a small bounce and takes you back to the top. On phones, the X button gets its own row, with the other social links grouped beside the stamp below.
 
@@ -26,4 +26,6 @@ Add a Markdown file in `content/musings/` with a `title` and a `kind` of `note`,
 
 Set `draft: true` and run `MUSINGS_PREVIEW=1 npm run dev` to review unpublished entries. When an entry is approved, remove `draft` and add a quoted `date` in `YYYY-MM-DD` format. The standard build excludes drafts.
 
-The archive uses `kind` for the Essays and Unfiltered thoughts filters. Add `topic: building-with-ai` to include any entry in Building with AI.
+Every entry needs `topics`, a list with one or more of `thoughts`, `tech`, `tennis`, and `fitness` (defined in `src/lib/musing-topics.ts`). These are the archive filters, and an unknown slug fails the build. Add `featured: true` to show an entry in the Musings section of the home page, which lists up to three featured entries, newest first.
+
+For a post from X, use `kind: repost` with the post text as the body, the post’s date, its URL as `originalUrl`, and `embed` with `provider: x` and the post `id`. Line breaks in the body are kept. For a reply or quote post, add a one-line `context` saying what it responds to. The archive shows 20 entries at a time.

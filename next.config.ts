@@ -21,6 +21,11 @@ const nextConfig: NextConfig = {
         destination: '/products/court-trips',
         permanent: true,
       },
+      {
+        source: '/products/startdotdev',
+        destination: '/#career',
+        permanent: false,
+      },
     ]
   },
 }

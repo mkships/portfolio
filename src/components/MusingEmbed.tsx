@@ -67,8 +67,9 @@ export default function MusingEmbed({ embed, title }: { embed: Embed; title: str
   const panelId = useId()
   const provider = providers[embed.provider]
 
+  // Rendered inside a wrapping flex row: the button sits beside the link, the panel takes its own line.
   return (
-    <div>
+    <>
       <button
         type="button"
         aria-expanded={open}
@@ -78,7 +79,7 @@ export default function MusingEmbed({ embed, title }: { embed: Embed; title: str
       >
         {open ? 'Hide' : 'Load'} {provider} embed
       </button>
-      <div id={panelId} hidden={!open} className="mt-3 overflow-hidden rounded-lg">
+      <div id={panelId} hidden={!open} className="mt-3 basis-full overflow-hidden rounded-lg">
         {open && (embed.provider === 'x' ? (
           <XPost id={embed.id} />
         ) : (
@@ -91,6 +92,6 @@ export default function MusingEmbed({ embed, title }: { embed: Embed; title: str
           />
         ))}
       </div>
-    </div>
+    </>
   )
 }

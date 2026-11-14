@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { marked } from 'marked'
-import { PostMeta, PostDetail, BioData } from './types'
+import { PostMeta, PostDetail, BioData, ExperienceData } from './types'
 
 const contentDirectory = path.join(process.cwd(), 'content')
 
@@ -60,6 +60,7 @@ export function getAllPosts(dir: string): PostMeta[] {
         metricLabel: data.metricLabel,
         description: data.description,
         image: data.image,
+        screenshots: Array.isArray(data.screenshots) ? data.screenshots : [],
       } as PostMeta
     })
 
@@ -98,6 +99,7 @@ export function getPostBySlug(dir: string, slug: string): PostDetail | null {
     metricLabel: data.metricLabel,
     description: data.description,
     image: data.image,
+    screenshots: Array.isArray(data.screenshots) ? data.screenshots : [],
     highlights: data.highlights,
     linkPreviews: data.linkPreviews ?? (data.linkPreview ? [data.linkPreview] : []),
     content: htmlContent,
@@ -115,6 +117,19 @@ export function getBio(): BioData {
     subheadline: data.subheadline || '',
     content: htmlContent,
     image: data.image,
+    openTo: data.openTo,
+  }
+}
+
+export function getExperience(): ExperienceData {
+  const fullPath = path.join(contentDirectory, 'experience.md')
+  const data = fs.existsSync(fullPath) ? matter(fs.readFileSync(fullPath, 'utf8')).data : {}
+  const hasResume = fs.existsSync(path.join(process.cwd(), 'public', 'resume.pdf'))
+
+  return {
+    roles: Array.isArray(data.roles) ? data.roles : [],
+    education: Array.isArray(data.education) ? data.education : [],
+    resumeUrl: hasResume ? '/resume.pdf' : undefined,
   }
 }
 

@@ -29,3 +29,6 @@ npm-debug.log*
 
 # Original tennis photos kept outside the public site
 /.local/tennis-photos/
+
+# Raw post exports used to import Musings
+/.local/grok/

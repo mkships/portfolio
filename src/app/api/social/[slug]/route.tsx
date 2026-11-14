@@ -22,9 +22,7 @@ export async function GET(_request: Request, { params }: { params: Promise<{ slu
   if (!post) return new Response('Not found', { status: 404 })
 
   const photo = slug === 'la-cafe' ? await asset('images/social/la-cafe-dish.jpg', 'jpeg') : undefined
-  const logo = slug === 'la-cafe'
-    ? await asset('images/social/la-cafe-wordmark.png', 'png')
-    : slug === 'startdotdev' ? await asset('images/products/startdotdev.png', 'png') : undefined
+  const logo = slug === 'la-cafe' ? await asset('images/social/la-cafe-wordmark.png', 'png') : undefined
 
   return new ImageResponse(
     <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', width: '100%', height: '100%', padding: '48px 60px', background: '#fbf6ee', color: '#1a1a17', fontFamily: 'sans-serif' }}>
@@ -49,10 +47,6 @@ export async function GET(_request: Request, { params }: { params: Promise<{ slu
             <div style={{ display: 'flex', marginTop: 14, fontSize: 25, fontWeight: 600 }}>Alex Morgan</div>
             <div style={{ display: 'flex', marginTop: 5, fontSize: 15, color: '#526757' }}>Sample coach profile</div>
             <div style={{ display: 'flex', marginTop: 22, width: '100%', padding: 12, justifyContent: 'center', borderRadius: 9, background: '#edf2e8', fontSize: 18 }}>Coaching & hitting practice</div>
-          </div>}
-          {slug === 'startdotdev' && <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
-            <img src={logo} alt={post.title} width={52} height={52} style={{ marginBottom: 18 }} />
-            {['Research', 'Draft', 'Review'].map(stage => <div key={stage} style={{ display: 'flex', justifyContent: 'center', marginTop: 8, padding: 12, width: '100%', borderRadius: 10, background: '#fbfcf5', border: '1px solid #cbd4bb', color: brand.accent, fontSize: 21 }}>{stage}</div>)}
           </div>}
         </div>
       </div>

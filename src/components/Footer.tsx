@@ -5,11 +5,10 @@ const socialIconClass = `inline-flex h-11 w-11 items-center justify-center round
 
 export default function Footer() {
   return (
-    <footer className="mx-auto mt-12 max-w-3xl px-4 pb-8 sm:mt-16 sm:px-6 md:mt-20 md:pb-12">
+    <footer id="contact" className="mx-auto mt-12 scroll-mt-6 max-w-3xl px-4 pb-8 sm:mt-16 sm:px-6 md:mt-20 md:pb-12">
       <div className="portfolio-panel grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-4 sm:gap-x-6 sm:gap-y-5">
         <div className="col-span-2 min-w-0 sm:col-span-1">
-          <p className="portfolio-kicker">Say hello</p>
-          <p className="mt-2 font-display text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
+          <p className="font-display text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
             Want to talk product, agents, or tennis?
           </p>
         </div>
