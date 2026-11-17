@@ -1,5 +1,11 @@
 import Image from 'next/image'
 import { BioData } from '@/lib/types'
+import PortraitCompare from './PortraitCompare'
+
+const PORTRAIT_ALT = 'Manohar Kanapaka smiling at a table'
+const PORTRAIT_SIZES = '(min-width: 768px) 260px, (min-width: 500px) 384px, calc(100vw - 74px)'
+// Portraits are pre-cropped to 4:5; the wider mobile frames need to keep the face in view.
+const PORTRAIT_POSITION = 'object-[center_20%] sm:object-[center_15%] md:object-center'
 
 interface HeroProps {
   bio: BioData
@@ -24,14 +30,24 @@ export default function Hero({ bio }: HeroProps) {
 
         {bio.image && (
           <div className="relative mx-auto aspect-[16/9] w-full max-w-sm overflow-hidden rounded-[1.35rem] bg-[#e8dfcd] ring-1 ring-black/10 sm:aspect-[6/5] md:aspect-[4/5] dark:ring-white/10">
-            <Image
-              src={bio.image}
-              alt="Manohar Kanapaka smiling at a table"
-              fill
-              className="object-cover object-top sm:object-[center_42%]"
-              sizes="(min-width: 768px) 260px, (min-width: 500px) 384px, calc(100vw - 74px)"
-              priority
-            />
+            {bio.imageOriginal ? (
+              <PortraitCompare
+                after={bio.image}
+                before={bio.imageOriginal}
+                alt={PORTRAIT_ALT}
+                sizes={PORTRAIT_SIZES}
+                imageClassName={PORTRAIT_POSITION}
+              />
+            ) : (
+              <Image
+                src={bio.image}
+                alt={PORTRAIT_ALT}
+                fill
+                className={`object-cover ${PORTRAIT_POSITION}`}
+                sizes={PORTRAIT_SIZES}
+                priority
+              />
+            )}
           </div>
         )}
       </div>
