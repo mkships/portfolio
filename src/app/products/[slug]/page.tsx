@@ -64,9 +64,9 @@ export default async function ProductDetailPage({ params }: Props) {
   const meta = projectMeta(post)
 
   return (
-    <div className={`mx-auto flex flex-col gap-6 px-4 pt-6 sm:px-6 sm:pt-10 md:pt-14 ${mainShot ? 'max-w-3xl' : 'max-w-2xl'}`}>
+    <div className={`mx-auto flex flex-col gap-6 px-4 pt-6 sm:px-6 sm:pt-10 md:pt-14 max-w-3xl`}>
       <Link href="/#tinkertank" className="inline-flex min-h-11 items-center gap-2 self-start text-sm font-semibold text-moss-dark underline decoration-moss/40 underline-offset-4 hover:decoration-current focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 dark:text-moss-light">
-        <ArrowLeft size={16} aria-hidden="true" /> Back to Tinkertank
+        <ArrowLeft size={15} aria-hidden="true" /> Back to Tinkertank
       </Link>
 
       <article className="motion-safe:animate-fadeInUp">
@@ -99,7 +99,7 @@ export default async function ProductDetailPage({ params }: Props) {
         )}
 
         <div
-          className="article-copy prose prose-zinc mt-10 max-w-[65ch] dark:prose-invert
+          className="article-copy prose prose-zinc mx-auto mt-10 max-w-[65ch] dark:prose-invert
             prose-p:text-zinc-700 prose-p:dark:text-zinc-300 prose-p:leading-[1.75] prose-p:text-base
             prose-li:text-zinc-700 prose-li:dark:text-zinc-300 prose-li:leading-[1.75]
             prose-ul:text-zinc-700 prose-ul:dark:text-zinc-300"

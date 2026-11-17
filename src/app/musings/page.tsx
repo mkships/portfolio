@@ -13,7 +13,7 @@ export default function MusingsPage() {
   const entries = getMusings()
 
   return (
-    <div className="mx-auto flex max-w-2xl flex-col gap-6 px-4 pt-6 sm:gap-8 sm:px-6 sm:pt-10 md:pt-14">
+    <div className="mx-auto flex max-w-3xl flex-col gap-6 px-4 pt-6 sm:gap-8 sm:px-6 sm:pt-10 md:pt-14">
       <header className="portfolio-panel space-y-3">
         <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Musings</h1>
         <p className="text-base leading-relaxed text-zinc-700 dark:text-zinc-300">{description}</p>

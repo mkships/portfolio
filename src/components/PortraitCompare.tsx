@@ -12,7 +12,7 @@ interface PortraitCompareProps {
   imageClassName?: string
 }
 
-const RESTING_POSITION = 10
+const RESTING_POSITION = 8
 
 /**
  * Before/after wipe for the hero portrait. The AI-enhanced photo sits on top and is
@@ -93,10 +93,10 @@ export default function PortraitCompare({ after, before, alt, sizes, imageClassN
 
       <span
         aria-hidden="true"
-        className={`portfolio-meta pointer-events-none absolute bottom-2.5 right-2.5 flex items-center gap-1.5 rounded-full bg-[color-mix(in_srgb,var(--panel)_85%,transparent)] px-2.5 py-1 backdrop-blur transition-opacity duration-500 motion-reduce:transition-none ${touched ? 'opacity-0' : 'opacity-100'}`}
+        className={`portfolio-meta pointer-events-none absolute bottom-2 left-1/2 flex -translate-x-1/2 items-center gap-1 whitespace-nowrap rounded-full bg-[color-mix(in_srgb,var(--panel)_85%,transparent)] px-2 py-0.5 backdrop-blur transition-opacity duration-500 motion-reduce:transition-none ${touched ? 'opacity-0' : 'opacity-100'}`}
       >
         Original
-        <ArrowLeftRight className="h-3 w-3" strokeWidth={2} />
+        <ArrowLeftRight className="h-2.5 w-2.5" strokeWidth={2} />
         AI-enhanced
       </span>
 

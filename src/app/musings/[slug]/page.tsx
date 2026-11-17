@@ -29,9 +29,9 @@ export default async function MusingEssayPage({ params }: Props) {
   if (!essay) notFound()
 
   return (
-    <div className="mx-auto flex max-w-2xl flex-col gap-6 px-4 pt-6 sm:px-6 sm:pt-10 md:pt-14">
+    <div className="mx-auto flex max-w-3xl flex-col gap-6 px-4 pt-6 sm:px-6 sm:pt-10 md:pt-14">
       <Link href="/musings" className="inline-flex min-h-11 items-center gap-2 self-start text-sm font-semibold text-moss-dark underline decoration-moss/40 underline-offset-4 hover:decoration-current focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 dark:text-moss-light">
-        <ArrowLeft size={16} aria-hidden="true" /> Back to Musings
+        <ArrowLeft size={15} aria-hidden="true" /> Back to Musings
       </Link>
 
       <article>
@@ -39,7 +39,9 @@ export default async function MusingEssayPage({ params }: Props) {
           <MusingDate date={essay.date} />
           <h1 className="text-pretty text-[2rem] font-semibold leading-tight tracking-tight sm:text-4xl">{essay.title}</h1>
         </header>
-        <MusingBody html={essay.body} />
+        <div className="mx-auto max-w-[65ch]">
+          <MusingBody html={essay.body} />
+        </div>
       </article>
     </div>
   )

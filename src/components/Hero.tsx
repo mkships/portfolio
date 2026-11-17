@@ -13,7 +13,7 @@ interface HeroProps {
 
 export default function Hero({ bio }: HeroProps) {
   return (
-    <section className="portfolio-panel mt-6 rounded-[1.5rem] sm:mt-10 sm:rounded-[2rem] text-[#24251d] motion-safe:animate-fadeInUp md:mt-14 dark:text-[#fbf6ee]">
+    <section className="portfolio-panel mt-6 sm:mt-10 text-[#24251d] motion-safe:animate-fadeInUp md:mt-14 dark:text-[#fbf6ee]">
       <div className="grid items-center gap-5 sm:gap-7 md:grid-cols-[1.4fr_1fr] md:gap-9">
         <div>
           <h1 className="text-pretty text-[clamp(1.875rem,8.2vw,2.15rem)] font-semibold leading-[1.12] tracking-[-0.035em] sm:text-[2.65rem] md:text-[2.8rem]">

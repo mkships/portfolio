@@ -20,7 +20,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             {project.title}
           </h3>
           {(project.description || project.excerpt) && (
-            <p className="mt-1.5 text-sm text-zinc-600 dark:text-zinc-400 leading-[1.5]">
+            <p className="mt-1.5 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
               {project.description || project.excerpt}
             </p>
           )}
