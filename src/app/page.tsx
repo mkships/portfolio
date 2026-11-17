@@ -141,7 +141,7 @@ export default function Home() {
             <WebsitePreview previews={[alcarazPreview]}>
               <p className="text-base leading-[1.75] text-zinc-700 dark:text-zinc-300">
                 I’m a little obsessed with tennis. I play recreationally, and if there’s a match on TV I’m probably watching it live. Time on court is the thing that most reliably slows my head down.{' '}
-                <a href={alcarazPreview.url} className="font-medium text-moss-dark underline underline-offset-4 dark:text-moss-light">Carlos Alcaraz</a> is my favourite player right now.
+                <a href={alcarazPreview.url} className="font-medium text-moss-dark underline decoration-moss/40 underline-offset-4 hover:decoration-current dark:text-moss-light">Carlos Alcaraz</a> is my favourite player right now.
               </p>
             </WebsitePreview>
             <CourtNotes />

@@ -23,7 +23,7 @@ function isOnX(url: string) {
 export function MusingBody({ html }: { html: string }) {
   return (
     <div
-      className="article-copy prose prose-zinc max-w-none text-zinc-700 prose-p:leading-[1.75] prose-a:text-moss-dark dark:prose-invert dark:text-zinc-300 dark:prose-a:text-moss-light"
+      className="article-copy prose prose-zinc max-w-none text-zinc-700 prose-p:leading-[1.75] dark:prose-invert dark:text-zinc-300"
       dangerouslySetInnerHTML={{ __html: html }}
     />
   )

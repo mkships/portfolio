@@ -122,6 +122,10 @@
   @apply my-0 font-display text-xl leading-snug;
 }
 
+.article-copy a {
+  @apply font-medium text-moss-dark underline decoration-moss/40 underline-offset-4 hover:decoration-current dark:text-moss-light;
+}
+
 .article-copy :is(pre, table) {
   display: block;
   max-width: 100%;

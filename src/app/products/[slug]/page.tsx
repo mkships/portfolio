@@ -65,7 +65,7 @@ export default async function ProductDetailPage({ params }: Props) {
 
   return (
     <div className={`mx-auto flex flex-col gap-6 px-4 pt-6 sm:px-6 sm:pt-10 md:pt-14 ${mainShot ? 'max-w-3xl' : 'max-w-2xl'}`}>
-      <Link href="/#tinkertank" className="inline-flex min-h-11 items-center gap-2 self-start text-sm font-medium hover:text-moss dark:hover:text-moss-light">
+      <Link href="/#tinkertank" className="inline-flex min-h-11 items-center gap-2 self-start text-sm font-semibold text-moss-dark underline decoration-moss/40 underline-offset-4 hover:decoration-current focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 dark:text-moss-light">
         <ArrowLeft size={16} aria-hidden="true" /> Back to Tinkertank
       </Link>
 
@@ -102,7 +102,6 @@ export default async function ProductDetailPage({ params }: Props) {
           className="article-copy prose prose-zinc mt-10 max-w-[65ch] dark:prose-invert
             prose-p:text-zinc-700 prose-p:dark:text-zinc-300 prose-p:leading-[1.75] prose-p:text-base
             prose-li:text-zinc-700 prose-li:dark:text-zinc-300 prose-li:leading-[1.75]
-            prose-a:text-moss prose-a:no-underline hover:prose-a:underline
             prose-ul:text-zinc-700 prose-ul:dark:text-zinc-300"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />

@@ -47,15 +47,14 @@ export default async function CaseStudyDetailPage({ params }: Props) {
     <div
       className="article-copy prose prose-zinc max-w-none dark:prose-invert
         prose-p:text-base prose-p:leading-[1.75] prose-p:text-zinc-700 dark:prose-p:text-zinc-300
-        prose-li:leading-[1.75] prose-li:text-zinc-700 dark:prose-li:text-zinc-300
-        prose-a:text-moss-dark dark:prose-a:text-moss-light"
+        prose-li:leading-[1.75] prose-li:text-zinc-700 dark:prose-li:text-zinc-300"
       dangerouslySetInnerHTML={{ __html: post.content }}
     />
   )
 
   return (
     <div className="mx-auto flex max-w-3xl flex-col gap-4 px-4 pt-6 sm:px-6 sm:pt-10 md:pt-14">
-      <Link href="/#work" className="inline-flex min-h-11 items-center gap-2 self-start text-sm font-medium text-moss-dark underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 dark:text-moss-light">
+      <Link href="/#work" className="inline-flex min-h-11 items-center gap-2 self-start text-sm font-semibold text-moss-dark underline decoration-moss/40 underline-offset-4 hover:decoration-current focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 dark:text-moss-light">
         <ArrowLeft size={16} aria-hidden="true" /> Back to work
       </Link>
 
@@ -100,10 +99,10 @@ export default async function CaseStudyDetailPage({ params }: Props) {
           )}
 
           <nav aria-label="Case study navigation" className="mt-10 flex flex-wrap items-center justify-between gap-x-5 border-t border-[var(--panel-border)] pt-4 sm:mt-14">
-            <Link href="/#work" className="inline-flex min-h-11 items-center gap-2 text-sm text-zinc-600 underline-offset-4 hover:underline dark:text-zinc-300">
+            <Link href="/#work" className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-moss-dark underline decoration-moss/40 underline-offset-4 hover:decoration-current focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 dark:text-moss-light">
               <ArrowLeft size={14} aria-hidden="true" /> Back to work
             </Link>
-            <Link href={`/case-studies/${nextSlug}`} className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-moss-dark underline-offset-4 hover:underline dark:text-moss-light">
+            <Link href={`/case-studies/${nextSlug}`} className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-moss-dark underline decoration-moss/40 underline-offset-4 hover:decoration-current focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 dark:text-moss-light">
               Next case study <ArrowRight size={14} aria-hidden="true" />
             </Link>
           </nav>

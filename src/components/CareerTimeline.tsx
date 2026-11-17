@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Download } from 'lucide-react'
 import type { ExperienceData } from '@/lib/types'
 
-const linkClass = 'underline decoration-moss/40 underline-offset-4 hover:decoration-current focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2'
+const linkClass = 'font-medium text-moss-dark underline decoration-moss/40 underline-offset-4 hover:decoration-current focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 dark:text-moss-light'
 const rowClass = 'grid gap-x-6 gap-y-1 border-b border-[var(--panel-border)] py-4 sm:grid-cols-[8.5rem_1fr]'
 const periodClass = 'font-mono text-xs leading-6 text-zinc-600 dark:text-zinc-400'
 const summaryClass = 'mt-0.5 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400'
