@@ -100,6 +100,28 @@
   overflow-wrap: anywhere;
 }
 
+/* Shared article typography: musings, products and case studies all render through .article-copy,
+   so headings and pull quotes are defined once here instead of per template. */
+.article-copy :is(h2, h3) {
+  @apply font-display font-semibold tracking-tight;
+}
+
+.article-copy h2 {
+  @apply mb-4 mt-10 text-2xl;
+}
+
+.article-copy h3 {
+  font-size: 1.25rem;
+}
+
+.article-copy blockquote {
+  @apply rounded-r-xl border-moss bg-[var(--panel)] px-5 py-4 not-italic dark:border-moss-light;
+}
+
+.article-copy blockquote p {
+  @apply my-0 font-display text-xl leading-snug;
+}
+
 .article-copy :is(pre, table) {
   display: block;
   max-width: 100%;

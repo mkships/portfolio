@@ -100,8 +100,6 @@ export default async function ProductDetailPage({ params }: Props) {
 
         <div
           className="article-copy prose prose-zinc mt-10 max-w-[65ch] dark:prose-invert
-            prose-headings:font-semibold prose-headings:tracking-[-0.02em]
-            prose-h2:text-xl prose-h2:mb-4 prose-h2:mt-12
             prose-p:text-zinc-700 prose-p:dark:text-zinc-300 prose-p:leading-[1.75] prose-p:text-base
             prose-li:text-zinc-700 prose-li:dark:text-zinc-300 prose-li:leading-[1.75]
             prose-a:text-moss prose-a:no-underline hover:prose-a:underline

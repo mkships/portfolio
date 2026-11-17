@@ -64,7 +64,7 @@ export default function Footer() {
           </g>
           <circle cx="14" cy="60" r="1.5" fill="currentColor" />
           <circle cx="106" cy="60" r="1.5" fill="currentColor" />
-          <text x="60" y="60" dy=".35em" textAnchor="middle" fontSize="23" letterSpacing="-1" className="fill-white font-sans font-semibold dark:fill-zinc-900">MK</text>
+          <text x="60" y="60" dy=".35em" textAnchor="middle" fontSize="23" letterSpacing="-1" className="fill-white font-display font-semibold dark:fill-zinc-900">MK</text>
         </svg>
         </a>
       </div>

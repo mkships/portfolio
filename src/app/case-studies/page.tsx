@@ -16,7 +16,7 @@ export default function CaseStudiesPage() {
     <div className="mx-auto flex max-w-2xl flex-col gap-10 px-4 pt-6 sm:px-6 sm:pt-10 md:pt-14">
       <ScrollReveal>
         <div className="portfolio-panel">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-[-0.03em] leading-[1.05] mb-3 text-zinc-900 dark:text-zinc-100">
+          <h1 className="text-4xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] mb-3 text-zinc-900 dark:text-zinc-100">
             Professional work
           </h1>
           <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">

@@ -50,7 +50,7 @@ export default function Header({ openTo }: { openTo?: string }) {
           aria-label="Musings of a Product Guy, Manohar Kanapaka home"
           className="group flex shrink-0 items-center gap-3"
         >
-          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-zinc-900 text-sm font-semibold text-white transition-colors group-hover:bg-moss-dark dark:bg-[#e7edc7] dark:text-zinc-900 dark:group-hover:bg-moss-light">
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-zinc-900 font-display text-sm font-semibold text-white transition-colors group-hover:bg-moss-dark dark:bg-[#e7edc7] dark:text-zinc-900 dark:group-hover:bg-moss-light">
             MK
           </span>
           <span className="hidden font-display text-lg font-semibold leading-tight tracking-tight text-zinc-900 sm:inline dark:text-zinc-100">

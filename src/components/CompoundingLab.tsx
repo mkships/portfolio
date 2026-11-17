@@ -13,7 +13,7 @@ const STEPS_KCAL_MAP = (steps: number) => {
 }
 const WORKOUT_KCAL = 400
 
-const labelClass = 'text-[11px] font-medium uppercase tracking-[0.15em] text-zinc-500 dark:text-zinc-400'
+const labelClass = 'text-[11px] font-medium uppercase tracking-[0.17em] text-zinc-500 dark:text-zinc-400'
 const hintClass = 'text-[11px] text-zinc-400 dark:text-zinc-500'
 const valueClass = 'text-sm font-semibold tabular-nums text-zinc-900 dark:text-zinc-100'
 const controlBtnClass =

@@ -102,7 +102,7 @@ export default function CourtNotes() {
       <div className="mb-3 flex items-center justify-between gap-2">
         <div>
           <p className="portfolio-kicker">Court notes</p>
-          <p className="mt-0.5 font-mono text-[10px] text-zinc-600 dark:text-zinc-400">
+          <p className="mt-0.5 font-mono text-xs text-zinc-600 dark:text-zinc-400">
             10 moments, on and off court
           </p>
         </div>

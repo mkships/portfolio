@@ -51,7 +51,7 @@ export default function Home() {
                 We built one merchant platform for inventory, procurement, and financials. Configurable rules helped it adapt across stores.
               </p>
               <p className="mt-4 text-sm text-zinc-700 dark:text-zinc-300">
-                <strong className="mr-1 text-xl font-semibold text-moss-dark dark:text-moss-light">83.3%</strong> monthly retention for new merchants
+                <strong className="mr-1 font-display text-xl font-semibold text-moss-dark dark:text-moss-light">83.3%</strong> monthly retention for new merchants
               </p>
               <Link
                 href={`/case-studies/${featuredStudy.slug}`}
@@ -62,7 +62,7 @@ export default function Home() {
             </div>
 
             <figure className="rounded-xl border border-[#dedfc9] bg-[#fcfcf5] p-4 dark:border-[#3c402f] dark:bg-[#171a13]">
-              <figcaption className="mb-3 text-[10px] font-semibold uppercase tracking-[0.14em] text-zinc-600 dark:text-zinc-400">
+              <figcaption className="mb-3 text-[10px] font-semibold uppercase tracking-[0.17em] text-zinc-600 dark:text-zinc-400">
                 How store rules worked
               </figcaption>
               <ol className="space-y-1.5 text-center text-sm">

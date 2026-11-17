@@ -46,14 +46,9 @@ export default async function CaseStudyDetailPage({ params }: Props) {
   const body = (
     <div
       className="article-copy prose prose-zinc max-w-none dark:prose-invert
-        prose-headings:font-semibold prose-headings:tracking-tight
-        prose-h2:mb-4 prose-h2:mt-10 prose-h2:font-display prose-h2:text-2xl sm:prose-h2:text-3xl
         prose-p:text-base prose-p:leading-[1.75] prose-p:text-zinc-700 dark:prose-p:text-zinc-300
         prose-li:leading-[1.75] prose-li:text-zinc-700 dark:prose-li:text-zinc-300
-        prose-a:text-moss-dark dark:prose-a:text-moss-light
-        prose-blockquote:rounded-r-xl prose-blockquote:border-moss prose-blockquote:bg-[var(--panel)]
-        prose-blockquote:px-5 prose-blockquote:py-4 prose-blockquote:not-italic dark:prose-blockquote:border-moss-light
-        [&_blockquote_p]:my-0 [&_blockquote_p]:font-display [&_blockquote_p]:text-xl [&_blockquote_p]:leading-snug"
+        prose-a:text-moss-dark dark:prose-a:text-moss-light"
       dangerouslySetInnerHTML={{ __html: post.content }}
     />
   )
@@ -68,7 +63,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
         <header className="portfolio-panel space-y-4">
           <div className="flex flex-wrap items-baseline justify-between gap-x-5 gap-y-1.5">
             <p className="portfolio-meta">{['Case study', post.organization, post.year || post.date].filter(Boolean).join(' · ')}</p>
-            {post.role && <p className="font-mono text-xs font-medium text-zinc-600 dark:text-zinc-400">{post.role}</p>}
+            {post.role && <p className="font-mono text-xs text-zinc-600 dark:text-zinc-400">{post.role}</p>}
           </div>
           <h1 className="text-balance text-[2rem] font-semibold leading-[1.1] tracking-tight text-zinc-900 sm:text-5xl dark:text-zinc-100">
             {post.title}
