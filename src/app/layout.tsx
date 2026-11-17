@@ -20,10 +20,10 @@ const plusJakartaSans = localFont({
 const title = 'Manohar Kanapaka | Product guy, now building with AI'
 const description = 'I’m Manohar Kanapaka. I’ve helped scale products to a million users. Now I’m building my own and sharing what I learn along the way.'
 const socialImage = {
-  url: '/images/social/musings.jpg',
+  url: '/images/social/home.jpg',
   width: 1200,
   height: 630,
-  alt: 'Musings of a Product Guy by Manohar Kanapaka, alongside a portrait of Manohar',
+  alt: 'Manohar Kanapaka: I helped scale products to 1M+ users. Now I’m building my own. Alongside a portrait of Manohar.',
 }
 
 export const metadata: Metadata = {
