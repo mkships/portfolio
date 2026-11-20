@@ -3,6 +3,7 @@ import localFont from 'next/font/local'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { getBio } from '@/lib/posts'
+import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const inter = localFont({
@@ -55,6 +56,7 @@ export default function RootLayout({
         <Header openTo={getBio().openTo} />
         <main>{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   )
