@@ -117,7 +117,6 @@ export function getBio(): BioData {
     subheadline: data.subheadline || '',
     content: htmlContent,
     image: data.image,
-    imageOriginal: data.imageOriginal,
     openTo: data.openTo,
   }
 }

@@ -44,7 +44,6 @@ export interface BioData {
   subheadline: string
   content: string
   image?: string
-  imageOriginal?: string
   openTo?: string
 }
 

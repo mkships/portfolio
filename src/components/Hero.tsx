@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import { BioData } from '@/lib/types'
-import PortraitCompare from './PortraitCompare'
 
 const PORTRAIT_ALT = 'Manohar Kanapaka smiling at a table'
 const PORTRAIT_SIZES = '(min-width: 768px) 260px, (min-width: 500px) 384px, calc(100vw - 74px)'
@@ -30,24 +29,14 @@ export default function Hero({ bio }: HeroProps) {
 
         {bio.image && (
           <div className="relative mx-auto aspect-[16/9] w-full max-w-sm overflow-hidden rounded-[1.35rem] bg-[#e8dfcd] ring-1 ring-black/10 sm:aspect-[6/5] md:aspect-[4/5] dark:ring-white/10">
-            {bio.imageOriginal ? (
-              <PortraitCompare
-                after={bio.image}
-                before={bio.imageOriginal}
-                alt={PORTRAIT_ALT}
-                sizes={PORTRAIT_SIZES}
-                imageClassName={PORTRAIT_POSITION}
-              />
-            ) : (
-              <Image
-                src={bio.image}
-                alt={PORTRAIT_ALT}
-                fill
-                className={`object-cover ${PORTRAIT_POSITION}`}
-                sizes={PORTRAIT_SIZES}
-                priority
-              />
-            )}
+            <Image
+              src={bio.image}
+              alt={PORTRAIT_ALT}
+              fill
+              className={`object-cover ${PORTRAIT_POSITION}`}
+              sizes={PORTRAIT_SIZES}
+              priority
+            />
           </div>
         )}
       </div>
