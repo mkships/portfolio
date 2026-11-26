@@ -45,9 +45,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
   const summary = post.excerpt || post.description
   const body = (
     <div
-      className="article-copy prose prose-zinc max-w-none dark:prose-invert
-        prose-p:text-base prose-p:leading-[1.75] prose-p:text-zinc-700 dark:prose-p:text-zinc-300
-        prose-li:leading-[1.75] prose-li:text-zinc-700 dark:prose-li:text-zinc-300"
+      className="article-copy prose prose-zinc max-w-none dark:prose-invert"
       dangerouslySetInnerHTML={{ __html: post.content }}
     />
   )

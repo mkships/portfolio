@@ -102,6 +102,10 @@
 
 /* Shared article typography: musings, products and case studies all render through .article-copy,
    so headings and pull quotes are defined once here instead of per template. */
+.article-copy :is(p, li) {
+  @apply leading-[1.75] text-zinc-700 dark:text-zinc-300;
+}
+
 .article-copy :is(h2, h3) {
   @apply font-display font-semibold tracking-tight;
 }
@@ -119,7 +123,7 @@
 }
 
 .article-copy blockquote p {
-  @apply my-0 font-display text-xl leading-snug;
+  @apply my-0 font-display text-xl leading-snug text-zinc-900 dark:text-zinc-100;
 }
 
 .article-copy a {
