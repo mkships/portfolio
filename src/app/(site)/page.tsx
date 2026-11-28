@@ -10,6 +10,7 @@ import CompoundingLabWidget from '@/components/CompoundingLabWidget'
 import CourtNotes from '@/components/CourtNotes'
 import CareerTimeline from '@/components/CareerTimeline'
 import MusingsList from '@/components/MusingsList'
+import LearningBlock from '@/components/LearningBlock'
 import WebsitePreview from '@/components/WebsitePreview'
 
 const alcarazPreview = {
@@ -17,6 +18,9 @@ const alcarazPreview = {
   title: 'Carlos Alcaraz · ATP Tour',
   description: 'Player profile, rankings, match results and career stats.',
 }
+
+// The learning block's progress counts are re-read every five minutes.
+export const revalidate = 300
 
 export default function Home() {
   const professionalWork = getAllPosts('case-studies').sort((a, b) =>
@@ -88,6 +92,8 @@ export default function Home() {
         </div>
         <CareerTimeline experience={experience} />
       </Section>
+
+      <LearningBlock />
 
       {recentMusings.length > 0 && (
         <Section id="musings" title="Musings" subtitle="Notes on products, building with AI, and life on and off court.">
