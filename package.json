@@ -6,9 +6,12 @@
     "dev": "next dev",
     "build": "next build --webpack",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "convex:dev": "convex dev",
+    "convex:deploy": "convex deploy --env-file .env.convex-prod"
   },
   "dependencies": {
+    "convex": "^1.51.0",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.563.0",
     "marked": "^12.0.2",
