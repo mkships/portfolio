@@ -11,6 +11,7 @@
     "convex:deploy": "convex deploy --env-file .env.convex-prod"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "convex": "^1.51.0",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.563.0",
