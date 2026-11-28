@@ -3,6 +3,16 @@
 import { useState } from 'react'
 import { LockKeyhole, LockKeyholeOpen } from 'lucide-react'
 
+// What was typed, minus the things that tend to come along when a passphrase is copied from
+// a settings page: spaces or line breaks at either end, the variable name in front, and quotes.
+function normalise(value: string) {
+  return value
+    .trim()
+    .replace(/^LEARNING_OWNER_KEY\s*=\s*/i, '')
+    .replace(/^(["'])(.*)\1$/, '$2')
+    .trim()
+}
+
 // The owner types a passphrase once per device. Visitors can ignore this: everything is readable without it.
 export default function OwnerUnlock({
   unlocked,
@@ -41,8 +51,7 @@ export default function OwnerUnlock({
       style={{ width: '100%', maxWidth: '26rem' }}
       onSubmit={async event => {
         event.preventDefault()
-        // A pasted passphrase often carries a space or line break at either end.
-        const candidate = key.trim()
+        const candidate = normalise(key)
         if (candidate === '') return
         setBusy(true)
         const problem = await onUnlock(candidate)
@@ -58,8 +67,7 @@ export default function OwnerUnlock({
     >
       <label htmlFor="owner-key" className="lp-label">
         Owner passphrase
-      </label>
-      <input
+      </label>      <input
         id="owner-key"
         type={visible ? 'text' : 'password'}
         autoCapitalize="none"
@@ -81,7 +89,7 @@ export default function OwnerUnlock({
         </p>
       )}
       <div className="lp-actions">
-        <button type="submit" disabled={busy || key.trim() === ''} className="lp-btn is-primary">
+        <button type="submit" disabled={busy || normalise(key) === ''} className="lp-btn is-primary">
           Unlock
         </button>
         <button
